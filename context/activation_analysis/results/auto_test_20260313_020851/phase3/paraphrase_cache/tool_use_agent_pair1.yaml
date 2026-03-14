@@ -1,0 +1,35 @@
+? "3. **file_reader**: Read contents of a file from the local filesystem.\n   - Parameters:\
+  \ path (string, required), encoding (string, optional, default \"utf-8\")\n   -\
+  \ Returns: File contents as a string. Supports text files up to 10MB.\n   - Notes:\
+  \ This tool can read various text formats including .txt, .csv, .json, .yaml, .xml,\
+  \ and source code files. Binary files are not supported. The path must be an absolute\
+  \ path or relative to the working directory.\n"
+: "<think>\nOkay, the user wants me to paraphrase the given text about the file_reader\
+  \ tool. Let me read through the original carefully.\n\nFirst, the main points are:\
+  \ the tool reads a file's contents from the local filesystem. The parameters are\
+  \ path (required, string) and encoding (optional, default \"utf-8\"). It returns\
+  \ a string with the file contents, supporting text files up to 10MB. The notes mention\
+  \ supported formats like .txt, .csv, etc., binary files not supported, and the path\
+  \ needs to be absolute or relative to the working directory.\n\nI need to rephrase\
+  \ each part without changing the meaning. Let's start with the title. \"file_reader\"\
+  \ could stay as is. \"Read contents of a file from the local filesystem.\" Maybe\
+  \ \"Reads the contents of a file from the local file system.\"\n\nParameters: \"\
+  path (string, required)\" becomes \"path (string, required)\" – maybe \"path (string,\
+  \ mandatory)\"? But the user might prefer keeping \"required\". Encoding is optional\
+  \ with default \"utf-8\", so \"encoding (string, optional, default 'utf-8')\".\n\
+  \nReturns: \"File contents as a string.\" Maybe \"Returns the file's contents as\
+  \ a string.\"\n\nSupports text files up to 10MB: \"Supports text files up to 10MB\
+  \ in size.\" Or \"Capable of handling text files up to 10MB.\"\n\nNotes: \"This\
+  \ tool can read various text formats...\" could be \"This tool is capable of reading\
+  \ various text formats...\" or \"Supports reading different text formats including...\"\
+  . \n\nBinary files not supported: \"Binary files are not supported.\" Maybe \"Binary\
+  \ files are not supported by this tool.\"\n\nPath must be absolute or relative:\
+  \ \"The path must be an absolute path or relative to the working directory.\" Maybe\
+  \ \"The path should be an absolute path or relative to the current working directory.\"\
+  \n\nCheck for any technical terms that need to stay the same. \"Working directory\"\
+  \ is correct. \"Encoding\" is a standard term. \n\nAvoid using the same phrases.\
+  \ For example, \"supports\" can be \"capable of handling\" or \"able to process\"\
+  . \n\nMake sure the structure is the same: bullet points for parameters, returns,\
+  \ notes. But the original uses hyphens, so maybe keep that. \n\nCheck for consistency\
+  \ in terminology. The original uses \"file system\" with a space, so I should keep\
+  \ that. \n\nDouble-check that all information is present: required parameters"

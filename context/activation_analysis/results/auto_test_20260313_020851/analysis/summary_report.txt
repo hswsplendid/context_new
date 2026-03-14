@@ -1,0 +1,38 @@
+======================================================================
+EXPERIMENT SUMMARY REPORT
+======================================================================
+
+--- PHASE2 ---
+Total metric rows: 852
+Unique experiments: 71
+
+  cosine_mean: mean=0.9869, std=0.0139, min=0.9242, max=1.0000
+  cosine_std: mean=0.0234, std=0.0210, min=0.0001, max=0.0975
+  l2_mean: mean=3.1137, std=3.6843, min=0.0094, max=20.2299
+  l2_std: mean=2.0568, std=2.2764, min=0.0066, max=11.2661
+  cosine_segment: mean=0.9993, std=0.0009, min=0.9941, max=1.0000
+  cka: mean=0.9878, std=0.0152, min=0.9178, max=1.0000
+
+  Shallow layers (<=L12) cosine: mean=0.9981
+  Deep layers (>L12) cosine:    mean=0.9813
+  Delta (shallow - deep): 0.0168
+
+  Per-ratio cosine_mean:
+    ratio=0.1: mean=0.9881, std=0.0118
+    ratio=0.25: mean=0.9856, std=0.0161
+    ratio=0.5: mean=0.9870, std=0.0133
+
+  Per-position cosine_mean:
+    beginning: mean=0.9865, std=0.0150
+    middle: mean=0.9873, std=0.0127
+
+--- PHASE3 ---
+Total metric rows: 1248
+Unique experiments: 104
+
+  cosine_segment: mean=0.9470, std=0.0385, min=0.8067, max=0.9993
+  cka: mean=0.5392, std=0.3388, min=0.0397, max=1.0000
+
+  Per-ratio cosine_mean:
+
+  Per-position cosine_mean:

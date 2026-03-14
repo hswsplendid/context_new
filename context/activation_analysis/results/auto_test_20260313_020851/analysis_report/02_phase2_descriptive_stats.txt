@@ -1,0 +1,35 @@
+======================================================================
+  DESCRIPTIVE STATISTICS — Phase 2 (Type1: Content Replacement)
+======================================================================
+
+Total rows: 852
+Unique experiments: 71
+Layers: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44]
+Ratios: [0.1, 0.25, 0.5]
+Positions: ['beginning', 'middle']
+Context lengths: [512, 1024, 2048, 4096]
+Perturbation types: ['type1']
+
+  cosine_mean:
+    count=852, mean=0.986876, std=0.013884
+    min=0.924218, Q1=0.978748, median=0.992480, Q3=0.997816, max=0.999978
+
+  cosine_std:
+    count=852, mean=0.023387, std=0.020980
+    min=0.000065, Q1=0.004890, median=0.017335, Q3=0.036840, max=0.097548
+
+  l2_mean:
+    count=852, mean=3.113722, std=3.684261
+    min=0.009391, Q1=0.567589, median=1.594662, Q3=4.380937, max=20.229891
+
+  l2_std:
+    count=852, mean=2.056754, std=2.276417
+    min=0.006567, Q1=0.336326, median=1.069460, Q3=3.164995, max=11.266122
+
+  cosine_segment:
+    count=852, mean=0.999286, std=0.000865
+    min=0.994150, Q1=0.999035, median=0.999632, Q3=0.999866, max=0.999998
+
+  cka:
+    count=852, mean=0.987842, std=0.015246
+    min=0.917780, Q1=0.981043, median=0.994296, Q3=0.999270, max=0.999997

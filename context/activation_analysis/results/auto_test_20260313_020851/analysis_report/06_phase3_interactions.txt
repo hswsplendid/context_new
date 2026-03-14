@@ -1,0 +1,41 @@
+======================================================================
+  INTERACTION ANALYSIS (cosine_segment) — Phase 3 (Type2: Semantic Paraphrasing)
+======================================================================
+
+  --- Position Effect within Depth Groups (Kruskal-Wallis) ---
+    Shallow: H=12.2561, p=2.18e-03
+      beginning: mean=0.972980, n=144
+      end: mean=0.962102, n=136
+      middle: mean=0.966327, n=136
+    Middle: H=14.3984, p=7.47e-04
+      beginning: mean=0.950352, n=144
+      end: mean=0.932809, n=136
+      middle: mean=0.941168, n=136
+    Deep: H=6.7736, p=3.38e-02
+      beginning: mean=0.938440, n=144
+      end: mean=0.924715, n=136
+      middle: mean=0.933326, n=136
+
+  --- Ratio Effect within Depth Groups (Kruskal-Wallis) ---
+    Shallow: H=5.6678, p=5.88e-02
+      ratio=0.1: mean=0.963829, n=128
+      ratio=0.25: mean=0.967415, n=144
+      ratio=0.5: mean=0.970122, n=144
+    Middle: H=16.8417, p=2.20e-04
+      ratio=0.1: mean=0.932950, n=128
+      ratio=0.25: mean=0.941029, n=144
+      ratio=0.5: mean=0.949901, n=144
+    Deep: H=18.7027, p=8.69e-05
+      ratio=0.1: mean=0.921783, n=128
+      ratio=0.25: mean=0.932234, n=144
+      ratio=0.5: mean=0.941660, n=144
+
+  --- Ratio Effect within Positions (Kruskal-Wallis) ---
+    beginning: H=2.4128, p=2.99e-01
+    end: H=35.2482, p=2.22e-08
+    middle: H=14.0553, p=8.87e-04
+
+  --- Context Length Effect within Depth Groups (Spearman) ---
+    Shallow: rho=0.089130, p=6.94e-02
+    Middle: rho=0.152252, p=1.84e-03
+    Deep: rho=0.134741, p=5.91e-03

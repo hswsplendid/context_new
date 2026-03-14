@@ -1,0 +1,23 @@
+======================================================================
+  METRIC CORRELATION ANALYSIS — Phase 2 (Type1: Content Replacement)
+======================================================================
+
+  cosine_mean vs l2_mean (n=852):
+    Pearson:  r=-0.719221, p=1.41e-136
+    Spearman: rho=-0.934603, p=0.00e+00
+
+  cosine_mean vs cosine_segment (n=852):
+    Pearson:  r=0.789630, p=1.71e-182
+    Spearman: rho=0.921793, p=0.00e+00
+
+  cosine_mean vs cka (n=852):
+    Pearson:  r=0.925023, p=0.00e+00
+    Spearman: rho=0.973615, p=0.00e+00
+
+  cosine_segment vs cka (n=852):
+    Pearson:  r=0.693542, p=3.48e-123
+    Spearman: rho=0.870150, p=1.81e-263
+
+  l2_mean vs cka (n=852):
+    Pearson:  r=-0.649931, p=2.05e-103
+    Spearman: rho=-0.928384, p=0.00e+00

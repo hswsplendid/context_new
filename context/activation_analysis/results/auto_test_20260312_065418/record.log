@@ -1,0 +1,127 @@
+======================================================================
+EXPERIMENT SUMMARY REPORT
+======================================================================
+
+--- PHASE2 ---
+Total metric rows: 1846
+Unique experiments: 142
+
+  cosine_mean: mean=0.9635, std=0.0528, min=0.7842, max=1.0000
+  cosine_std: mean=0.0448, std=0.0548, min=0.0000, max=0.1891
+  l2_mean: mean=34.3451, std=41.3874, min=0.1616, max=189.7157
+  l2_std: mean=50.3703, std=103.7312, min=0.0411, max=905.8948
+  cosine_segment: mean=0.9975, std=0.0034, min=0.9679, max=1.0000
+  cka: mean=0.8765, std=0.2872, min=0.0013, max=1.0000
+
+  Shallow layers (<=L12) cosine: mean=0.9989
+  Deep layers (>L12) cosine:    mean=0.9477
+  Delta (shallow - deep): 0.0511
+
+  Per-ratio cosine_mean:
+    ratio=0.1: mean=0.9634, std=0.0530
+    ratio=0.25: mean=0.9613, std=0.0547
+    ratio=0.5: mean=0.9657, std=0.0506
+
+  Per-position cosine_mean:
+    beginning: mean=0.9545, std=0.0614
+    middle: mean=0.9724, std=0.0405
+
+--- PHASE3 ---
+Total metric rows: 2730
+Unique experiments: 210
+
+  cosine_segment: mean=0.9841, std=0.0232, min=0.8449, max=1.0000
+  cka: mean=0.7146, std=0.2469, min=0.0031, max=1.0000
+
+  Per-ratio cosine_mean:
+
+  Per-position cosine_mean:
+
+2026-03-12 07:34:00 [INFO] __main__: All phases complete!
+2026-03-12 07:34:00 [INFO] __main__: Results saved to /root/context/context/activation_analysis/results/auto_test_20260312_065418
+
+● 下面是我的分析结论。                                                                                                                                                                                                         
+                                                  
+  ---                                                                                                                                                                                                                          
+  一、代码对比的是哪部分激活？                                                                                                                                                                                                 
+                                                                                                                                                                                                                               
+  既不是整层的全部激活，也不是简单地对比"扰动部分"的激活。具体取决于扰动类型：                                                                                                                                                 
+                                                                                                                                                                                                                               
+  Type 1（内容替换）：对比的是 扰动段之后的 subsequent 区域 的逐 token 激活                                                                                                                                                    
+
+  关键代码链路：
+
+  1. prompt_builder.py 将 prompt 结构化为三段：[Prefix] + [Segment(被替换)] + [Subsequent]
+  2. token_aligner.py:29-85 的 align_type1() 函数对齐的是 A2 vs B2（即 subsequent_range_original 和 subsequent_range_perturbed），不是被替换的 segment 本身
+  3. experiment_runner.py:90-98 明确将 orig_indices = alignment.original_indices（subsequent 区域的 token 索引）传给激活提取器
+  4. activation_extractor.py:27-42 的 hook 只提取这些指定位置的 hidden states
+
+  设计意图：Type 1 中被替换段的内容完全不同，逐 token 对比没有意义。真正要测量的是：替换扰动如何传播到下游未被修改的文本的激活表示中。
+
+  Type 2（语义改写）：对比的是 被改写的 segment 区域 的 segment-level 激活
+
+  1. token_aligner.py:88-98 的 align_type2() 返回的是 original_segment_range 和 perturbed_segment_range
+  2. experiment_runner.py:100-106 提取 segment 范围内的所有 token，但 token_level=False，只做 segment-level 对比
+  3. metrics.py:66-77 通过 mean pooling 将不等长的 token 序列压缩为单个向量后计算 cosine，或使用 CKA 处理不同 token 数
+
+  设计意图：改写后 token 数量和内容都变了，无法逐 token 对齐。通过 mean pooling/CKA 测量的是：语义等价的不同表述在激活空间中是否收敛到相似的表示。
+
+  总结
+
+  ┌─────────────────┬───────────────────────────────┬────────────────────┬──────────────────────────┐
+  │    扰动类型     │       提取的 token 范围       │      对比粒度      │       测量的是什么       │
+  ├─────────────────┼───────────────────────────────┼────────────────────┼──────────────────────────┤
+  │ Type 1 内容替换 │ Subsequent 区域（扰动段之后） │ 逐 token + segment │ 扰动如何向下游传播       │
+  ├─────────────────┼───────────────────────────────┼────────────────────┼──────────────────────────┤
+  │ Type 2 语义改写 │ Segment 区域（被改写段本身）  │ 仅 segment-level   │ 语义等价表述的表示一致性 │
+  └─────────────────┴───────────────────────────────┴────────────────────┴──────────────────────────┘
+
+  两者都不是对比整层的全部激活，而是通过 PyTorch hook 选择性地只提取特定 token 位置、特定层的 hidden states，这是内存高效的设计。
+
+  ---
+  二、实验结果分析
+
+  核心发现
+
+  1. 层深度是激活发散的主导因素（H1，强支持）
+
+  - Spearman rho = -0.94，Cohen's d = 2.34（极大效应量）
+  - 存在明显的两阶段模式：
+    - Layer 0-24：缓慢线性漂移（cosine 从 0.9998 降到 0.9951，仅降 0.5%）
+    - Layer 28-48：急剧非线性放大（cosine 从 0.9893 降到 0.8697，降 12%）
+  - 拐点在 Layer 28 附近，这可能对应 Qwen3-30B-A3B 的某种架构特征（MoE 路由决策层？）
+  - Layer 44-48 出现轻微平台期（0.8707 vs 0.8697），暗示输出表示有部分再稳定
+
+  2. 扰动比例（10%-50%）对内容替换毫无影响（H2，不支持）
+
+  - 三个 ratio 的 cosine 均值几乎相同（0.963/0.961/0.966），Kruskal-Wallis p=0.898
+  - 这是一个阈值效应：只要有任何内容被替换（哪怕 10%），后续层的发散程度就由网络架构本身决定，而非扰动规模
+  - 这对对抗鲁棒性研究有重要启示：小扰动和大扰动在深层的影响等价
+
+  3. 扰动位置影响显著，但在两种扰动类型中方向相反（H3，支持）
+
+  - Type 1：Beginning 位置扰动造成更多发散（deep层 cosine: beginning=0.888, middle=0.933）
+    - 原因：因果注意力机制下，前部扰动影响更多后续 token，"爆炸半径"更大
+  - Type 2：Beginning 位置改写反而发散最小（cosine_segment: beginning=0.992, middle=0.980）
+    - 原因：前部改写后，后续大量未修改文本提供"锚定"，帮助模型收敛回等价表示
+
+  4. Type 2 的独特发现
+
+  - 更大的改写比例反而产生更高相似度（ratio 0.1→0.976, 0.5→0.992），与直觉相反
+    - 解释：更大的改写段包含更多冗余上下文，帮助模型维持语义一致性
+  - 更长的上下文显著提高改写的表示一致性（L512→0.970, L4096→0.993，Cohen's d=0.90）
+  - CKA 在 Layer 0 就很低（0.65），说明 BPE 分词差异导致 token 级别模式差异很大，但 mean pooling 后可以收敛
+
+  5. 场景敏感性
+
+  - Multi-turn agent 场景始终比 tool-use agent 场景更敏感
+  - 最极端的发散案例集中在 multi-turn + beginning 位置 + deep 层 + 短上下文
+
+  对研究的整体评估
+
+  这个实验设计合理，结论可信：
+
+  - 管线可靠性：identity test 确认 cosine=1.0000（精度 1e-7），无伪发散
+  - 方法论亮点：通过选择性提取 subsequent 区域（Type 1）和 segment 区域（Type 2）分别测量传播效应和表示一致性，避免了"苹果对橘子"的对比问题
+  - 最有价值的发现：H2 的阴性结果（阈值效应）和 Type 2 ratio 的反向效应，这两个反直觉结论比简单验证假设更有科学价值
+  - 主要局限：只测了一个模型（Qwen3-30B-A3B），Phase 2 缺 end 位置，prompt pair 多样性有限（每场景仅 3 对）

@@ -1,0 +1,36 @@
+? "3. **file_reader**: Read contents of a file from the local filesystem.\n   - Parameters:\
+  \ path (string, required), encoding (string, optional, default \"utf-8\")\n   -\
+  \ Returns: File contents as a string. Supports text files up to 10MB.\n   - Notes:\
+  \ This tool can read various text formats including .txt, .csv, .json, .yaml, .xml,\
+  \ and source code files. Binary files are not supported. The path must be an absolute\
+  \ path or relative to the working directory.\n"
+: "<think>\nOkay, the user wants me to paraphrase the given text about the file_reader\
+  \ tool. Let me start by understanding the original content.\n\nThe original describes\
+  \ a function called file_reader that reads a file's contents from the local filesystem.\
+  \ The parameters are path (required, string) and encoding (optional, default \"\
+  utf-8\"). It returns a string with the file content, supports up to 10MB, and mentions\
+  \ supported formats like .txt, .csv, etc., while noting that binary files aren't\
+  \ supported. The path needs to be absolute or relative to the working directory.\n\
+  \nI need to rephrase this without changing the meaning. Let me check each part.\
+  \ \"Read contents of a file from the local filesystem\" could be \"Access and retrieve\
+  \ the contents of a file stored on the local filesystem.\" \n\nParameters: \"path\
+  \ (string, required), encoding (string, optional, default 'utf-8')\" can become\
+  \ \"Takes a path (string, mandatory) and an encoding (string, optional, defaulting\
+  \ to 'utf-8').\" \n\nReturns: \"File contents as a string. Supports text files up\
+  \ to 10MB.\" might be \"Returns the file's content as a string, suitable for text\
+  \ files with a maximum size of 10MB.\"\n\nNotes: \"This tool can read various text\
+  \ formats including...\" could be \"This tool is capable of handling multiple text-based\
+  \ formats such as...\" Then list the formats. \"Binary files are not supported.\"\
+  \ stays similar. \"The path must be an absolute path or relative to the working\
+  \ directory.\" could be \"The path must be an absolute path or relative to the current\
+  \ working directory.\"\n\nI should ensure that all key points are covered: parameters,\
+  \ return type, supported formats, size limit, binary restriction, and path requirements.\
+  \ Avoid technical jargon where possible, but keep the necessary terms. Check for\
+  \ any synonyms or alternative phrasing that maintains the original meaning. Make\
+  \ sure not to add any extra information or explanations. Finally, verify that the\
+  \ structure mirrors the original but with different wording.\n</think>\n\n3. **file_reader**:\
+  \ Access and retrieve the contents of a file stored on the local filesystem.  \n\
+  \   - Parameters: path (string, mandatory), encoding (string, optional, defaulting\
+  \ to \"utf-8\")  \n   - Returns: File content as a string. Compatible with text\
+  \ files up to 10MB.  \n   - Notes: This tool is capable of handling multiple text-based\
+  \ formats such as .txt, .csv, .json,"

@@ -1,0 +1,34 @@
+name: "tool_use_agent"
+description: "Tool-calling agent template where tool descriptions get perturbed"
+
+system_prompt: |
+  You are a helpful AI assistant with access to the following tools. Use them when appropriate to answer user questions.
+
+prefix: |
+  ### Available Tools
+
+  1. **web_search**: Search the web for current information.
+     - Parameters: query (string, required), num_results (integer, optional, default 5)
+     - Returns: List of search results with title, URL, and snippet.
+
+  2. **calculator**: Perform mathematical calculations.
+     - Parameters: expression (string, required)
+     - Returns: Numerical result of the expression.
+
+segment: |
+  3. **file_reader**: Read contents of a file from the local filesystem.
+     - Parameters: path (string, required), encoding (string, optional, default "utf-8")
+     - Returns: File contents as a string. Supports text files up to 10MB.
+     - Notes: This tool can read various text formats including .txt, .csv, .json, .yaml, .xml, and source code files. Binary files are not supported. The path must be an absolute path or relative to the working directory.
+
+subsequent: |
+  4. **code_executor**: Execute Python code in a sandboxed environment.
+     - Parameters: code (string, required), timeout (integer, optional, default 30)
+     - Returns: stdout output and return value of the last expression.
+
+  ### Conversation
+
+  User: Can you help me analyze the data in my project files?
+  Assistant: I'd be happy to help you analyze your project data. Let me start by reading the relevant files. Which files would you like me to look at?
+  User: Please read the config.yaml and then calculate some statistics from data.csv.
+  Assistant: I'll read both files for you. Let me start with the config file.

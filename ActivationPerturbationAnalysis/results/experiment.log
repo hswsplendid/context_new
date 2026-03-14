@@ -1,0 +1,8 @@
+2026-03-13 04:39:28,665 [INFO] __main__: Configuration loaded from config/default.yaml
+2026-03-13 04:39:32,043 [INFO] src.scheduler: Detected 8 usable GPUs (min_free=40.0 GB).
+2026-03-13 04:39:32,092 [INFO] src.model: Loading tokenizer from /root/share/models/Qwen3-235B-A22B
+2026-03-13 04:39:32,614 [INFO] src.model: Loading model from /root/share/models/Qwen3-235B-A22B (dtype=bfloat16)
+2026-03-13 04:40:07,449 [INFO] __main__: Configuration loaded from config/default.yaml
+2026-03-13 04:40:10,234 [INFO] src.scheduler: Detected 8 usable GPUs (min_free=40.0 GB).
+2026-03-13 04:40:10,282 [INFO] src.model: Loading tokenizer from /root/share/models/Qwen3-235B-A22B
+2026-03-13 04:40:10,773 [INFO] src.model: Loading model from /root/share/models/Qwen3-235B-A22B (dtype=bfloat16)

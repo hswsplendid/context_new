@@ -1,0 +1,19 @@
+======================================================================
+  DESCRIPTIVE STATISTICS — Phase 3 (Type2: Semantic Paraphrasing)
+======================================================================
+
+Total rows: 2730
+Unique experiments: 210
+Layers: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48]
+Ratios: [0.1, 0.25, 0.5]
+Positions: ['beginning', 'end', 'middle']
+Context lengths: [512, 1024, 2048, 4096]
+Perturbation types: ['type2']
+
+  cosine_segment:
+    count=2730, mean=0.984107, std=0.023216
+    min=0.844865, Q1=0.982675, median=0.992193, Q3=0.996899, max=0.999982
+
+  cka:
+    count=2730, mean=0.714627, std=0.246912
+    min=0.003095, Q1=0.546675, median=0.709218, Q3=0.999418, max=0.999995

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /d/Tank/agent/split -maxdepth 3 -name \"*.py\" -type f 2>/dev/null | grep -E \"\\(engine|extraction|activation|analysis\\)\" | head -20)",
+      "Bash(ls -la /d/Tank/agent/split/ | grep -E \"\\\\.py$|\\\\.yaml$|\\\\.json$|\\\\.toml$\")"
+    ]
+  }
+}

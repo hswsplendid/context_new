@@ -1,0 +1,38 @@
+==================================================
+  HYPOTHESIS TESTING REPORT
+==================================================
+
+H1: Layer Depth Divergence
+  Spearman ρ(layer, cosine) = nan, p = nan
+  Mann-Whitney U (shallow > deep): U = nan, p = nan
+  Shallow mean = nan, Deep mean = nan, Delta = nan, Cohen's d = nan
+  Verdict: NOT SUPPORTED
+
+H2: Perturbation Ratio Scaling
+  Spearman ρ(ratio, 1−cosine) = nan, p = nan
+  Kruskal-Wallis H = nan, p = nan
+  Pairwise 0.1 vs 0.25: U = nan, p = nan, p_adj = nan
+  Pairwise 0.25 vs 0.5: U = nan, p = nan, p_adj = nan
+  Monotonic decrease: False (means: {0.1: 0.9634, 0.25: 0.9613, 0.5: 0.9657})
+  Verdict: NOT SUPPORTED
+
+H3: Position Effect
+  Kruskal-Wallis H = nan, p = nan
+  beginning vs end: U = nan, p = nan, p_adj = nan
+  beginning vs middle: U = nan, p = nan, p_adj = nan
+  end vs middle: U = nan, p = nan, p_adj = nan
+  Position effect in Shallow layers: H = nan, p = nan
+  Position effect in Middle layers: H = nan, p = nan
+  Position effect in Deep layers: H = nan, p = nan
+  Verdict: NOT SUPPORTED
+
+==================================================
+  OVERALL VERDICT
+==================================================
+  Hypotheses supported: 0/3
+  Idea feasibility: WEAK
+
+  Not supported: H1: Layer Depth Divergence, H2: Perturbation Ratio Scaling, H3: Position Effect
+
+  Recommendation: The current approach does not show strong
+  signal. Reconsider the experimental design or model choice.

@@ -1,0 +1,1272 @@
+2026-03-14 13:25:18,060 [INFO] __main__: Configuration loaded from config/agent_prompts_llama3.yaml
+2026-03-14 13:25:20,869 [INFO] src.scheduler: GPU 0 (NVIDIA A800-SXM4-80GB): 16363 MB free — below threshold, skipping.
+2026-03-14 13:25:20,874 [INFO] src.scheduler: GPU 1 (NVIDIA A800-SXM4-80GB): 19561 MB free — below threshold, skipping.
+2026-03-14 13:25:20,907 [INFO] src.scheduler: GPU 7 (NVIDIA A800-SXM4-80GB): 17535 MB free — below threshold, skipping.
+2026-03-14 13:25:20,909 [INFO] src.scheduler: Detected 5 usable GPUs (min_free=20.0 GB).
+2026-03-14 13:25:20,957 [INFO] src.model: Loading tokenizer from /root/share/models/Meta-Llama-3-8B-Instruct
+2026-03-14 13:25:21,472 [INFO] src.model: Loading model from /root/share/models/Meta-Llama-3-8B-Instruct (dtype=bfloat16)
+2026-03-14 13:26:04,732 [INFO] src.model: Model loaded. Parameters: 8,030,261,248
+2026-03-14 13:26:04,750 [INFO] src.prompts: Loaded 12 prompts from prompt/extracted_prompts.json.
+2026-03-14 13:26:04,998 [INFO] src.sweep: jsonfile mode: 12 prompts, token counts: [7588, 7872, 8395, 8690, 8685, 9626, 10364, 10990, 11558, 12087, 12477, 13047]
+2026-03-14 13:26:05,004 [INFO] src.sweep: Built 1080 experiment jobs.
+2026-03-14 13:26:05,004 [INFO] src.sweep: Starting sweep: 1080 experiments.
+2026-03-14 13:26:05,004 [INFO] src.sweep: [1/1080] Running 3b7f2359c3c7978e — ctx=7588 pos=0.10 span=8 type=random_replace
+2026-03-14 13:26:10,675 [INFO] src.sweep: [2/1080] Running dd8ed38f332e06ad — ctx=7588 pos=0.10 span=8 type=mask
+2026-03-14 13:26:15,863 [INFO] src.sweep: [3/1080] Running 77322bd6aba0af76 — ctx=7588 pos=0.10 span=8 type=delete
+2026-03-14 13:26:21,031 [INFO] src.sweep: [4/1080] Running 2ac6c5c7546ae98d — ctx=7588 pos=0.10 span=8 type=compress
+2026-03-14 13:26:25,971 [INFO] src.sweep: [5/1080] Running c34cae136be1d001 — ctx=7588 pos=0.10 span=8 type=paraphrase
+2026-03-14 13:26:31,162 [INFO] src.sweep: [6/1080] Running e2bf0387f03b790f — ctx=7588 pos=0.10 span=8 type=semantic_change
+2026-03-14 13:26:36,288 [INFO] src.sweep: [7/1080] Running 9425968be5bacc4c — ctx=7588 pos=0.10 span=32 type=random_replace
+2026-03-14 13:26:41,447 [INFO] src.sweep: [8/1080] Running b3a81efb31842551 — ctx=7588 pos=0.10 span=32 type=mask
+2026-03-14 13:26:46,595 [INFO] src.sweep: [9/1080] Running 4974c302aaf6dc11 — ctx=7588 pos=0.10 span=32 type=delete
+2026-03-14 13:26:51,721 [INFO] src.sweep: [10/1080] Running 5264bd218e134f66 — ctx=7588 pos=0.10 span=32 type=compress
+2026-03-14 13:26:56,966 [INFO] src.storage: Flushed 26928 records to Llama-3-8B-agent-results/results_part_000000.parquet.
+2026-03-14 13:26:56,972 [INFO] src.sweep: [11/1080] Running 2a198c97e63c74ed — ctx=7588 pos=0.10 span=32 type=paraphrase
+2026-03-14 13:27:02,644 [INFO] src.sweep: [12/1080] Running 3ffe8548c96d05ec — ctx=7588 pos=0.10 span=32 type=semantic_change
+2026-03-14 13:27:07,873 [INFO] src.sweep: [13/1080] Running 0db7fb59c9e90961 — ctx=7588 pos=0.10 span=128 type=random_replace
+2026-03-14 13:27:13,010 [INFO] src.sweep: [14/1080] Running eaf303e41f67e9de — ctx=7588 pos=0.10 span=128 type=mask
+2026-03-14 13:27:18,147 [INFO] src.sweep: [15/1080] Running e541a4fbf2b00f6e — ctx=7588 pos=0.10 span=128 type=delete
+2026-03-14 13:27:23,221 [INFO] src.sweep: [16/1080] Running 50304b09759f8d9e — ctx=7588 pos=0.10 span=128 type=compress
+2026-03-14 13:27:28,380 [INFO] src.sweep: [17/1080] Running bc8c795aff56f71e — ctx=7588 pos=0.10 span=128 type=paraphrase
+2026-03-14 13:27:34,010 [INFO] src.sweep: [18/1080] Running c7929a7b95ef0a5b — ctx=7588 pos=0.10 span=128 type=semantic_change
+2026-03-14 13:27:39,137 [INFO] src.sweep: [19/1080] Running 2d99fc42ecc533cd — ctx=7588 pos=0.25 span=8 type=random_replace
+2026-03-14 13:27:44,250 [INFO] src.sweep: [20/1080] Running 7f7fe4bb9bd8607f — ctx=7588 pos=0.25 span=8 type=mask
+2026-03-14 13:27:49,433 [INFO] src.storage: Flushed 26004 records to Llama-3-8B-agent-results/results_part_000001.parquet.
+2026-03-14 13:27:49,438 [INFO] src.sweep: [21/1080] Running f03cbdfb8c69d44e — ctx=7588 pos=0.25 span=8 type=delete
+2026-03-14 13:27:54,543 [INFO] src.sweep: [22/1080] Running c073e17f9aeb8404 — ctx=7588 pos=0.25 span=8 type=compress
+2026-03-14 13:27:59,540 [INFO] src.sweep: [23/1080] Running 0025f7533e0d654e — ctx=7588 pos=0.25 span=8 type=paraphrase
+2026-03-14 13:28:04,660 [INFO] src.sweep: [24/1080] Running 804cd2733ca7521e — ctx=7588 pos=0.25 span=8 type=semantic_change
+2026-03-14 13:28:09,777 [INFO] src.sweep: [25/1080] Running cdf95e3594b462a7 — ctx=7588 pos=0.25 span=32 type=random_replace
+2026-03-14 13:28:14,908 [INFO] src.sweep: [26/1080] Running fa88a34ca01eccf9 — ctx=7588 pos=0.25 span=32 type=mask
+2026-03-14 13:28:20,047 [INFO] src.sweep: [27/1080] Running a7921698d328fe1f — ctx=7588 pos=0.25 span=32 type=delete
+2026-03-14 13:28:25,163 [INFO] src.sweep: [28/1080] Running c5e22a84d4f524b5 — ctx=7588 pos=0.25 span=32 type=compress
+2026-03-14 13:28:30,353 [INFO] src.sweep: [29/1080] Running 2cf8f15b8f793e8b — ctx=7588 pos=0.25 span=32 type=paraphrase
+2026-03-14 13:28:36,025 [INFO] src.sweep: [30/1080] Running d1eacc6ef10f06dd — ctx=7588 pos=0.25 span=32 type=semantic_change
+2026-03-14 13:28:41,242 [INFO] src.storage: Flushed 23100 records to Llama-3-8B-agent-results/results_part_000002.parquet.
+2026-03-14 13:28:41,247 [INFO] src.sweep: [31/1080] Running 5cd77de51bfbed01 — ctx=7588 pos=0.25 span=128 type=random_replace
+2026-03-14 13:28:46,402 [INFO] src.sweep: [32/1080] Running bb0e17b5e9cd6c29 — ctx=7588 pos=0.25 span=128 type=mask
+2026-03-14 13:28:51,520 [INFO] src.sweep: [33/1080] Running fba8f800f87568d2 — ctx=7588 pos=0.25 span=128 type=delete
+2026-03-14 13:28:56,572 [INFO] src.sweep: [34/1080] Running eeb7e17aed0f8360 — ctx=7588 pos=0.25 span=128 type=compress
+2026-03-14 13:29:01,758 [INFO] src.sweep: [35/1080] Running 2cb01020ba255eaa — ctx=7588 pos=0.25 span=128 type=paraphrase
+2026-03-14 13:29:06,962 [INFO] src.sweep: [36/1080] Running 761cdcf4aa362cb1 — ctx=7588 pos=0.25 span=128 type=semantic_change
+2026-03-14 13:29:12,111 [INFO] src.sweep: [37/1080] Running ba38e47003eaa5b9 — ctx=7588 pos=0.50 span=8 type=random_replace
+2026-03-14 13:29:17,253 [INFO] src.sweep: [38/1080] Running 239a9c89de3e2535 — ctx=7588 pos=0.50 span=8 type=mask
+2026-03-14 13:29:22,446 [INFO] src.sweep: [39/1080] Running 76972b5fcf692c2a — ctx=7588 pos=0.50 span=8 type=delete
+2026-03-14 13:29:27,644 [INFO] src.sweep: [40/1080] Running 2322f350dbf281ce — ctx=7588 pos=0.50 span=8 type=compress
+2026-03-14 13:29:32,632 [INFO] src.storage: Flushed 20394 records to Llama-3-8B-agent-results/results_part_000003.parquet.
+2026-03-14 13:29:32,636 [INFO] src.sweep: [41/1080] Running f7cffc53b8ba79f3 — ctx=7588 pos=0.50 span=8 type=paraphrase
+2026-03-14 13:29:37,760 [INFO] src.sweep: [42/1080] Running dda902f7bdd2ecad — ctx=7588 pos=0.50 span=8 type=semantic_change
+2026-03-14 13:29:42,903 [INFO] src.sweep: [43/1080] Running d95402ac8580ab89 — ctx=7588 pos=0.50 span=32 type=random_replace
+2026-03-14 13:29:48,057 [INFO] src.sweep: [44/1080] Running e614cd0f107e5a32 — ctx=7588 pos=0.50 span=32 type=mask
+2026-03-14 13:29:53,161 [INFO] src.sweep: [45/1080] Running af866a625ca26698 — ctx=7588 pos=0.50 span=32 type=delete
+2026-03-14 13:29:58,295 [INFO] src.sweep: [46/1080] Running 4f81f2a1e72ae515 — ctx=7588 pos=0.50 span=32 type=compress
+2026-03-14 13:30:03,377 [INFO] src.sweep: [47/1080] Running c8f44dcd69cd224a — ctx=7588 pos=0.50 span=32 type=paraphrase
+2026-03-14 13:30:09,006 [INFO] src.sweep: [48/1080] Running 40b27a70a1d7202d — ctx=7588 pos=0.50 span=32 type=semantic_change
+2026-03-14 13:30:14,098 [INFO] src.sweep: [49/1080] Running 15cbfb9e009c6bf5 — ctx=7588 pos=0.50 span=128 type=random_replace
+2026-03-14 13:30:19,293 [INFO] src.sweep: [50/1080] Running d23c006b4c402968 — ctx=7588 pos=0.50 span=128 type=mask
+2026-03-14 13:30:24,489 [INFO] src.storage: Flushed 16764 records to Llama-3-8B-agent-results/results_part_000004.parquet.
+2026-03-14 13:30:24,492 [INFO] src.sweep: [51/1080] Running ab1e57c4999c9a9d — ctx=7588 pos=0.50 span=128 type=delete
+2026-03-14 13:30:29,581 [INFO] src.sweep: [52/1080] Running 09906ecc0296ca0a — ctx=7588 pos=0.50 span=128 type=compress
+2026-03-14 13:30:34,744 [INFO] src.sweep: [53/1080] Running 08a3d7053111ec50 — ctx=7588 pos=0.50 span=128 type=paraphrase
+2026-03-14 13:30:39,895 [INFO] src.sweep: [54/1080] Running 902bf9161859997d — ctx=7588 pos=0.50 span=128 type=semantic_change
+2026-03-14 13:30:45,038 [INFO] src.sweep: [55/1080] Running 00f252fea42f1c1f — ctx=7588 pos=0.75 span=8 type=random_replace
+2026-03-14 13:30:50,275 [INFO] src.sweep: [56/1080] Running 8eb8a25e51dbac0b — ctx=7588 pos=0.75 span=8 type=mask
+2026-03-14 13:30:55,397 [INFO] src.sweep: [57/1080] Running 71d610152f49490e — ctx=7588 pos=0.75 span=8 type=delete
+2026-03-14 13:31:00,572 [INFO] src.sweep: [58/1080] Running de3912fd5a25cc0e — ctx=7588 pos=0.75 span=8 type=compress
+2026-03-14 13:31:05,484 [INFO] src.sweep: [59/1080] Running bdf705d84247554e — ctx=7588 pos=0.75 span=8 type=paraphrase
+2026-03-14 13:31:10,923 [INFO] src.sweep: [60/1080] Running 92407e0c911999b0 — ctx=7588 pos=0.75 span=8 type=semantic_change
+2026-03-14 13:31:16,111 [INFO] src.storage: Flushed 12936 records to Llama-3-8B-agent-results/results_part_000005.parquet.
+2026-03-14 13:31:16,114 [INFO] src.sweep: [61/1080] Running f4edcfea7afa3fdf — ctx=7588 pos=0.75 span=32 type=random_replace
+2026-03-14 13:31:21,338 [INFO] src.sweep: [62/1080] Running 5466bdb9935acb1b — ctx=7588 pos=0.75 span=32 type=mask
+2026-03-14 13:31:26,468 [INFO] src.sweep: [63/1080] Running 84430290b82220d3 — ctx=7588 pos=0.75 span=32 type=delete
+2026-03-14 13:31:31,855 [INFO] src.sweep: [64/1080] Running c8f32b8b689aba0a — ctx=7588 pos=0.75 span=32 type=compress
+2026-03-14 13:31:36,984 [INFO] src.sweep: [65/1080] Running d7968c01311038ec — ctx=7588 pos=0.75 span=32 type=paraphrase
+2026-03-14 13:31:42,612 [INFO] src.sweep: [66/1080] Running b24837ed514b056d — ctx=7588 pos=0.75 span=32 type=semantic_change
+2026-03-14 13:31:47,809 [INFO] src.sweep: [67/1080] Running f69e50260efc974d — ctx=7588 pos=0.75 span=128 type=random_replace
+2026-03-14 13:31:52,980 [INFO] src.sweep: [68/1080] Running 58365dd777b36e20 — ctx=7588 pos=0.75 span=128 type=mask
+2026-03-14 13:31:58,114 [INFO] src.sweep: [69/1080] Running 83597882612ca8f4 — ctx=7588 pos=0.75 span=128 type=delete
+2026-03-14 13:32:03,411 [INFO] src.sweep: [70/1080] Running 1a2ecc7cc041bf40 — ctx=7588 pos=0.75 span=128 type=compress
+2026-03-14 13:32:08,683 [INFO] src.storage: Flushed 10428 records to Llama-3-8B-agent-results/results_part_000006.parquet.
+2026-03-14 13:32:08,686 [INFO] src.sweep: [71/1080] Running 701423d45643131a — ctx=7588 pos=0.75 span=128 type=paraphrase
+2026-03-14 13:32:14,029 [INFO] src.sweep: [72/1080] Running 606567fd68dfd696 — ctx=7588 pos=0.75 span=128 type=semantic_change
+2026-03-14 13:32:19,148 [INFO] src.sweep: [73/1080] Running 8f8b39e60a79643a — ctx=7588 pos=0.90 span=8 type=random_replace
+2026-03-14 13:32:24,291 [INFO] src.sweep: [74/1080] Running 0ba2cf12a5a9b4a3 — ctx=7588 pos=0.90 span=8 type=mask
+2026-03-14 13:32:29,411 [INFO] src.sweep: [75/1080] Running ab4fc715da54134f — ctx=7588 pos=0.90 span=8 type=delete
+2026-03-14 13:32:34,519 [INFO] src.sweep: [76/1080] Running 75a8c11701863f1c — ctx=7588 pos=0.90 span=8 type=compress
+2026-03-14 13:32:39,451 [INFO] src.sweep: [77/1080] Running 552d539d3b3c805c — ctx=7588 pos=0.90 span=8 type=paraphrase
+2026-03-14 13:32:45,016 [INFO] src.sweep: [78/1080] Running 6ac6c7a02a6ca748 — ctx=7588 pos=0.90 span=8 type=semantic_change
+2026-03-14 13:32:50,076 [INFO] src.sweep: [79/1080] Running fa78b48f5e833174 — ctx=7588 pos=0.90 span=32 type=random_replace
+2026-03-14 13:32:55,155 [INFO] src.sweep: [80/1080] Running 041f3cb89ed99b20 — ctx=7588 pos=0.90 span=32 type=mask
+2026-03-14 13:33:00,234 [INFO] src.storage: Flushed 7590 records to Llama-3-8B-agent-results/results_part_000007.parquet.
+2026-03-14 13:33:00,236 [INFO] src.sweep: [81/1080] Running 48ba8de6f63c102c — ctx=7588 pos=0.90 span=32 type=delete
+2026-03-14 13:33:05,280 [INFO] src.sweep: [82/1080] Running 2af2bf465081d633 — ctx=7588 pos=0.90 span=32 type=compress
+2026-03-14 13:33:10,342 [INFO] src.sweep: [83/1080] Running 3adf07558c1846ef — ctx=7588 pos=0.90 span=32 type=paraphrase
+2026-03-14 13:33:15,893 [INFO] src.sweep: [84/1080] Running 061e999d004daa5c — ctx=7588 pos=0.90 span=32 type=semantic_change
+2026-03-14 13:33:20,932 [INFO] src.sweep: [85/1080] Running 7a19189122f8933f — ctx=7588 pos=0.90 span=128 type=random_replace
+2026-03-14 13:33:25,980 [INFO] src.sweep: [86/1080] Running f90ba372e3b382de — ctx=7588 pos=0.90 span=128 type=mask
+2026-03-14 13:33:31,021 [INFO] src.sweep: [87/1080] Running 38fd8bce69ba84ce — ctx=7588 pos=0.90 span=128 type=delete
+2026-03-14 13:33:36,046 [INFO] src.sweep: [88/1080] Running 8a2c2b749695d7cc — ctx=7588 pos=0.90 span=128 type=compress
+2026-03-14 13:33:41,123 [INFO] src.sweep: [89/1080] Running 4c550163e31596e8 — ctx=7588 pos=0.90 span=128 type=paraphrase
+2026-03-14 13:33:46,620 [INFO] src.sweep: [90/1080] Running a609ba1527a6bc12 — ctx=7588 pos=0.90 span=128 type=semantic_change
+2026-03-14 13:33:51,775 [INFO] src.storage: Flushed 6732 records to Llama-3-8B-agent-results/results_part_000008.parquet.
+2026-03-14 13:33:51,777 [INFO] src.sweep: [91/1080] Running d2e3fa4734a6ec24 — ctx=7872 pos=0.10 span=8 type=random_replace
+2026-03-14 13:33:56,940 [INFO] src.sweep: [92/1080] Running 74333ac93f1bdf79 — ctx=7872 pos=0.10 span=8 type=mask
+2026-03-14 13:34:02,480 [INFO] src.sweep: [93/1080] Running 9a4cef6eaa804429 — ctx=7872 pos=0.10 span=8 type=delete
+2026-03-14 13:34:07,662 [INFO] src.sweep: [94/1080] Running c7cd84f61e4f99a6 — ctx=7872 pos=0.10 span=8 type=compress
+2026-03-14 13:34:13,022 [INFO] src.sweep: [95/1080] Running 7df92d15d9ed66bd — ctx=7872 pos=0.10 span=8 type=paraphrase
+2026-03-14 13:34:18,616 [INFO] src.sweep: [96/1080] Running 662b4e02fc7be21b — ctx=7872 pos=0.10 span=8 type=semantic_change
+2026-03-14 13:34:24,220 [INFO] src.sweep: [97/1080] Running 18913480ecee5429 — ctx=7872 pos=0.10 span=32 type=random_replace
+2026-03-14 13:34:29,410 [INFO] src.sweep: [98/1080] Running 1a5bd8b5c9d5d372 — ctx=7872 pos=0.10 span=32 type=mask
+2026-03-14 13:34:34,595 [INFO] src.sweep: [99/1080] Running a1bbdc02cc4b6487 — ctx=7872 pos=0.10 span=32 type=delete
+2026-03-14 13:34:39,765 [INFO] src.sweep: [100/1080] Running e419be4b13a072f7 — ctx=7872 pos=0.10 span=32 type=compress
+2026-03-14 13:34:45,035 [INFO] src.storage: Flushed 27720 records to Llama-3-8B-agent-results/results_part_000009.parquet.
+2026-03-14 13:34:45,041 [INFO] src.sweep: [101/1080] Running 6666a45b6c844d38 — ctx=7872 pos=0.10 span=32 type=paraphrase
+2026-03-14 13:34:50,332 [INFO] src.sweep: [102/1080] Running 2c396abac2d1c227 — ctx=7872 pos=0.10 span=32 type=semantic_change
+2026-03-14 13:34:55,525 [INFO] src.sweep: [103/1080] Running 1beacae3a472a0a9 — ctx=7872 pos=0.10 span=128 type=random_replace
+2026-03-14 13:35:01,240 [INFO] src.sweep: [104/1080] Running 8c27b31ae3ebfb02 — ctx=7872 pos=0.10 span=128 type=mask
+2026-03-14 13:35:06,415 [INFO] src.sweep: [105/1080] Running fee1bf1b54b1da05 — ctx=7872 pos=0.10 span=128 type=delete
+2026-03-14 13:35:11,494 [INFO] src.sweep: [106/1080] Running f55ec57c03da8843 — ctx=7872 pos=0.10 span=128 type=compress
+2026-03-14 13:35:16,962 [INFO] src.sweep: [107/1080] Running 3aea7cc0777e7005 — ctx=7872 pos=0.10 span=128 type=paraphrase
+2026-03-14 13:35:22,437 [INFO] src.sweep: [108/1080] Running 88fe5bad3768e351 — ctx=7872 pos=0.10 span=128 type=semantic_change
+2026-03-14 13:35:28,126 [INFO] src.sweep: [109/1080] Running cba89eb2553da36d — ctx=7872 pos=0.25 span=8 type=random_replace
+2026-03-14 13:35:33,634 [INFO] src.sweep: [110/1080] Running 362ca40f1ba118f9 — ctx=7872 pos=0.25 span=8 type=mask
+2026-03-14 13:35:39,072 [INFO] src.storage: Flushed 26730 records to Llama-3-8B-agent-results/results_part_000010.parquet.
+2026-03-14 13:35:39,077 [INFO] src.sweep: [111/1080] Running e875e2d855e252a0 — ctx=7872 pos=0.25 span=8 type=delete
+2026-03-14 13:35:44,329 [INFO] src.sweep: [112/1080] Running 2aa7c12cceda4ee0 — ctx=7872 pos=0.25 span=8 type=compress
+2026-03-14 13:35:50,171 [INFO] src.sweep: [113/1080] Running 3c4847dab7759888 — ctx=7872 pos=0.25 span=8 type=paraphrase
+2026-03-14 13:35:55,787 [INFO] src.sweep: [114/1080] Running 9a6032d7d499d0d5 — ctx=7872 pos=0.25 span=8 type=semantic_change
+2026-03-14 13:36:01,219 [INFO] src.sweep: [115/1080] Running e337517dcfbe28b5 — ctx=7872 pos=0.25 span=32 type=random_replace
+2026-03-14 13:36:06,790 [INFO] src.sweep: [116/1080] Running 89d3813d2b0d72b6 — ctx=7872 pos=0.25 span=32 type=mask
+2026-03-14 13:36:12,152 [INFO] src.sweep: [117/1080] Running 1379932cb55c0b6a — ctx=7872 pos=0.25 span=32 type=delete
+2026-03-14 13:36:17,372 [INFO] src.sweep: [118/1080] Running a75f90f2a2bfd95b — ctx=7872 pos=0.25 span=32 type=compress
+2026-03-14 13:36:22,973 [INFO] src.sweep: [119/1080] Running 09db098f454dbc20 — ctx=7872 pos=0.25 span=32 type=paraphrase
+2026-03-14 13:36:29,571 [INFO] src.sweep: [120/1080] Running d2723bc3fb83bd27 — ctx=7872 pos=0.25 span=32 type=semantic_change
+2026-03-14 13:36:35,203 [INFO] src.storage: Flushed 23760 records to Llama-3-8B-agent-results/results_part_000011.parquet.
+2026-03-14 13:36:35,208 [INFO] src.sweep: [121/1080] Running c3a189faad2e40d5 — ctx=7872 pos=0.25 span=128 type=random_replace
+2026-03-14 13:36:40,506 [INFO] src.sweep: [122/1080] Running daf34603057cfaf4 — ctx=7872 pos=0.25 span=128 type=mask
+2026-03-14 13:36:46,163 [INFO] src.sweep: [123/1080] Running 1656921b02282d18 — ctx=7872 pos=0.25 span=128 type=delete
+2026-03-14 13:36:51,683 [INFO] src.sweep: [124/1080] Running 44a01b79644e771f — ctx=7872 pos=0.25 span=128 type=compress
+2026-03-14 13:36:57,379 [INFO] src.sweep: [125/1080] Running 6a29685cec1366bb — ctx=7872 pos=0.25 span=128 type=paraphrase
+2026-03-14 13:37:03,482 [INFO] src.sweep: [126/1080] Running 0d1a37a0aa90a8a9 — ctx=7872 pos=0.25 span=128 type=semantic_change
+2026-03-14 13:37:08,838 [INFO] src.sweep: [127/1080] Running 9be7bf639b6b35f9 — ctx=7872 pos=0.50 span=8 type=random_replace
+2026-03-14 13:37:14,486 [INFO] src.sweep: [128/1080] Running 1d76800848360a2f — ctx=7872 pos=0.50 span=8 type=mask
+2026-03-14 13:37:20,156 [INFO] src.sweep: [129/1080] Running 030e3b38417733dc — ctx=7872 pos=0.50 span=8 type=delete
+2026-03-14 13:37:25,289 [INFO] src.sweep: [130/1080] Running 3cd9e9a14b09df72 — ctx=7872 pos=0.50 span=8 type=compress
+2026-03-14 13:37:31,099 [INFO] src.storage: Flushed 21054 records to Llama-3-8B-agent-results/results_part_000012.parquet.
+2026-03-14 13:37:31,104 [INFO] src.sweep: [131/1080] Running 43f6199303d0ad53 — ctx=7872 pos=0.50 span=8 type=paraphrase
+2026-03-14 13:37:37,737 [INFO] src.sweep: [132/1080] Running de0049c54bb05004 — ctx=7872 pos=0.50 span=8 type=semantic_change
+2026-03-14 13:37:43,061 [INFO] src.sweep: [133/1080] Running 0594e14e0b905889 — ctx=7872 pos=0.50 span=32 type=random_replace
+2026-03-14 13:37:48,354 [INFO] src.sweep: [134/1080] Running 1d30d6a33afed0e9 — ctx=7872 pos=0.50 span=32 type=mask
+2026-03-14 13:37:53,873 [INFO] src.sweep: [135/1080] Running f7a542349130b36c — ctx=7872 pos=0.50 span=32 type=delete
+2026-03-14 13:37:58,983 [INFO] src.sweep: [136/1080] Running 62488d45376f9a44 — ctx=7872 pos=0.50 span=32 type=compress
+2026-03-14 13:38:04,526 [INFO] src.sweep: [137/1080] Running a181eee07f2f71a3 — ctx=7872 pos=0.50 span=32 type=paraphrase
+2026-03-14 13:38:10,385 [INFO] src.sweep: [138/1080] Running 854720c37ce4fcac — ctx=7872 pos=0.50 span=32 type=semantic_change
+2026-03-14 13:38:15,928 [INFO] src.sweep: [139/1080] Running 4f3a921a092546ed — ctx=7872 pos=0.50 span=128 type=random_replace
+2026-03-14 13:38:21,490 [INFO] src.sweep: [140/1080] Running b8f48808bf268745 — ctx=7872 pos=0.50 span=128 type=mask
+2026-03-14 13:38:26,886 [INFO] src.storage: Flushed 17424 records to Llama-3-8B-agent-results/results_part_000013.parquet.
+2026-03-14 13:38:26,890 [INFO] src.sweep: [141/1080] Running 799ab94cac36e36f — ctx=7872 pos=0.50 span=128 type=delete
+2026-03-14 13:38:32,108 [INFO] src.sweep: [142/1080] Running 071599b7d21b750e — ctx=7872 pos=0.50 span=128 type=compress
+2026-03-14 13:38:37,392 [INFO] src.sweep: [143/1080] Running 4dab6474578e79a8 — ctx=7872 pos=0.50 span=128 type=paraphrase
+2026-03-14 13:38:42,734 [INFO] src.sweep: [144/1080] Running 8c69e1bd48b8df08 — ctx=7872 pos=0.50 span=128 type=semantic_change
+2026-03-14 13:38:48,073 [INFO] src.sweep: [145/1080] Running 0500aef89be11e07 — ctx=7872 pos=0.75 span=8 type=random_replace
+2026-03-14 13:38:53,689 [INFO] src.sweep: [146/1080] Running 03c71b7a878b9170 — ctx=7872 pos=0.75 span=8 type=mask
+2026-03-14 13:38:59,207 [INFO] src.sweep: [147/1080] Running bf133bb45b9e3ac6 — ctx=7872 pos=0.75 span=8 type=delete
+2026-03-14 13:39:04,312 [INFO] src.sweep: [148/1080] Running 2aed4c3a0fffd172 — ctx=7872 pos=0.75 span=8 type=compress
+2026-03-14 13:39:10,041 [INFO] src.sweep: [149/1080] Running b8540f587b3f96db — ctx=7872 pos=0.75 span=8 type=paraphrase
+2026-03-14 13:39:15,919 [INFO] src.sweep: [150/1080] Running d2ff83faaaadc392 — ctx=7872 pos=0.75 span=8 type=semantic_change
+2026-03-14 13:39:21,542 [INFO] src.storage: Flushed 13398 records to Llama-3-8B-agent-results/results_part_000014.parquet.
+2026-03-14 13:39:21,545 [INFO] src.sweep: [151/1080] Running d1c3ba2b07a346f9 — ctx=7872 pos=0.75 span=32 type=random_replace
+2026-03-14 13:39:27,055 [INFO] src.sweep: [152/1080] Running 0ec749a40b73c3fd — ctx=7872 pos=0.75 span=32 type=mask
+2026-03-14 13:39:32,535 [INFO] src.sweep: [153/1080] Running a1c4b3e4ab984c20 — ctx=7872 pos=0.75 span=32 type=delete
+2026-03-14 13:39:38,137 [INFO] src.sweep: [154/1080] Running e2d7ef7dd5d6042c — ctx=7872 pos=0.75 span=32 type=compress
+2026-03-14 13:39:43,247 [INFO] src.sweep: [155/1080] Running 30579e8fe7c13d95 — ctx=7872 pos=0.75 span=32 type=paraphrase
+2026-03-14 13:39:49,524 [INFO] src.sweep: [156/1080] Running 30f411c4106124a2 — ctx=7872 pos=0.75 span=32 type=semantic_change
+2026-03-14 13:39:55,416 [INFO] src.sweep: [157/1080] Running a93070ad65681abd — ctx=7872 pos=0.75 span=128 type=random_replace
+2026-03-14 13:40:00,477 [INFO] src.sweep: [158/1080] Running 0df217bc244d61f1 — ctx=7872 pos=0.75 span=128 type=mask
+2026-03-14 13:40:06,006 [INFO] src.sweep: [159/1080] Running 666aeb1d511ebc44 — ctx=7872 pos=0.75 span=128 type=delete
+2026-03-14 13:40:11,484 [INFO] src.sweep: [160/1080] Running 0a64c647ddde54f4 — ctx=7872 pos=0.75 span=128 type=compress
+2026-03-14 13:40:16,935 [INFO] src.storage: Flushed 10758 records to Llama-3-8B-agent-results/results_part_000015.parquet.
+2026-03-14 13:40:16,937 [INFO] src.sweep: [161/1080] Running 6d28adc56b6f20cf — ctx=7872 pos=0.75 span=128 type=paraphrase
+2026-03-14 13:40:22,668 [INFO] src.sweep: [162/1080] Running 80d45822824cdae5 — ctx=7872 pos=0.75 span=128 type=semantic_change
+2026-03-14 13:40:27,785 [INFO] src.sweep: [163/1080] Running 462848adf38b8059 — ctx=7872 pos=0.90 span=8 type=random_replace
+2026-03-14 13:40:33,371 [INFO] src.sweep: [164/1080] Running 3892d356d8109133 — ctx=7872 pos=0.90 span=8 type=mask
+2026-03-14 13:40:38,828 [INFO] src.sweep: [165/1080] Running b8a8afed9e4e58d4 — ctx=7872 pos=0.90 span=8 type=delete
+2026-03-14 13:40:44,121 [INFO] src.sweep: [166/1080] Running ef2e33d12eb06610 — ctx=7872 pos=0.90 span=8 type=compress
+2026-03-14 13:40:49,791 [INFO] src.sweep: [167/1080] Running e7e162edb21fc951 — ctx=7872 pos=0.90 span=8 type=paraphrase
+2026-03-14 13:40:56,031 [INFO] src.sweep: [168/1080] Running 1f86bfadefe716db — ctx=7872 pos=0.90 span=8 type=semantic_change
+2026-03-14 13:41:01,284 [INFO] src.sweep: [169/1080] Running 926afc9f669941dc — ctx=7872 pos=0.90 span=32 type=random_replace
+2026-03-14 13:41:06,379 [INFO] src.sweep: [170/1080] Running 3d1e1bd663bda181 — ctx=7872 pos=0.90 span=32 type=mask
+2026-03-14 13:41:11,476 [INFO] src.storage: Flushed 7656 records to Llama-3-8B-agent-results/results_part_000016.parquet.
+2026-03-14 13:41:11,478 [INFO] src.sweep: [171/1080] Running 05dc61960e0e16c5 — ctx=7872 pos=0.90 span=32 type=delete
+2026-03-14 13:41:16,496 [INFO] src.sweep: [172/1080] Running 2037a811cb6a5ae9 — ctx=7872 pos=0.90 span=32 type=compress
+2026-03-14 13:41:21,549 [INFO] src.sweep: [173/1080] Running 931e17c8ba63b990 — ctx=7872 pos=0.90 span=32 type=paraphrase
+2026-03-14 13:41:26,708 [INFO] src.sweep: [174/1080] Running 5200a856fea40cb1 — ctx=7872 pos=0.90 span=32 type=semantic_change
+2026-03-14 13:41:32,214 [INFO] src.sweep: [175/1080] Running 70024bb16ecb9050 — ctx=7872 pos=0.90 span=128 type=random_replace
+2026-03-14 13:41:37,288 [INFO] src.sweep: [176/1080] Running 06c6fa5a3e4d463f — ctx=7872 pos=0.90 span=128 type=mask
+2026-03-14 13:41:42,826 [INFO] src.sweep: [177/1080] Running 4c6b0840772f7570 — ctx=7872 pos=0.90 span=128 type=delete
+2026-03-14 13:41:47,851 [INFO] src.sweep: [178/1080] Running a0467899ab5b07ef — ctx=7872 pos=0.90 span=128 type=compress
+2026-03-14 13:41:52,862 [INFO] src.sweep: [179/1080] Running 35d9e108d181dda9 — ctx=7872 pos=0.90 span=128 type=paraphrase
+2026-03-14 13:41:58,961 [INFO] src.sweep: [180/1080] Running 39d04b0f445160fd — ctx=7872 pos=0.90 span=128 type=semantic_change
+2026-03-14 13:42:05,166 [INFO] src.storage: Flushed 6732 records to Llama-3-8B-agent-results/results_part_000017.parquet.
+2026-03-14 13:42:05,168 [INFO] src.sweep: [181/1080] Running 78601861519e2ce3 — ctx=8395 pos=0.10 span=8 type=random_replace
+2026-03-14 13:42:12,539 [INFO] src.sweep: [182/1080] Running 5e762f202eadfbc9 — ctx=8395 pos=0.10 span=8 type=mask
+2026-03-14 13:42:19,872 [INFO] src.sweep: [183/1080] Running ba598a0e3f3ec77f — ctx=8395 pos=0.10 span=8 type=delete
+2026-03-14 13:42:27,179 [INFO] src.sweep: [184/1080] Running fcca0710240254a0 — ctx=8395 pos=0.10 span=8 type=compress
+2026-03-14 13:42:34,537 [INFO] src.sweep: [185/1080] Running 0a9502fb050dda55 — ctx=8395 pos=0.10 span=8 type=paraphrase
+2026-03-14 13:42:41,800 [INFO] src.sweep: [186/1080] Running c5bd727d2cd6c7e5 — ctx=8395 pos=0.10 span=8 type=semantic_change
+2026-03-14 13:42:49,957 [INFO] src.sweep: [187/1080] Running 2a98a06e4993b717 — ctx=8395 pos=0.10 span=32 type=random_replace
+2026-03-14 13:42:57,645 [INFO] src.sweep: [188/1080] Running 5b5a1ed08dbb259b — ctx=8395 pos=0.10 span=32 type=mask
+2026-03-14 13:43:05,360 [INFO] src.sweep: [189/1080] Running 55402897c4ff1ff8 — ctx=8395 pos=0.10 span=32 type=delete
+2026-03-14 13:43:13,031 [INFO] src.sweep: [190/1080] Running 90c76fc4794979dd — ctx=8395 pos=0.10 span=32 type=compress
+2026-03-14 13:43:20,820 [INFO] src.storage: Flushed 29370 records to Llama-3-8B-agent-results/results_part_000018.parquet.
+2026-03-14 13:43:20,825 [INFO] src.sweep: [191/1080] Running b40087f7bcd5c6a8 — ctx=8395 pos=0.10 span=32 type=paraphrase
+2026-03-14 13:43:27,558 [INFO] src.sweep: [192/1080] Running e25db9d7deb04acb — ctx=8395 pos=0.10 span=32 type=semantic_change
+2026-03-14 13:43:35,299 [INFO] src.sweep: [193/1080] Running d17ee68697f1fa61 — ctx=8395 pos=0.10 span=128 type=random_replace
+2026-03-14 13:43:43,100 [INFO] src.sweep: [194/1080] Running 5984214b49d3b8a1 — ctx=8395 pos=0.10 span=128 type=mask
+2026-03-14 13:43:50,830 [INFO] src.sweep: [195/1080] Running e3e309a157215c30 — ctx=8395 pos=0.10 span=128 type=delete
+2026-03-14 13:43:58,406 [INFO] src.sweep: [196/1080] Running a892c2fbb108601e — ctx=8395 pos=0.10 span=128 type=compress
+2026-03-14 13:44:06,104 [INFO] src.sweep: [197/1080] Running 2f44f95de7e49ce3 — ctx=8395 pos=0.10 span=128 type=paraphrase
+2026-03-14 13:44:14,083 [INFO] src.sweep: [198/1080] Running ef3140d8ddfb609b — ctx=8395 pos=0.10 span=128 type=semantic_change
+2026-03-14 13:44:21,472 [INFO] src.sweep: [199/1080] Running a0d8da149f342058 — ctx=8395 pos=0.25 span=8 type=random_replace
+2026-03-14 13:44:29,197 [INFO] src.sweep: [200/1080] Running e1091b087ab317d5 — ctx=8395 pos=0.25 span=8 type=mask
+2026-03-14 13:44:36,574 [INFO] src.storage: Flushed 28314 records to Llama-3-8B-agent-results/results_part_000019.parquet.
+2026-03-14 13:44:36,579 [INFO] src.sweep: [201/1080] Running 3e36ecc11dc6a4d4 — ctx=8395 pos=0.25 span=8 type=delete
+2026-03-14 13:44:43,894 [INFO] src.sweep: [202/1080] Running d2c667815e312c11 — ctx=8395 pos=0.25 span=8 type=compress
+2026-03-14 13:44:51,347 [INFO] src.sweep: [203/1080] Running e0d2bde94a4d44bc — ctx=8395 pos=0.25 span=8 type=paraphrase
+2026-03-14 13:44:59,102 [INFO] src.sweep: [204/1080] Running 3b61cd112643671e — ctx=8395 pos=0.25 span=8 type=semantic_change
+2026-03-14 13:45:06,497 [INFO] src.sweep: [205/1080] Running 692a27ec019c08c6 — ctx=8395 pos=0.25 span=32 type=random_replace
+2026-03-14 13:45:13,844 [INFO] src.sweep: [206/1080] Running c443eea240d3b032 — ctx=8395 pos=0.25 span=32 type=mask
+2026-03-14 13:45:21,394 [INFO] src.sweep: [207/1080] Running 453a900b4443953b — ctx=8395 pos=0.25 span=32 type=delete
+2026-03-14 13:45:28,744 [INFO] src.sweep: [208/1080] Running bbb44ea700f52b53 — ctx=8395 pos=0.25 span=32 type=compress
+2026-03-14 13:45:36,513 [INFO] src.sweep: [209/1080] Running 442f75b7ee131586 — ctx=8395 pos=0.25 span=32 type=paraphrase
+2026-03-14 13:45:44,254 [INFO] src.sweep: [210/1080] Running 7236559e61b55691 — ctx=8395 pos=0.25 span=32 type=semantic_change
+2026-03-14 13:45:51,679 [INFO] src.storage: Flushed 25080 records to Llama-3-8B-agent-results/results_part_000020.parquet.
+2026-03-14 13:45:51,684 [INFO] src.sweep: [211/1080] Running c2605fa94d6ba8eb — ctx=8395 pos=0.25 span=128 type=random_replace
+2026-03-14 13:45:59,009 [INFO] src.sweep: [212/1080] Running b4fbfa0093c3bcc9 — ctx=8395 pos=0.25 span=128 type=mask
+2026-03-14 13:46:07,431 [INFO] src.sweep: [213/1080] Running 09efb1d0a3d3c1d2 — ctx=8395 pos=0.25 span=128 type=delete
+2026-03-14 13:46:14,695 [INFO] src.sweep: [214/1080] Running 919ac37ad95a71e9 — ctx=8395 pos=0.25 span=128 type=compress
+2026-03-14 13:46:22,390 [INFO] src.sweep: [215/1080] Running d31d52624a755f81 — ctx=8395 pos=0.25 span=128 type=paraphrase
+2026-03-14 13:46:30,090 [INFO] src.sweep: [216/1080] Running 6409ec8439a94a08 — ctx=8395 pos=0.25 span=128 type=semantic_change
+2026-03-14 13:46:37,815 [INFO] src.sweep: [217/1080] Running d060101498697cb5 — ctx=8395 pos=0.50 span=8 type=random_replace
+2026-03-14 13:46:45,090 [INFO] src.sweep: [218/1080] Running a8264de5fffcd015 — ctx=8395 pos=0.50 span=8 type=mask
+2026-03-14 13:46:52,358 [INFO] src.sweep: [219/1080] Running 9d5e819159096e8f — ctx=8395 pos=0.50 span=8 type=delete
+2026-03-14 13:46:59,664 [INFO] src.sweep: [220/1080] Running 074f893881b7e374 — ctx=8395 pos=0.50 span=8 type=compress
+2026-03-14 13:47:06,997 [INFO] src.storage: Flushed 22110 records to Llama-3-8B-agent-results/results_part_000021.parquet.
+2026-03-14 13:47:07,002 [INFO] src.sweep: [221/1080] Running ffae41eedfa2c78d — ctx=8395 pos=0.50 span=8 type=paraphrase
+2026-03-14 13:47:14,875 [INFO] src.sweep: [222/1080] Running 85397af26c348644 — ctx=8395 pos=0.50 span=8 type=semantic_change
+2026-03-14 13:47:22,526 [INFO] src.sweep: [223/1080] Running 6c8c6f8fe581d041 — ctx=8395 pos=0.50 span=32 type=random_replace
+2026-03-14 13:47:29,823 [INFO] src.sweep: [224/1080] Running 57f9ad4c6679084a — ctx=8395 pos=0.50 span=32 type=mask
+2026-03-14 13:47:37,172 [INFO] src.sweep: [225/1080] Running 36ad0d475b80d5dc — ctx=8395 pos=0.50 span=32 type=delete
+2026-03-14 13:47:44,463 [INFO] src.sweep: [226/1080] Running 5d471ddb0593cff2 — ctx=8395 pos=0.50 span=32 type=compress
+2026-03-14 13:47:52,155 [INFO] src.sweep: [227/1080] Running 6d2672102a0d7fbf — ctx=8395 pos=0.50 span=32 type=paraphrase
+2026-03-14 13:47:59,482 [INFO] src.sweep: [228/1080] Running a03cd5b8ec8b9c87 — ctx=8395 pos=0.50 span=32 type=semantic_change
+2026-03-14 13:48:07,179 [INFO] src.sweep: [229/1080] Running fada17303705503b — ctx=8395 pos=0.50 span=128 type=random_replace
+2026-03-14 13:48:14,499 [INFO] src.sweep: [230/1080] Running 14dd499900e17cc6 — ctx=8395 pos=0.50 span=128 type=mask
+2026-03-14 13:48:22,033 [INFO] src.storage: Flushed 18084 records to Llama-3-8B-agent-results/results_part_000022.parquet.
+2026-03-14 13:48:22,037 [INFO] src.sweep: [231/1080] Running 7884fe285ded1bf3 — ctx=8395 pos=0.50 span=128 type=delete
+2026-03-14 13:48:29,261 [INFO] src.sweep: [232/1080] Running 1bc5535ee64d892e — ctx=8395 pos=0.50 span=128 type=compress
+2026-03-14 13:48:36,909 [INFO] src.sweep: [233/1080] Running fad4496cdce22f84 — ctx=8395 pos=0.50 span=128 type=paraphrase
+2026-03-14 13:48:44,577 [INFO] src.sweep: [234/1080] Running d0b87c1ad5bced32 — ctx=8395 pos=0.50 span=128 type=semantic_change
+2026-03-14 13:48:52,222 [INFO] src.sweep: [235/1080] Running 66bab4d6ee219513 — ctx=8395 pos=0.75 span=8 type=random_replace
+2026-03-14 13:48:59,508 [INFO] src.sweep: [236/1080] Running d88e1c749f16b589 — ctx=8395 pos=0.75 span=8 type=mask
+2026-03-14 13:49:07,041 [INFO] src.sweep: [237/1080] Running 91c63f6f2faf3a49 — ctx=8395 pos=0.75 span=8 type=delete
+2026-03-14 13:49:14,328 [INFO] src.sweep: [238/1080] Running 3a6c8d9089fa086f — ctx=8395 pos=0.75 span=8 type=compress
+2026-03-14 13:49:21,662 [INFO] src.sweep: [239/1080] Running e2dfe7bba2b79172 — ctx=8395 pos=0.75 span=8 type=paraphrase
+2026-03-14 13:49:30,278 [INFO] src.sweep: [240/1080] Running 2c852b3598e121bf — ctx=8395 pos=0.75 span=8 type=semantic_change
+2026-03-14 13:49:37,624 [INFO] src.storage: Flushed 13860 records to Llama-3-8B-agent-results/results_part_000023.parquet.
+2026-03-14 13:49:37,627 [INFO] src.sweep: [241/1080] Running ce58cd65f350f9ba — ctx=8395 pos=0.75 span=32 type=random_replace
+2026-03-14 13:49:44,872 [INFO] src.sweep: [242/1080] Running beb2730943be1b42 — ctx=8395 pos=0.75 span=32 type=mask
+2026-03-14 13:49:53,079 [INFO] src.sweep: [243/1080] Running 4901eac870780ff0 — ctx=8395 pos=0.75 span=32 type=delete
+2026-03-14 13:50:00,379 [INFO] src.sweep: [244/1080] Running eeeb383ef0ecff5d — ctx=8395 pos=0.75 span=32 type=compress
+2026-03-14 13:50:08,009 [INFO] src.sweep: [245/1080] Running 13f85c47ecc37018 — ctx=8395 pos=0.75 span=32 type=paraphrase
+2026-03-14 13:50:15,925 [INFO] src.sweep: [246/1080] Running 37d73b9fbb9c61ed — ctx=8395 pos=0.75 span=32 type=semantic_change
+2026-03-14 13:50:23,248 [INFO] src.sweep: [247/1080] Running 3a853ff7f01154fe — ctx=8395 pos=0.75 span=128 type=random_replace
+2026-03-14 13:50:30,518 [INFO] src.sweep: [248/1080] Running 2bbaefcfc5422996 — ctx=8395 pos=0.75 span=128 type=mask
+2026-03-14 13:50:38,725 [INFO] src.sweep: [249/1080] Running 89465f6584cdd67d — ctx=8395 pos=0.75 span=128 type=delete
+2026-03-14 13:50:45,954 [INFO] src.sweep: [250/1080] Running d5bcb66aec38faa3 — ctx=8395 pos=0.75 span=128 type=compress
+2026-03-14 13:50:53,592 [INFO] src.storage: Flushed 11088 records to Llama-3-8B-agent-results/results_part_000024.parquet.
+2026-03-14 13:50:53,595 [INFO] src.sweep: [251/1080] Running f353f3a9769d01f1 — ctx=8395 pos=0.75 span=128 type=paraphrase
+2026-03-14 13:51:01,531 [INFO] src.sweep: [252/1080] Running beac1fa73ade4dc6 — ctx=8395 pos=0.75 span=128 type=semantic_change
+2026-03-14 13:51:08,813 [INFO] src.sweep: [253/1080] Running b1135547f4ff4f55 — ctx=8395 pos=0.90 span=8 type=random_replace
+2026-03-14 13:51:16,112 [INFO] src.sweep: [254/1080] Running a71284c88698d754 — ctx=8395 pos=0.90 span=8 type=mask
+2026-03-14 13:51:24,301 [INFO] src.sweep: [255/1080] Running d4b69766b6279bb3 — ctx=8395 pos=0.90 span=8 type=delete
+2026-03-14 13:51:31,626 [INFO] src.sweep: [256/1080] Running b5a133091680b98a — ctx=8395 pos=0.90 span=8 type=compress
+2026-03-14 13:51:38,932 [INFO] src.sweep: [257/1080] Running 8adc797f4e599b9a — ctx=8395 pos=0.90 span=8 type=paraphrase
+2026-03-14 13:51:45,597 [INFO] src.sweep: [258/1080] Running aeb65cd68f600f23 — ctx=8395 pos=0.90 span=8 type=semantic_change
+2026-03-14 13:51:53,273 [INFO] src.sweep: [259/1080] Running dffdf056430b2396 — ctx=8395 pos=0.90 span=32 type=random_replace
+2026-03-14 13:52:00,905 [INFO] src.sweep: [260/1080] Running 7ff62a403621bc97 — ctx=8395 pos=0.90 span=32 type=mask
+2026-03-14 13:52:09,799 [INFO] src.storage: Flushed 7986 records to Llama-3-8B-agent-results/results_part_000025.parquet.
+2026-03-14 13:52:09,801 [INFO] src.sweep: [261/1080] Running 7b79384eed4e728a — ctx=8395 pos=0.90 span=32 type=delete
+2026-03-14 13:52:17,073 [INFO] src.sweep: [262/1080] Running 669d9fe0fee76ded — ctx=8395 pos=0.90 span=32 type=compress
+2026-03-14 13:52:24,675 [INFO] src.sweep: [263/1080] Running 4d16ee39cd1c33d6 — ctx=8395 pos=0.90 span=32 type=paraphrase
+2026-03-14 13:52:32,720 [INFO] src.sweep: [264/1080] Running e2b9e0e6d6f46b89 — ctx=8395 pos=0.90 span=32 type=semantic_change
+2026-03-14 13:52:39,964 [INFO] src.sweep: [265/1080] Running f3ad569dcfa8c266 — ctx=8395 pos=0.90 span=128 type=random_replace
+2026-03-14 13:52:47,290 [INFO] src.sweep: [266/1080] Running b28a61d952e1c616 — ctx=8395 pos=0.90 span=128 type=mask
+2026-03-14 13:52:55,433 [INFO] src.sweep: [267/1080] Running f5c539c69d55a8de — ctx=8395 pos=0.90 span=128 type=delete
+2026-03-14 13:53:02,653 [INFO] src.sweep: [268/1080] Running a74f311a6ed91d6f — ctx=8395 pos=0.90 span=128 type=compress
+2026-03-14 13:53:10,230 [INFO] src.sweep: [269/1080] Running e7ab75b18ad5e2f4 — ctx=8395 pos=0.90 span=128 type=paraphrase
+2026-03-14 13:53:18,376 [INFO] src.sweep: [270/1080] Running a1976206b2a6f2b4 — ctx=8395 pos=0.90 span=128 type=semantic_change
+2026-03-14 13:53:26,069 [INFO] src.storage: Flushed 7062 records to Llama-3-8B-agent-results/results_part_000026.parquet.
+2026-03-14 13:53:26,070 [INFO] src.sweep: [271/1080] Running e77f09011157bab3 — ctx=8690 pos=0.10 span=8 type=random_replace
+2026-03-14 13:53:32,528 [INFO] src.sweep: [272/1080] Running 963ec4fea5276b9d — ctx=8690 pos=0.10 span=8 type=mask
+2026-03-14 13:53:40,324 [INFO] src.sweep: [273/1080] Running 96532f235bb59c80 — ctx=8690 pos=0.10 span=8 type=delete
+2026-03-14 13:53:47,217 [INFO] src.sweep: [274/1080] Running 25dcde53e1dbbb0e — ctx=8690 pos=0.10 span=8 type=compress
+2026-03-14 13:53:54,150 [INFO] src.sweep: [275/1080] Running 8db79c9705e62198 — ctx=8690 pos=0.10 span=8 type=paraphrase
+2026-03-14 13:54:01,581 [INFO] src.sweep: [276/1080] Running 829419bede8185cd — ctx=8690 pos=0.10 span=8 type=semantic_change
+2026-03-14 13:54:08,708 [INFO] src.sweep: [277/1080] Running 4250243605424375 — ctx=8690 pos=0.10 span=32 type=random_replace
+2026-03-14 13:54:16,137 [INFO] src.sweep: [278/1080] Running 31b62fd991acb967 — ctx=8690 pos=0.10 span=32 type=mask
+2026-03-14 13:54:23,059 [INFO] src.sweep: [279/1080] Running 8999a53d0472b6d1 — ctx=8690 pos=0.10 span=32 type=delete
+2026-03-14 13:54:30,471 [INFO] src.sweep: [280/1080] Running 14671e3e33f4ff15 — ctx=8690 pos=0.10 span=32 type=compress
+2026-03-14 13:54:37,790 [INFO] src.storage: Flushed 30228 records to Llama-3-8B-agent-results/results_part_000027.parquet.
+2026-03-14 13:54:37,796 [INFO] src.sweep: [281/1080] Running 8ad0407391c80922 — ctx=8690 pos=0.10 span=32 type=paraphrase
+2026-03-14 13:54:45,128 [INFO] src.sweep: [282/1080] Running 95fe2e7f791c325b — ctx=8690 pos=0.10 span=32 type=semantic_change
+2026-03-14 13:54:52,104 [INFO] src.sweep: [283/1080] Running 9ecf5436f049a324 — ctx=8690 pos=0.10 span=128 type=random_replace
+2026-03-14 13:54:58,993 [INFO] src.sweep: [284/1080] Running 26c8747b4db95b5f — ctx=8690 pos=0.10 span=128 type=mask
+2026-03-14 13:55:05,947 [INFO] src.sweep: [285/1080] Running fd7c5ae148f9df84 — ctx=8690 pos=0.10 span=128 type=delete
+2026-03-14 13:55:12,784 [INFO] src.sweep: [286/1080] Running 03583d23371b0a03 — ctx=8690 pos=0.10 span=128 type=compress
+2026-03-14 13:55:20,137 [INFO] src.sweep: [287/1080] Running 1988fdc4b089ce4c — ctx=8690 pos=0.10 span=128 type=paraphrase
+2026-03-14 13:55:27,123 [INFO] src.sweep: [288/1080] Running 2aabcf09b6946beb — ctx=8690 pos=0.10 span=128 type=semantic_change
+2026-03-14 13:55:34,534 [INFO] src.sweep: [289/1080] Running bf563ce65cbd0180 — ctx=8690 pos=0.25 span=8 type=random_replace
+2026-03-14 13:55:41,435 [INFO] src.sweep: [290/1080] Running 9ba77d03dcf9c5e0 — ctx=8690 pos=0.25 span=8 type=mask
+2026-03-14 13:55:48,918 [INFO] src.storage: Flushed 29040 records to Llama-3-8B-agent-results/results_part_000028.parquet.
+2026-03-14 13:55:48,923 [INFO] src.sweep: [291/1080] Running 195fd92c542903e3 — ctx=8690 pos=0.25 span=8 type=delete
+2026-03-14 13:55:55,736 [INFO] src.sweep: [292/1080] Running 050cec03dd2399f2 — ctx=8690 pos=0.25 span=8 type=compress
+2026-03-14 13:56:03,136 [INFO] src.sweep: [293/1080] Running 95ef115745066585 — ctx=8690 pos=0.25 span=8 type=paraphrase
+2026-03-14 13:56:11,195 [INFO] src.sweep: [294/1080] Running 1ae18d09ef705d9d — ctx=8690 pos=0.25 span=8 type=semantic_change
+2026-03-14 13:56:18,570 [INFO] src.sweep: [295/1080] Running 11b7f6caff9986f1 — ctx=8690 pos=0.25 span=32 type=random_replace
+2026-03-14 13:56:25,728 [INFO] src.sweep: [296/1080] Running 40a2f1c2c0ca885e — ctx=8690 pos=0.25 span=32 type=mask
+2026-03-14 13:56:33,629 [INFO] src.sweep: [297/1080] Running aafb906c9311a084 — ctx=8690 pos=0.25 span=32 type=delete
+2026-03-14 13:56:40,452 [INFO] src.sweep: [298/1080] Running dcfc89bb68fc0d29 — ctx=8690 pos=0.25 span=32 type=compress
+2026-03-14 13:56:47,360 [INFO] src.sweep: [299/1080] Running bea3d2b6bdf739bb — ctx=8690 pos=0.25 span=32 type=paraphrase
+2026-03-14 13:56:54,276 [INFO] src.sweep: [300/1080] Running cacba69eafd69a28 — ctx=8690 pos=0.25 span=32 type=semantic_change
+2026-03-14 13:57:01,736 [INFO] src.storage: Flushed 25872 records to Llama-3-8B-agent-results/results_part_000029.parquet.
+2026-03-14 13:57:01,741 [INFO] src.sweep: [301/1080] Running 6b2ac89ad725909b — ctx=8690 pos=0.25 span=128 type=random_replace
+2026-03-14 13:57:09,064 [INFO] src.sweep: [302/1080] Running 6a094febcdeebcb3 — ctx=8690 pos=0.25 span=128 type=mask
+2026-03-14 13:57:15,985 [INFO] src.sweep: [303/1080] Running 9e51e94f7f292cb6 — ctx=8690 pos=0.25 span=128 type=delete
+2026-03-14 13:57:23,343 [INFO] src.sweep: [304/1080] Running 77ae5eb977207cfb — ctx=8690 pos=0.25 span=128 type=compress
+2026-03-14 13:57:30,552 [INFO] src.sweep: [305/1080] Running d77ed47a4a810e99 — ctx=8690 pos=0.25 span=128 type=paraphrase
+2026-03-14 13:57:37,153 [INFO] src.sweep: [306/1080] Running 2aaba6176eba9008 — ctx=8690 pos=0.25 span=128 type=semantic_change
+2026-03-14 13:57:44,060 [INFO] src.sweep: [307/1080] Running 7f24f13df557c1fe — ctx=8690 pos=0.50 span=8 type=random_replace
+2026-03-14 13:57:51,394 [INFO] src.sweep: [308/1080] Running cf3a7e52dc1f9985 — ctx=8690 pos=0.50 span=8 type=mask
+2026-03-14 13:57:58,281 [INFO] src.sweep: [309/1080] Running caaa69514861ffe0 — ctx=8690 pos=0.50 span=8 type=delete
+2026-03-14 13:58:05,596 [INFO] src.sweep: [310/1080] Running a67ff1711faffbf1 — ctx=8690 pos=0.50 span=8 type=compress
+2026-03-14 13:58:13,081 [INFO] src.storage: Flushed 22770 records to Llama-3-8B-agent-results/results_part_000030.parquet.
+2026-03-14 13:58:13,087 [INFO] src.sweep: [311/1080] Running e49a8bd609be669f — ctx=8690 pos=0.50 span=8 type=paraphrase
+2026-03-14 13:58:20,379 [INFO] src.sweep: [312/1080] Running cc22b8747b5a38e8 — ctx=8690 pos=0.50 span=8 type=semantic_change
+2026-03-14 13:58:28,012 [INFO] src.sweep: [313/1080] Running 9ab74a6b4b152a11 — ctx=8690 pos=0.50 span=32 type=random_replace
+2026-03-14 13:58:35,343 [INFO] src.sweep: [314/1080] Running 412906cbba60e52b — ctx=8690 pos=0.50 span=32 type=mask
+2026-03-14 13:58:42,804 [INFO] src.sweep: [315/1080] Running a79f540ef13ef503 — ctx=8690 pos=0.50 span=32 type=delete
+2026-03-14 13:58:49,667 [INFO] src.sweep: [316/1080] Running 7482ae6bc083b22c — ctx=8690 pos=0.50 span=32 type=compress
+2026-03-14 13:58:57,029 [INFO] src.sweep: [317/1080] Running 13c9aaacbe2940cd — ctx=8690 pos=0.50 span=32 type=paraphrase
+2026-03-14 13:59:03,639 [INFO] src.sweep: [318/1080] Running b2636033e2ac7cc7 — ctx=8690 pos=0.50 span=32 type=semantic_change
+2026-03-14 13:59:11,075 [INFO] src.sweep: [319/1080] Running 6a3175d2e78ffa28 — ctx=8690 pos=0.50 span=128 type=random_replace
+2026-03-14 13:59:18,377 [INFO] src.sweep: [320/1080] Running 53fba879ee609426 — ctx=8690 pos=0.50 span=128 type=mask
+2026-03-14 13:59:26,111 [INFO] src.storage: Flushed 18744 records to Llama-3-8B-agent-results/results_part_000031.parquet.
+2026-03-14 13:59:26,115 [INFO] src.sweep: [321/1080] Running 84cb65afdac4b448 — ctx=8690 pos=0.50 span=128 type=delete
+2026-03-14 13:59:32,792 [INFO] src.sweep: [322/1080] Running cf239937f7d6a68e — ctx=8690 pos=0.50 span=128 type=compress
+2026-03-14 13:59:40,116 [INFO] src.sweep: [323/1080] Running 1d02aad56bb167fe — ctx=8690 pos=0.50 span=128 type=paraphrase
+2026-03-14 13:59:48,144 [INFO] src.sweep: [324/1080] Running 1536b8f19e6ddf39 — ctx=8690 pos=0.50 span=128 type=semantic_change
+2026-03-14 13:59:55,539 [INFO] src.sweep: [325/1080] Running 6bc2c6979974bc7a — ctx=8690 pos=0.75 span=8 type=random_replace
+2026-03-14 14:00:02,435 [INFO] src.sweep: [326/1080] Running b771b326bc291134 — ctx=8690 pos=0.75 span=8 type=mask
+2026-03-14 14:00:09,321 [INFO] src.sweep: [327/1080] Running eba5e599bb8de786 — ctx=8690 pos=0.75 span=8 type=delete
+2026-03-14 14:00:16,149 [INFO] src.sweep: [328/1080] Running 5503793c9e5067f5 — ctx=8690 pos=0.75 span=8 type=compress
+2026-03-14 14:00:23,034 [INFO] src.sweep: [329/1080] Running ce567824df9951c4 — ctx=8690 pos=0.75 span=8 type=paraphrase
+2026-03-14 14:00:31,055 [INFO] src.sweep: [330/1080] Running 6262e77bbc4c0303 — ctx=8690 pos=0.75 span=8 type=semantic_change
+2026-03-14 14:00:38,472 [INFO] src.storage: Flushed 14322 records to Llama-3-8B-agent-results/results_part_000032.parquet.
+2026-03-14 14:00:38,475 [INFO] src.sweep: [331/1080] Running 18cfcaad78f16e88 — ctx=8690 pos=0.75 span=32 type=random_replace
+2026-03-14 14:00:45,495 [INFO] src.sweep: [332/1080] Running b0324612e0a0c9e6 — ctx=8690 pos=0.75 span=32 type=mask
+2026-03-14 14:00:52,604 [INFO] src.sweep: [333/1080] Running 628e824196164e0b — ctx=8690 pos=0.75 span=32 type=delete
+2026-03-14 14:00:59,393 [INFO] src.sweep: [334/1080] Running 02da95925bb02053 — ctx=8690 pos=0.75 span=32 type=compress
+2026-03-14 14:01:06,865 [INFO] src.sweep: [335/1080] Running 5dddd49137868819 — ctx=8690 pos=0.75 span=32 type=paraphrase
+2026-03-14 14:01:14,138 [INFO] src.sweep: [336/1080] Running 70b6d7b7b102823d — ctx=8690 pos=0.75 span=32 type=semantic_change
+2026-03-14 14:01:21,428 [INFO] src.sweep: [337/1080] Running cc7a9e0f85caadeb — ctx=8690 pos=0.75 span=128 type=random_replace
+2026-03-14 14:01:29,050 [INFO] src.sweep: [338/1080] Running f1322d282e894a5f — ctx=8690 pos=0.75 span=128 type=mask
+2026-03-14 14:01:35,885 [INFO] src.sweep: [339/1080] Running 245cb0c7c1e65da9 — ctx=8690 pos=0.75 span=128 type=delete
+2026-03-14 14:01:42,657 [INFO] src.sweep: [340/1080] Running 647367184baa6f92 — ctx=8690 pos=0.75 span=128 type=compress
+2026-03-14 14:01:49,546 [INFO] src.storage: Flushed 11418 records to Llama-3-8B-agent-results/results_part_000033.parquet.
+2026-03-14 14:01:49,549 [INFO] src.sweep: [341/1080] Running 820e902a517cf695 — ctx=8690 pos=0.75 span=128 type=paraphrase
+2026-03-14 14:01:56,370 [INFO] src.sweep: [342/1080] Running 1f11d3db775bb1e8 — ctx=8690 pos=0.75 span=128 type=semantic_change
+2026-03-14 14:02:03,211 [INFO] src.sweep: [343/1080] Running 8495c734842bf7d6 — ctx=8690 pos=0.90 span=8 type=random_replace
+2026-03-14 14:02:10,129 [INFO] src.sweep: [344/1080] Running 52c3cd4d531cc33c — ctx=8690 pos=0.90 span=8 type=mask
+2026-03-14 14:02:17,528 [INFO] src.sweep: [345/1080] Running 8fcdc34c79db3f64 — ctx=8690 pos=0.90 span=8 type=delete
+2026-03-14 14:02:24,346 [INFO] src.sweep: [346/1080] Running 50b4903a179e7152 — ctx=8690 pos=0.90 span=8 type=compress
+2026-03-14 14:02:31,682 [INFO] src.sweep: [347/1080] Running a7af4d48dc0e12c0 — ctx=8690 pos=0.90 span=8 type=paraphrase
+2026-03-14 14:02:39,677 [INFO] src.sweep: [348/1080] Running d2049b19d5ec4cd8 — ctx=8690 pos=0.90 span=8 type=semantic_change
+2026-03-14 14:02:47,005 [INFO] src.sweep: [349/1080] Running f85e53f431e10be5 — ctx=8690 pos=0.90 span=32 type=random_replace
+2026-03-14 14:02:54,488 [INFO] src.sweep: [350/1080] Running 4b027b3a5d56051b — ctx=8690 pos=0.90 span=32 type=mask
+2026-03-14 14:03:01,229 [INFO] src.storage: Flushed 8052 records to Llama-3-8B-agent-results/results_part_000034.parquet.
+2026-03-14 14:03:01,231 [INFO] src.sweep: [351/1080] Running 2cf304615df2a3bd — ctx=8690 pos=0.90 span=32 type=delete
+2026-03-14 14:03:07,978 [INFO] src.sweep: [352/1080] Running b02819bcad3df1a2 — ctx=8690 pos=0.90 span=32 type=compress
+2026-03-14 14:03:14,806 [INFO] src.sweep: [353/1080] Running 63f0bdf8ce1923a1 — ctx=8690 pos=0.90 span=32 type=paraphrase
+2026-03-14 14:03:22,153 [INFO] src.sweep: [354/1080] Running fb48bf5d74540a93 — ctx=8690 pos=0.90 span=32 type=semantic_change
+2026-03-14 14:03:29,556 [INFO] src.sweep: [355/1080] Running bd7e95ccaeb261da — ctx=8690 pos=0.90 span=128 type=random_replace
+2026-03-14 14:03:36,381 [INFO] src.sweep: [356/1080] Running 4ec62013a71031b4 — ctx=8690 pos=0.90 span=128 type=mask
+2026-03-14 14:03:44,000 [INFO] src.sweep: [357/1080] Running b69ad51514802df8 — ctx=8690 pos=0.90 span=128 type=delete
+2026-03-14 14:03:50,708 [INFO] src.sweep: [358/1080] Running befa471586eb3c9c — ctx=8690 pos=0.90 span=128 type=compress
+2026-03-14 14:03:57,513 [INFO] src.sweep: [359/1080] Running 60177c55239f5896 — ctx=8690 pos=0.90 span=128 type=paraphrase
+2026-03-14 14:04:05,060 [INFO] src.sweep: [360/1080] Running 3925ea5d28ded3c5 — ctx=8690 pos=0.90 span=128 type=semantic_change
+2026-03-14 14:04:11,920 [INFO] src.storage: Flushed 7062 records to Llama-3-8B-agent-results/results_part_000035.parquet.
+2026-03-14 14:04:11,922 [INFO] src.sweep: [361/1080] Running 73c3d1559644245e — ctx=8685 pos=0.10 span=8 type=random_replace
+2026-03-14 14:04:20,495 [INFO] src.sweep: [362/1080] Running 1f317f67b14c5f7b — ctx=8685 pos=0.10 span=8 type=mask
+2026-03-14 14:04:28,701 [INFO] src.sweep: [363/1080] Running 9584794a01b2a702 — ctx=8685 pos=0.10 span=8 type=delete
+2026-03-14 14:04:36,945 [INFO] src.sweep: [364/1080] Running e6710bc817e08440 — ctx=8685 pos=0.10 span=8 type=compress
+2026-03-14 14:04:45,185 [INFO] src.sweep: [365/1080] Running 4ccf20d5631b4781 — ctx=8685 pos=0.10 span=8 type=paraphrase
+2026-03-14 14:04:54,153 [INFO] src.sweep: [366/1080] Running 95acd0e9917af585 — ctx=8685 pos=0.10 span=8 type=semantic_change
+2026-03-14 14:05:02,337 [INFO] src.sweep: [367/1080] Running 25653b174bfd2b83 — ctx=8685 pos=0.10 span=32 type=random_replace
+2026-03-14 14:05:11,094 [INFO] src.sweep: [368/1080] Running 94e77f3027eaf27b — ctx=8685 pos=0.10 span=32 type=mask
+2026-03-14 14:05:19,536 [INFO] src.sweep: [369/1080] Running 2de4f5c57d58ba0e — ctx=8685 pos=0.10 span=32 type=delete
+2026-03-14 14:05:27,759 [INFO] src.sweep: [370/1080] Running 706042b5db4c5597 — ctx=8685 pos=0.10 span=32 type=compress
+2026-03-14 14:05:36,041 [INFO] src.storage: Flushed 30228 records to Llama-3-8B-agent-results/results_part_000036.parquet.
+2026-03-14 14:05:36,047 [INFO] src.sweep: [371/1080] Running e763174d0509df7b — ctx=8685 pos=0.10 span=32 type=paraphrase
+2026-03-14 14:05:44,008 [INFO] src.sweep: [372/1080] Running a100f5318b8e9a5f — ctx=8685 pos=0.10 span=32 type=semantic_change
+2026-03-14 14:05:52,184 [INFO] src.sweep: [373/1080] Running df2b64c15542aa97 — ctx=8685 pos=0.10 span=128 type=random_replace
+2026-03-14 14:06:00,407 [INFO] src.sweep: [374/1080] Running a60a9b712f390e29 — ctx=8685 pos=0.10 span=128 type=mask
+2026-03-14 14:06:09,124 [INFO] src.sweep: [375/1080] Running 3c9e1a8496b76454 — ctx=8685 pos=0.10 span=128 type=delete
+2026-03-14 14:06:17,212 [INFO] src.sweep: [376/1080] Running 8991040e0d100a68 — ctx=8685 pos=0.10 span=128 type=compress
+2026-03-14 14:06:25,348 [INFO] src.sweep: [377/1080] Running c7412543b08026dd — ctx=8685 pos=0.10 span=128 type=paraphrase
+2026-03-14 14:06:32,896 [INFO] src.sweep: [378/1080] Running 32a735e2ee2335fa — ctx=8685 pos=0.10 span=128 type=semantic_change
+2026-03-14 14:06:41,608 [INFO] src.sweep: [379/1080] Running e96dfa09c132e40d — ctx=8685 pos=0.25 span=8 type=random_replace
+2026-03-14 14:06:49,844 [INFO] src.sweep: [380/1080] Running 67fad48e92977715 — ctx=8685 pos=0.25 span=8 type=mask
+2026-03-14 14:06:58,147 [INFO] src.storage: Flushed 29040 records to Llama-3-8B-agent-results/results_part_000037.parquet.
+2026-03-14 14:06:58,153 [INFO] src.sweep: [381/1080] Running 7297b1f34d954bcf — ctx=8685 pos=0.25 span=8 type=delete
+2026-03-14 14:07:06,281 [INFO] src.sweep: [382/1080] Running 367268fda51b2a18 — ctx=8685 pos=0.25 span=8 type=compress
+2026-03-14 14:07:14,448 [INFO] src.sweep: [383/1080] Running 0ec4e282ba7d0e15 — ctx=8685 pos=0.25 span=8 type=paraphrase
+2026-03-14 14:07:22,493 [INFO] src.sweep: [384/1080] Running a1e8327a4bc3ec71 — ctx=8685 pos=0.25 span=8 type=semantic_change
+2026-03-14 14:07:31,196 [INFO] src.sweep: [385/1080] Running 130779b01e659972 — ctx=8685 pos=0.25 span=32 type=random_replace
+2026-03-14 14:07:39,411 [INFO] src.sweep: [386/1080] Running c470bcbc5b2a08ba — ctx=8685 pos=0.25 span=32 type=mask
+2026-03-14 14:07:47,627 [INFO] src.sweep: [387/1080] Running 1dd1008174765f41 — ctx=8685 pos=0.25 span=32 type=delete
+2026-03-14 14:07:55,856 [INFO] src.sweep: [388/1080] Running d47c996bf33278ff — ctx=8685 pos=0.25 span=32 type=compress
+2026-03-14 14:08:04,008 [INFO] src.sweep: [389/1080] Running 69052f40dfb22afc — ctx=8685 pos=0.25 span=32 type=paraphrase
+2026-03-14 14:08:12,665 [INFO] src.sweep: [390/1080] Running 0b83c2d5a181277c — ctx=8685 pos=0.25 span=32 type=semantic_change
+2026-03-14 14:08:21,420 [INFO] src.storage: Flushed 25872 records to Llama-3-8B-agent-results/results_part_000038.parquet.
+2026-03-14 14:08:21,425 [INFO] src.sweep: [391/1080] Running 7dcaa62e32dac90b — ctx=8685 pos=0.25 span=128 type=random_replace
+2026-03-14 14:08:29,612 [INFO] src.sweep: [392/1080] Running 510525ed81eda955 — ctx=8685 pos=0.25 span=128 type=mask
+2026-03-14 14:08:37,828 [INFO] src.sweep: [393/1080] Running 81333ed539980cef — ctx=8685 pos=0.25 span=128 type=delete
+2026-03-14 14:08:45,933 [INFO] src.sweep: [394/1080] Running ae4317bb6d180c6c — ctx=8685 pos=0.25 span=128 type=compress
+2026-03-14 14:08:54,400 [INFO] src.sweep: [395/1080] Running 8d67d03bf6431d2a — ctx=8685 pos=0.25 span=128 type=paraphrase
+2026-03-14 14:09:04,013 [INFO] src.sweep: [396/1080] Running 2aaa95f0416a4f3f — ctx=8685 pos=0.25 span=128 type=semantic_change
+2026-03-14 14:09:12,088 [INFO] src.sweep: [397/1080] Running b14ba0e2af5f827d — ctx=8685 pos=0.50 span=8 type=random_replace
+2026-03-14 14:09:20,283 [INFO] src.sweep: [398/1080] Running 69af74cd783e94b7 — ctx=8685 pos=0.50 span=8 type=mask
+2026-03-14 14:09:28,503 [INFO] src.sweep: [399/1080] Running 1697d690520b2156 — ctx=8685 pos=0.50 span=8 type=delete
+2026-03-14 14:09:36,707 [INFO] src.sweep: [400/1080] Running 01df1bd4cc6cde17 — ctx=8685 pos=0.50 span=8 type=compress
+2026-03-14 14:09:44,949 [INFO] src.storage: Flushed 22770 records to Llama-3-8B-agent-results/results_part_000039.parquet.
+2026-03-14 14:09:44,954 [INFO] src.sweep: [401/1080] Running d48adc469c2b3883 — ctx=8685 pos=0.50 span=8 type=paraphrase
+2026-03-14 14:09:53,935 [INFO] src.sweep: [402/1080] Running 3e44f98c1b314697 — ctx=8685 pos=0.50 span=8 type=semantic_change
+2026-03-14 14:10:02,573 [INFO] src.sweep: [403/1080] Running fcbcfc6c6152fd01 — ctx=8685 pos=0.50 span=32 type=random_replace
+2026-03-14 14:10:10,785 [INFO] src.sweep: [404/1080] Running ed6cc78e7b533c2d — ctx=8685 pos=0.50 span=32 type=mask
+2026-03-14 14:10:18,983 [INFO] src.sweep: [405/1080] Running 9a516d491e538e84 — ctx=8685 pos=0.50 span=32 type=delete
+2026-03-14 14:10:27,143 [INFO] src.sweep: [406/1080] Running b90b08ba02aa1363 — ctx=8685 pos=0.50 span=32 type=compress
+2026-03-14 14:10:35,327 [INFO] src.sweep: [407/1080] Running 01448fb995c79b6f — ctx=8685 pos=0.50 span=32 type=paraphrase
+2026-03-14 14:10:43,499 [INFO] src.sweep: [408/1080] Running b295009572c1b53d — ctx=8685 pos=0.50 span=32 type=semantic_change
+2026-03-14 14:10:52,195 [INFO] src.sweep: [409/1080] Running 240e06ba7d578980 — ctx=8685 pos=0.50 span=128 type=random_replace
+2026-03-14 14:11:00,387 [INFO] src.sweep: [410/1080] Running 0840194f5b97456b — ctx=8685 pos=0.50 span=128 type=mask
+2026-03-14 14:11:08,642 [INFO] src.storage: Flushed 18744 records to Llama-3-8B-agent-results/results_part_000040.parquet.
+2026-03-14 14:11:08,646 [INFO] src.sweep: [411/1080] Running 96ebe75272c65942 — ctx=8685 pos=0.50 span=128 type=delete
+2026-03-14 14:11:16,893 [INFO] src.sweep: [412/1080] Running 4ea3e968a85c3ea5 — ctx=8685 pos=0.50 span=128 type=compress
+2026-03-14 14:11:25,012 [INFO] src.sweep: [413/1080] Running e0be6c81c7954cd4 — ctx=8685 pos=0.50 span=128 type=paraphrase
+2026-03-14 14:11:32,544 [INFO] src.sweep: [414/1080] Running 5b1e483540d2955d — ctx=8685 pos=0.50 span=128 type=semantic_change
+2026-03-14 14:11:41,215 [INFO] src.sweep: [415/1080] Running 97f1a44f7ca63177 — ctx=8685 pos=0.75 span=8 type=random_replace
+2026-03-14 14:11:49,371 [INFO] src.sweep: [416/1080] Running a1557419916b7824 — ctx=8685 pos=0.75 span=8 type=mask
+2026-03-14 14:11:57,501 [INFO] src.sweep: [417/1080] Running e66a44394b6feeae — ctx=8685 pos=0.75 span=8 type=delete
+2026-03-14 14:12:05,872 [INFO] src.sweep: [418/1080] Running de286cd81aac458c — ctx=8685 pos=0.75 span=8 type=compress
+2026-03-14 14:12:14,054 [INFO] src.sweep: [419/1080] Running 19c863fb6784907a — ctx=8685 pos=0.75 span=8 type=paraphrase
+2026-03-14 14:12:22,257 [INFO] src.sweep: [420/1080] Running fdbceb81bdba50c9 — ctx=8685 pos=0.75 span=8 type=semantic_change
+2026-03-14 14:12:30,486 [INFO] src.storage: Flushed 14322 records to Llama-3-8B-agent-results/results_part_000041.parquet.
+2026-03-14 14:12:30,489 [INFO] src.sweep: [421/1080] Running d0176c390a8abb55 — ctx=8685 pos=0.75 span=32 type=random_replace
+2026-03-14 14:12:38,614 [INFO] src.sweep: [422/1080] Running b2dec19bc92a0d50 — ctx=8685 pos=0.75 span=32 type=mask
+2026-03-14 14:12:46,782 [INFO] src.sweep: [423/1080] Running e76f9898345a3d73 — ctx=8685 pos=0.75 span=32 type=delete
+2026-03-14 14:12:55,790 [INFO] src.sweep: [424/1080] Running d809537ed44487fd — ctx=8685 pos=0.75 span=32 type=compress
+2026-03-14 14:13:03,523 [INFO] src.sweep: [425/1080] Running b7f7f0a00a12b6d7 — ctx=8685 pos=0.75 span=32 type=paraphrase
+2026-03-14 14:13:11,851 [INFO] src.sweep: [426/1080] Running fd1a745097bf1c56 — ctx=8685 pos=0.75 span=32 type=semantic_change
+2026-03-14 14:13:20,018 [INFO] src.sweep: [427/1080] Running da960dd60af4bf11 — ctx=8685 pos=0.75 span=128 type=random_replace
+2026-03-14 14:13:28,394 [INFO] src.sweep: [428/1080] Running ff1664463cf4b1ca — ctx=8685 pos=0.75 span=128 type=mask
+2026-03-14 14:13:36,586 [INFO] src.sweep: [429/1080] Running 0f8d7342cf5b9bdb — ctx=8685 pos=0.75 span=128 type=delete
+2026-03-14 14:13:44,582 [INFO] src.sweep: [430/1080] Running 11f0e9db1255c061 — ctx=8685 pos=0.75 span=128 type=compress
+2026-03-14 14:13:52,761 [INFO] src.storage: Flushed 11418 records to Llama-3-8B-agent-results/results_part_000042.parquet.
+2026-03-14 14:13:52,764 [INFO] src.sweep: [431/1080] Running ffa46f397230fb8c — ctx=8685 pos=0.75 span=128 type=paraphrase
+2026-03-14 14:14:00,185 [INFO] src.sweep: [432/1080] Running f3c1afe104dcd8c3 — ctx=8685 pos=0.75 span=128 type=semantic_change
+2026-03-14 14:14:08,834 [INFO] src.sweep: [433/1080] Running 835beb8fc2fcae5b — ctx=8685 pos=0.90 span=8 type=random_replace
+2026-03-14 14:14:16,997 [INFO] src.sweep: [434/1080] Running 51ccf0800146240e — ctx=8685 pos=0.90 span=8 type=mask
+2026-03-14 14:14:25,189 [INFO] src.sweep: [435/1080] Running debdde4d4582145e — ctx=8685 pos=0.90 span=8 type=delete
+2026-03-14 14:14:33,365 [INFO] src.sweep: [436/1080] Running 5ad0eb7e3f3be274 — ctx=8685 pos=0.90 span=8 type=compress
+2026-03-14 14:14:41,504 [INFO] src.sweep: [437/1080] Running dfef26a91986e361 — ctx=8685 pos=0.90 span=8 type=paraphrase
+2026-03-14 14:14:49,446 [INFO] src.sweep: [438/1080] Running 035ddd53f5f20f97 — ctx=8685 pos=0.90 span=8 type=semantic_change
+2026-03-14 14:14:58,382 [INFO] src.sweep: [439/1080] Running ddfc0359577930e8 — ctx=8685 pos=0.90 span=32 type=random_replace
+2026-03-14 14:15:06,467 [INFO] src.sweep: [440/1080] Running 88067ef5903b8c6b — ctx=8685 pos=0.90 span=32 type=mask
+2026-03-14 14:15:14,652 [INFO] src.storage: Flushed 8052 records to Llama-3-8B-agent-results/results_part_000043.parquet.
+2026-03-14 14:15:14,654 [INFO] src.sweep: [441/1080] Running 2708f48ab4e7d9f4 — ctx=8685 pos=0.90 span=32 type=delete
+2026-03-14 14:15:22,727 [INFO] src.sweep: [442/1080] Running 3dae4cd1c1f2bd82 — ctx=8685 pos=0.90 span=32 type=compress
+2026-03-14 14:15:30,836 [INFO] src.sweep: [443/1080] Running 6e710cd03f3e692d — ctx=8685 pos=0.90 span=32 type=paraphrase
+2026-03-14 14:15:38,765 [INFO] src.sweep: [444/1080] Running 77f854d8aa2ebd93 — ctx=8685 pos=0.90 span=32 type=semantic_change
+2026-03-14 14:15:47,410 [INFO] src.sweep: [445/1080] Running 501b09460cd19e1b — ctx=8685 pos=0.90 span=128 type=random_replace
+2026-03-14 14:15:55,521 [INFO] src.sweep: [446/1080] Running a26d210d36059da4 — ctx=8685 pos=0.90 span=128 type=mask
+2026-03-14 14:16:03,616 [INFO] src.sweep: [447/1080] Running e1dac80930c37fdb — ctx=8685 pos=0.90 span=128 type=delete
+2026-03-14 14:16:11,719 [INFO] src.sweep: [448/1080] Running 042e8ec9cd0e8a6e — ctx=8685 pos=0.90 span=128 type=compress
+2026-03-14 14:16:19,721 [INFO] src.sweep: [449/1080] Running f2d938c2d41f8b0c — ctx=8685 pos=0.90 span=128 type=paraphrase
+2026-03-14 14:16:27,633 [INFO] src.sweep: [450/1080] Running a596ecb02cc0836a — ctx=8685 pos=0.90 span=128 type=semantic_change
+2026-03-14 14:16:35,749 [INFO] src.storage: Flushed 7062 records to Llama-3-8B-agent-results/results_part_000044.parquet.
+2026-03-14 14:16:35,751 [INFO] src.sweep: [451/1080] Running 21cb98c51b7949c3 — ctx=9626 pos=0.10 span=8 type=random_replace
+2026-03-14 14:16:44,254 [INFO] src.sweep: [452/1080] Running 084ff410cb76d708 — ctx=9626 pos=0.10 span=8 type=mask
+2026-03-14 14:16:53,046 [INFO] src.sweep: [453/1080] Running 1d6bdea8058aed01 — ctx=9626 pos=0.10 span=8 type=delete
+2026-03-14 14:17:01,584 [INFO] src.sweep: [454/1080] Running 7885f3cc62270cdb — ctx=9626 pos=0.10 span=8 type=compress
+2026-03-14 14:17:10,091 [INFO] src.sweep: [455/1080] Running 8ccfd368a1ed9f87 — ctx=9626 pos=0.10 span=8 type=paraphrase
+2026-03-14 14:17:19,434 [INFO] src.sweep: [456/1080] Running 135a22b60d740c89 — ctx=9626 pos=0.10 span=8 type=semantic_change
+2026-03-14 14:17:28,031 [INFO] src.sweep: [457/1080] Running ccd7ec72339476c7 — ctx=9626 pos=0.10 span=32 type=random_replace
+2026-03-14 14:17:37,721 [INFO] src.sweep: [458/1080] Running 2f49598bbf5eb4a5 — ctx=9626 pos=0.10 span=32 type=mask
+2026-03-14 14:17:45,110 [INFO] src.sweep: [459/1080] Running 9b19ff95461926fc — ctx=9626 pos=0.10 span=32 type=delete
+2026-03-14 14:17:53,898 [INFO] src.sweep: [460/1080] Running 17df30caa2341b73 — ctx=9626 pos=0.10 span=32 type=compress
+2026-03-14 14:18:02,651 [INFO] src.storage: Flushed 33000 records to Llama-3-8B-agent-results/results_part_000045.parquet.
+2026-03-14 14:18:02,657 [INFO] src.sweep: [461/1080] Running 4b75a27011fd5e47 — ctx=9626 pos=0.10 span=32 type=paraphrase
+2026-03-14 14:18:12,148 [INFO] src.sweep: [462/1080] Running a100ec82acffef3e — ctx=9626 pos=0.10 span=32 type=semantic_change
+2026-03-14 14:18:20,937 [INFO] src.sweep: [463/1080] Running 116dd0cffde7ab9e — ctx=9626 pos=0.10 span=128 type=random_replace
+2026-03-14 14:18:29,751 [INFO] src.sweep: [464/1080] Running 2395a4c9a6e1f7fb — ctx=9626 pos=0.10 span=128 type=mask
+2026-03-14 14:18:37,980 [INFO] src.sweep: [465/1080] Running 15a7a15b493f99d0 — ctx=9626 pos=0.10 span=128 type=delete
+2026-03-14 14:18:46,138 [INFO] src.sweep: [466/1080] Running 801d601589e2202a — ctx=9626 pos=0.10 span=128 type=compress
+2026-03-14 14:18:54,644 [INFO] src.sweep: [467/1080] Running 128f69858c957283 — ctx=9626 pos=0.10 span=128 type=paraphrase
+2026-03-14 14:19:03,924 [INFO] src.sweep: [468/1080] Running e2bb55d965e6c4d0 — ctx=9626 pos=0.10 span=128 type=semantic_change
+2026-03-14 14:19:11,709 [INFO] src.sweep: [469/1080] Running 2dc1afdfd0823004 — ctx=9626 pos=0.25 span=8 type=random_replace
+2026-03-14 14:19:19,911 [INFO] src.sweep: [470/1080] Running 420a44419cb2eceb — ctx=9626 pos=0.25 span=8 type=mask
+2026-03-14 14:19:28,680 [INFO] src.storage: Flushed 31878 records to Llama-3-8B-agent-results/results_part_000046.parquet.
+2026-03-14 14:19:28,685 [INFO] src.sweep: [471/1080] Running 51937846ac0cccef — ctx=9626 pos=0.25 span=8 type=delete
+2026-03-14 14:19:36,608 [INFO] src.sweep: [472/1080] Running e6aaa5e55b5f0177 — ctx=9626 pos=0.25 span=8 type=compress
+2026-03-14 14:19:45,401 [INFO] src.sweep: [473/1080] Running 460ce3dc07236e58 — ctx=9626 pos=0.25 span=8 type=paraphrase
+2026-03-14 14:19:54,794 [INFO] src.sweep: [474/1080] Running 58e27d19ee80ba01 — ctx=9626 pos=0.25 span=8 type=semantic_change
+2026-03-14 14:20:02,674 [INFO] src.sweep: [475/1080] Running 724cdfca115a7411 — ctx=9626 pos=0.25 span=32 type=random_replace
+2026-03-14 14:20:10,889 [INFO] src.sweep: [476/1080] Running 50a4a59d44ca168d — ctx=9626 pos=0.25 span=32 type=mask
+2026-03-14 14:20:19,108 [INFO] src.sweep: [477/1080] Running ff813ba133771306 — ctx=9626 pos=0.25 span=32 type=delete
+2026-03-14 14:20:27,297 [INFO] src.sweep: [478/1080] Running 0bee00e8005e7ad0 — ctx=9626 pos=0.25 span=32 type=compress
+2026-03-14 14:20:35,212 [INFO] src.sweep: [479/1080] Running 4f73a8d2c48b3d8d — ctx=9626 pos=0.25 span=32 type=paraphrase
+2026-03-14 14:20:43,408 [INFO] src.sweep: [480/1080] Running 92ba5826881bf560 — ctx=9626 pos=0.25 span=32 type=semantic_change
+2026-03-14 14:20:51,677 [INFO] src.storage: Flushed 28182 records to Llama-3-8B-agent-results/results_part_000047.parquet.
+2026-03-14 14:20:51,682 [INFO] src.sweep: [481/1080] Running d02471dfc6ae79a8 — ctx=9626 pos=0.25 span=128 type=random_replace
+2026-03-14 14:20:59,815 [INFO] src.sweep: [482/1080] Running d56a19cabfcba932 — ctx=9626 pos=0.25 span=128 type=mask
+2026-03-14 14:21:08,051 [INFO] src.sweep: [483/1080] Running af233549c7b186e3 — ctx=9626 pos=0.25 span=128 type=delete
+2026-03-14 14:21:16,251 [INFO] src.sweep: [484/1080] Running f1d63d2cab4e27a7 — ctx=9626 pos=0.25 span=128 type=compress
+2026-03-14 14:21:24,139 [INFO] src.sweep: [485/1080] Running d8b86f7cbb0e2b4d — ctx=9626 pos=0.25 span=128 type=paraphrase
+2026-03-14 14:21:32,313 [INFO] src.sweep: [486/1080] Running 4955f503d6133fae — ctx=9626 pos=0.25 span=128 type=semantic_change
+2026-03-14 14:21:41,169 [INFO] src.sweep: [487/1080] Running e434eae0ef84039e — ctx=9626 pos=0.50 span=8 type=random_replace
+2026-03-14 14:21:49,645 [INFO] src.sweep: [488/1080] Running 620007d550b1b8ec — ctx=9626 pos=0.50 span=8 type=mask
+2026-03-14 14:21:58,412 [INFO] src.sweep: [489/1080] Running a514ad6dc532e267 — ctx=9626 pos=0.50 span=8 type=delete
+2026-03-14 14:22:07,161 [INFO] src.sweep: [490/1080] Running f851a9f77de1c8f2 — ctx=9626 pos=0.50 span=8 type=compress
+2026-03-14 14:22:16,034 [INFO] src.storage: Flushed 24816 records to Llama-3-8B-agent-results/results_part_000048.parquet.
+2026-03-14 14:22:16,038 [INFO] src.sweep: [491/1080] Running 70bac9e3ec4441ff — ctx=9626 pos=0.50 span=8 type=paraphrase
+2026-03-14 14:22:25,562 [INFO] src.sweep: [492/1080] Running 993a9af0630d5564 — ctx=9626 pos=0.50 span=8 type=semantic_change
+2026-03-14 14:22:34,017 [INFO] src.sweep: [493/1080] Running 38ac5cabfc886165 — ctx=9626 pos=0.50 span=32 type=random_replace
+2026-03-14 14:22:42,789 [INFO] src.sweep: [494/1080] Running 2521d1b78f359b9c — ctx=9626 pos=0.50 span=32 type=mask
+2026-03-14 14:22:51,566 [INFO] src.sweep: [495/1080] Running 61277a9b6488199e — ctx=9626 pos=0.50 span=32 type=delete
+2026-03-14 14:23:00,277 [INFO] src.sweep: [496/1080] Running 20d2c5165e9da380 — ctx=9626 pos=0.50 span=32 type=compress
+2026-03-14 14:23:08,722 [INFO] src.sweep: [497/1080] Running 0a252c59b3395097 — ctx=9626 pos=0.50 span=32 type=paraphrase
+2026-03-14 14:23:18,276 [INFO] src.sweep: [498/1080] Running 3146c26b8b02621d — ctx=9626 pos=0.50 span=32 type=semantic_change
+2026-03-14 14:23:26,458 [INFO] src.sweep: [499/1080] Running 263f4401936be5c5 — ctx=9626 pos=0.50 span=128 type=random_replace
+2026-03-14 14:23:34,650 [INFO] src.sweep: [500/1080] Running fb1e7cbdc1f0c953 — ctx=9626 pos=0.50 span=128 type=mask
+2026-03-14 14:23:42,882 [INFO] src.storage: Flushed 20130 records to Llama-3-8B-agent-results/results_part_000049.parquet.
+2026-03-14 14:23:42,886 [INFO] src.sweep: [501/1080] Running c0c46823b5945d36 — ctx=9626 pos=0.50 span=128 type=delete
+2026-03-14 14:23:50,937 [INFO] src.sweep: [502/1080] Running dfd3f0b4e217ed20 — ctx=9626 pos=0.50 span=128 type=compress
+2026-03-14 14:23:59,357 [INFO] src.sweep: [503/1080] Running bcf0312178c7d5d2 — ctx=9626 pos=0.50 span=128 type=paraphrase
+2026-03-14 14:24:07,795 [INFO] src.sweep: [504/1080] Running 65bc30af8e0be39a — ctx=9626 pos=0.50 span=128 type=semantic_change
+2026-03-14 14:24:16,570 [INFO] src.sweep: [505/1080] Running 87defda094209283 — ctx=9626 pos=0.75 span=8 type=random_replace
+2026-03-14 14:24:25,001 [INFO] src.sweep: [506/1080] Running 3054446f5f09a9f2 — ctx=9626 pos=0.75 span=8 type=mask
+2026-03-14 14:24:33,728 [INFO] src.sweep: [507/1080] Running 7c43fa9d0701479b — ctx=9626 pos=0.75 span=8 type=delete
+2026-03-14 14:24:42,447 [INFO] src.sweep: [508/1080] Running 4e799f2a44e4259b — ctx=9626 pos=0.75 span=8 type=compress
+2026-03-14 14:24:51,223 [INFO] src.sweep: [509/1080] Running beceff86ad5a2d4f — ctx=9626 pos=0.75 span=8 type=paraphrase
+2026-03-14 14:24:59,963 [INFO] src.sweep: [510/1080] Running 44410e281838f002 — ctx=9626 pos=0.75 span=8 type=semantic_change
+2026-03-14 14:25:08,446 [INFO] src.storage: Flushed 15246 records to Llama-3-8B-agent-results/results_part_000050.parquet.
+2026-03-14 14:25:08,449 [INFO] src.sweep: [511/1080] Running 9bc6776b2626242b — ctx=9626 pos=0.75 span=32 type=random_replace
+2026-03-14 14:25:17,131 [INFO] src.sweep: [512/1080] Running 967a1e65e08a2594 — ctx=9626 pos=0.75 span=32 type=mask
+2026-03-14 14:25:25,895 [INFO] src.sweep: [513/1080] Running bc0d358275060b0c — ctx=9626 pos=0.75 span=32 type=delete
+2026-03-14 14:25:34,589 [INFO] src.sweep: [514/1080] Running 2170317d2632f701 — ctx=9626 pos=0.75 span=32 type=compress
+2026-03-14 14:25:43,016 [INFO] src.sweep: [515/1080] Running 3a91ca2036438fc3 — ctx=9626 pos=0.75 span=32 type=paraphrase
+2026-03-14 14:25:51,737 [INFO] src.sweep: [516/1080] Running a1682371020138e6 — ctx=9626 pos=0.75 span=32 type=semantic_change
+2026-03-14 14:25:59,898 [INFO] src.sweep: [517/1080] Running a5bcc5674eaafbfb — ctx=9626 pos=0.75 span=128 type=random_replace
+2026-03-14 14:26:08,031 [INFO] src.sweep: [518/1080] Running 314319e458c821d4 — ctx=9626 pos=0.75 span=128 type=mask
+2026-03-14 14:26:16,215 [INFO] src.sweep: [519/1080] Running 4b6bd106363c4920 — ctx=9626 pos=0.75 span=128 type=delete
+2026-03-14 14:26:24,288 [INFO] src.sweep: [520/1080] Running 97f61a8fb4dd99a1 — ctx=9626 pos=0.75 span=128 type=compress
+2026-03-14 14:26:32,719 [INFO] src.storage: Flushed 12078 records to Llama-3-8B-agent-results/results_part_000051.parquet.
+2026-03-14 14:26:32,722 [INFO] src.sweep: [521/1080] Running 998a3a84d66bfce8 — ctx=9626 pos=0.75 span=128 type=paraphrase
+2026-03-14 14:26:41,923 [INFO] src.sweep: [522/1080] Running 8ae1a265151c23be — ctx=9626 pos=0.75 span=128 type=semantic_change
+2026-03-14 14:26:50,076 [INFO] src.sweep: [523/1080] Running 0b2194f31da51c3d — ctx=9626 pos=0.90 span=8 type=random_replace
+2026-03-14 14:26:58,782 [INFO] src.sweep: [524/1080] Running a47e3d41fb816334 — ctx=9626 pos=0.90 span=8 type=mask
+2026-03-14 14:27:07,511 [INFO] src.sweep: [525/1080] Running d1e69f78c21ebb56 — ctx=9626 pos=0.90 span=8 type=delete
+2026-03-14 14:27:16,272 [INFO] src.sweep: [526/1080] Running c59ed9f6f6bc7a2d — ctx=9626 pos=0.90 span=8 type=compress
+2026-03-14 14:27:25,018 [INFO] src.sweep: [527/1080] Running 7cf8821239583137 — ctx=9626 pos=0.90 span=8 type=paraphrase
+2026-03-14 14:27:33,812 [INFO] src.sweep: [528/1080] Running e6486fc47183610e — ctx=9626 pos=0.90 span=8 type=semantic_change
+2026-03-14 14:27:42,213 [INFO] src.sweep: [529/1080] Running 6b0796d8884aee6f — ctx=9626 pos=0.90 span=32 type=random_replace
+2026-03-14 14:27:50,964 [INFO] src.sweep: [530/1080] Running 70e1ff89fe906701 — ctx=9626 pos=0.90 span=32 type=mask
+2026-03-14 14:27:59,749 [INFO] src.storage: Flushed 8448 records to Llama-3-8B-agent-results/results_part_000052.parquet.
+2026-03-14 14:27:59,751 [INFO] src.sweep: [531/1080] Running a55e50c145cc0f41 — ctx=9626 pos=0.90 span=32 type=delete
+2026-03-14 14:28:08,366 [INFO] src.sweep: [532/1080] Running d9df83bcff71a03c — ctx=9626 pos=0.90 span=32 type=compress
+2026-03-14 14:28:16,772 [INFO] src.sweep: [533/1080] Running 61845ce0c68b8ce6 — ctx=9626 pos=0.90 span=32 type=paraphrase
+2026-03-14 14:28:26,321 [INFO] src.sweep: [534/1080] Running fa278be3e2301091 — ctx=9626 pos=0.90 span=32 type=semantic_change
+2026-03-14 14:28:34,465 [INFO] src.sweep: [535/1080] Running 1c0528d558587207 — ctx=9626 pos=0.90 span=128 type=random_replace
+2026-03-14 14:28:42,598 [INFO] src.sweep: [536/1080] Running 894f22f818548345 — ctx=9626 pos=0.90 span=128 type=mask
+2026-03-14 14:28:50,759 [INFO] src.sweep: [537/1080] Running 86934482a695ce91 — ctx=9626 pos=0.90 span=128 type=delete
+2026-03-14 14:28:58,807 [INFO] src.sweep: [538/1080] Running 28413f164ea2638e — ctx=9626 pos=0.90 span=128 type=compress
+2026-03-14 14:29:07,184 [INFO] src.sweep: [539/1080] Running 3e98147c9fdd47d6 — ctx=9626 pos=0.90 span=128 type=paraphrase
+2026-03-14 14:29:15,592 [INFO] src.sweep: [540/1080] Running 9bd10b29be6133de — ctx=9626 pos=0.90 span=128 type=semantic_change
+2026-03-14 14:29:24,328 [INFO] src.storage: Flushed 7392 records to Llama-3-8B-agent-results/results_part_000053.parquet.
+2026-03-14 14:29:24,330 [INFO] src.sweep: [541/1080] Running 4833daad402de6ed — ctx=10364 pos=0.10 span=8 type=random_replace
+2026-03-14 14:29:33,956 [INFO] src.sweep: [542/1080] Running 4d288f8f756871ca — ctx=10364 pos=0.10 span=8 type=mask
+2026-03-14 14:29:42,819 [INFO] src.sweep: [543/1080] Running 3fcd76ee066f8910 — ctx=10364 pos=0.10 span=8 type=delete
+2026-03-14 14:29:51,655 [INFO] src.sweep: [544/1080] Running 7471f1501ac603a9 — ctx=10364 pos=0.10 span=8 type=compress
+2026-03-14 14:30:00,128 [INFO] src.sweep: [545/1080] Running 00c4bed55e7e43df — ctx=10364 pos=0.10 span=8 type=paraphrase
+2026-03-14 14:30:08,996 [INFO] src.sweep: [546/1080] Running 7bb4da64d6faa9b4 — ctx=10364 pos=0.10 span=8 type=semantic_change
+2026-03-14 14:30:17,817 [INFO] src.sweep: [547/1080] Running 56a2a1b82f79b26e — ctx=10364 pos=0.10 span=32 type=random_replace
+2026-03-14 14:30:26,672 [INFO] src.sweep: [548/1080] Running ba312bbbcb6f0303 — ctx=10364 pos=0.10 span=32 type=mask
+2026-03-14 14:30:35,539 [INFO] src.sweep: [549/1080] Running 880115865e2f4af5 — ctx=10364 pos=0.10 span=32 type=delete
+2026-03-14 14:30:44,367 [INFO] src.sweep: [550/1080] Running 00702da3feda8fd4 — ctx=10364 pos=0.10 span=32 type=compress
+2026-03-14 14:30:53,341 [INFO] src.storage: Flushed 35178 records to Llama-3-8B-agent-results/results_part_000054.parquet.
+2026-03-14 14:30:53,348 [INFO] src.sweep: [551/1080] Running 8109a82c0d1d044b — ctx=10364 pos=0.10 span=32 type=paraphrase
+2026-03-14 14:31:02,218 [INFO] src.sweep: [552/1080] Running 16d201b31012e253 — ctx=10364 pos=0.10 span=32 type=semantic_change
+2026-03-14 14:31:11,048 [INFO] src.sweep: [553/1080] Running 155d7435eda3b6ad — ctx=10364 pos=0.10 span=128 type=random_replace
+2026-03-14 14:31:19,910 [INFO] src.sweep: [554/1080] Running c4012a94c530a535 — ctx=10364 pos=0.10 span=128 type=mask
+2026-03-14 14:31:28,769 [INFO] src.sweep: [555/1080] Running 4c288742f010922c — ctx=10364 pos=0.10 span=128 type=delete
+2026-03-14 14:31:37,537 [INFO] src.sweep: [556/1080] Running 85532ca2281aa7f4 — ctx=10364 pos=0.10 span=128 type=compress
+2026-03-14 14:31:46,375 [INFO] src.sweep: [557/1080] Running 9461218188f508cc — ctx=10364 pos=0.10 span=128 type=paraphrase
+2026-03-14 14:31:55,244 [INFO] src.sweep: [558/1080] Running 007fd7acf62cdf0a — ctx=10364 pos=0.10 span=128 type=semantic_change
+2026-03-14 14:32:04,110 [INFO] src.sweep: [559/1080] Running acdaf32cb552dc3e — ctx=10364 pos=0.25 span=8 type=random_replace
+2026-03-14 14:32:12,945 [INFO] src.sweep: [560/1080] Running 7a811f2fcb387403 — ctx=10364 pos=0.25 span=8 type=mask
+2026-03-14 14:32:21,902 [INFO] src.storage: Flushed 33792 records to Llama-3-8B-agent-results/results_part_000055.parquet.
+2026-03-14 14:32:21,908 [INFO] src.sweep: [561/1080] Running 0e653ba59a2160b0 — ctx=10364 pos=0.25 span=8 type=delete
+2026-03-14 14:32:30,640 [INFO] src.sweep: [562/1080] Running 7a7847195b9c1210 — ctx=10364 pos=0.25 span=8 type=compress
+2026-03-14 14:32:39,074 [INFO] src.sweep: [563/1080] Running d87ac27c9d6619f4 — ctx=10364 pos=0.25 span=8 type=paraphrase
+2026-03-14 14:32:47,906 [INFO] src.sweep: [564/1080] Running 39b00d2313eb1c45 — ctx=10364 pos=0.25 span=8 type=semantic_change
+2026-03-14 14:32:56,742 [INFO] src.sweep: [565/1080] Running 47ff1de43070c909 — ctx=10364 pos=0.25 span=32 type=random_replace
+2026-03-14 14:33:05,594 [INFO] src.sweep: [566/1080] Running f32dddc92603ec4a — ctx=10364 pos=0.25 span=32 type=mask
+2026-03-14 14:33:14,460 [INFO] src.sweep: [567/1080] Running 763fb9186bcdc770 — ctx=10364 pos=0.25 span=32 type=delete
+2026-03-14 14:33:23,287 [INFO] src.sweep: [568/1080] Running 52b42423a064bca3 — ctx=10364 pos=0.25 span=32 type=compress
+2026-03-14 14:33:32,116 [INFO] src.sweep: [569/1080] Running 4f8086cae9119aa4 — ctx=10364 pos=0.25 span=32 type=paraphrase
+2026-03-14 14:33:40,961 [INFO] src.sweep: [570/1080] Running 20ba1c730e2bd2f4 — ctx=10364 pos=0.25 span=32 type=semantic_change
+2026-03-14 14:33:49,885 [INFO] src.storage: Flushed 30030 records to Llama-3-8B-agent-results/results_part_000056.parquet.
+2026-03-14 14:33:49,890 [INFO] src.sweep: [571/1080] Running a0447bdc7fbf7319 — ctx=10364 pos=0.25 span=128 type=random_replace
+2026-03-14 14:33:58,639 [INFO] src.sweep: [572/1080] Running f8a981d7b4708c6c — ctx=10364 pos=0.25 span=128 type=mask
+2026-03-14 14:34:07,468 [INFO] src.sweep: [573/1080] Running 6a4ff96522e467ac — ctx=10364 pos=0.25 span=128 type=delete
+2026-03-14 14:34:16,222 [INFO] src.sweep: [574/1080] Running 6d0c11a137a5d98d — ctx=10364 pos=0.25 span=128 type=compress
+2026-03-14 14:34:25,060 [INFO] src.sweep: [575/1080] Running 867e5bdc34b2ea09 — ctx=10364 pos=0.25 span=128 type=paraphrase
+2026-03-14 14:34:34,926 [INFO] src.sweep: [576/1080] Running 3573aaea3d710138 — ctx=10364 pos=0.25 span=128 type=semantic_change
+2026-03-14 14:34:43,796 [INFO] src.sweep: [577/1080] Running d00c9281d9527eea — ctx=10364 pos=0.50 span=8 type=random_replace
+2026-03-14 14:34:52,610 [INFO] src.sweep: [578/1080] Running 042b05049535abf7 — ctx=10364 pos=0.50 span=8 type=mask
+2026-03-14 14:35:01,425 [INFO] src.sweep: [579/1080] Running 90cd6e185e95f023 — ctx=10364 pos=0.50 span=8 type=delete
+2026-03-14 14:35:10,263 [INFO] src.sweep: [580/1080] Running 4511a9301ff865d1 — ctx=10364 pos=0.50 span=8 type=compress
+2026-03-14 14:35:18,761 [INFO] src.storage: Flushed 26400 records to Llama-3-8B-agent-results/results_part_000057.parquet.
+2026-03-14 14:35:18,766 [INFO] src.sweep: [581/1080] Running 20c80ee185d18bed — ctx=10364 pos=0.50 span=8 type=paraphrase
+2026-03-14 14:35:27,505 [INFO] src.sweep: [582/1080] Running fe06547abff249f4 — ctx=10364 pos=0.50 span=8 type=semantic_change
+2026-03-14 14:35:36,350 [INFO] src.sweep: [583/1080] Running adfefcbc8ab1c200 — ctx=10364 pos=0.50 span=32 type=random_replace
+2026-03-14 14:35:45,174 [INFO] src.sweep: [584/1080] Running 479ae0a94b6375c6 — ctx=10364 pos=0.50 span=32 type=mask
+2026-03-14 14:35:54,011 [INFO] src.sweep: [585/1080] Running 6796fb4c4aa3b408 — ctx=10364 pos=0.50 span=32 type=delete
+2026-03-14 14:36:02,802 [INFO] src.sweep: [586/1080] Running 13b76c7d61063c70 — ctx=10364 pos=0.50 span=32 type=compress
+2026-03-14 14:36:11,602 [INFO] src.sweep: [587/1080] Running 6d9b7f65d95c3736 — ctx=10364 pos=0.50 span=32 type=paraphrase
+2026-03-14 14:36:20,441 [INFO] src.sweep: [588/1080] Running 2a849d7ca8c34012 — ctx=10364 pos=0.50 span=32 type=semantic_change
+2026-03-14 14:36:29,251 [INFO] src.sweep: [589/1080] Running a70c0a16b1de8869 — ctx=10364 pos=0.50 span=128 type=random_replace
+2026-03-14 14:36:38,080 [INFO] src.sweep: [590/1080] Running 9776bb3dc1f5a17b — ctx=10364 pos=0.50 span=128 type=mask
+2026-03-14 14:36:46,963 [INFO] src.storage: Flushed 21384 records to Llama-3-8B-agent-results/results_part_000058.parquet.
+2026-03-14 14:36:46,967 [INFO] src.sweep: [591/1080] Running 1ea6444afcdaa52a — ctx=10364 pos=0.50 span=128 type=delete
+2026-03-14 14:36:55,641 [INFO] src.sweep: [592/1080] Running c162c372fb241e33 — ctx=10364 pos=0.50 span=128 type=compress
+2026-03-14 14:37:04,465 [INFO] src.sweep: [593/1080] Running 8bdf17ccc4fee9c8 — ctx=10364 pos=0.50 span=128 type=paraphrase
+2026-03-14 14:37:14,277 [INFO] src.sweep: [594/1080] Running d7201e5057e2aef6 — ctx=10364 pos=0.50 span=128 type=semantic_change
+2026-03-14 14:37:23,078 [INFO] src.sweep: [595/1080] Running 24c6c4bbb93e0e92 — ctx=10364 pos=0.75 span=8 type=random_replace
+2026-03-14 14:37:31,873 [INFO] src.sweep: [596/1080] Running 37f0b03704ab1978 — ctx=10364 pos=0.75 span=8 type=mask
+2026-03-14 14:37:40,679 [INFO] src.sweep: [597/1080] Running 8e7420114b1b3c22 — ctx=10364 pos=0.75 span=8 type=delete
+2026-03-14 14:37:49,480 [INFO] src.sweep: [598/1080] Running 6d20a151d73f8145 — ctx=10364 pos=0.75 span=8 type=compress
+2026-03-14 14:37:57,881 [INFO] src.sweep: [599/1080] Running 242334d825bac285 — ctx=10364 pos=0.75 span=8 type=paraphrase
+2026-03-14 14:38:06,659 [INFO] src.sweep: [600/1080] Running b95874178e57d756 — ctx=10364 pos=0.75 span=8 type=semantic_change
+2026-03-14 14:38:15,488 [INFO] src.storage: Flushed 16170 records to Llama-3-8B-agent-results/results_part_000059.parquet.
+2026-03-14 14:38:15,491 [INFO] src.sweep: [601/1080] Running 14ca3efc4fccd976 — ctx=10364 pos=0.75 span=32 type=random_replace
+2026-03-14 14:38:24,257 [INFO] src.sweep: [602/1080] Running 23f904bf5d88d69a — ctx=10364 pos=0.75 span=32 type=mask
+2026-03-14 14:38:33,055 [INFO] src.sweep: [603/1080] Running acfc253a798a5597 — ctx=10364 pos=0.75 span=32 type=delete
+2026-03-14 14:38:41,839 [INFO] src.sweep: [604/1080] Running 8bce518fa657861f — ctx=10364 pos=0.75 span=32 type=compress
+2026-03-14 14:38:50,628 [INFO] src.sweep: [605/1080] Running 92f32fa5797ba48b — ctx=10364 pos=0.75 span=32 type=paraphrase
+2026-03-14 14:39:01,019 [INFO] src.sweep: [606/1080] Running f7cdf58203599fb8 — ctx=10364 pos=0.75 span=32 type=semantic_change
+2026-03-14 14:39:10,640 [INFO] src.sweep: [607/1080] Running 55f82408846af630 — ctx=10364 pos=0.75 span=128 type=random_replace
+2026-03-14 14:39:19,428 [INFO] src.sweep: [608/1080] Running 28ac1726c8340c0b — ctx=10364 pos=0.75 span=128 type=mask
+2026-03-14 14:39:28,199 [INFO] src.sweep: [609/1080] Running 570a125653979573 — ctx=10364 pos=0.75 span=128 type=delete
+2026-03-14 14:39:36,893 [INFO] src.sweep: [610/1080] Running d6d7f069bb016b8d — ctx=10364 pos=0.75 span=128 type=compress
+2026-03-14 14:39:45,730 [INFO] src.storage: Flushed 12738 records to Llama-3-8B-agent-results/results_part_000060.parquet.
+2026-03-14 14:39:45,733 [INFO] src.sweep: [611/1080] Running 3cb1701a2200f9f0 — ctx=10364 pos=0.75 span=128 type=paraphrase
+2026-03-14 14:39:55,525 [INFO] src.sweep: [612/1080] Running 0ec0ec68c47e2f93 — ctx=10364 pos=0.75 span=128 type=semantic_change
+2026-03-14 14:40:04,301 [INFO] src.sweep: [613/1080] Running 465b119b96006067 — ctx=10364 pos=0.90 span=8 type=random_replace
+2026-03-14 14:40:13,083 [INFO] src.sweep: [614/1080] Running ecf1950194725b16 — ctx=10364 pos=0.90 span=8 type=mask
+2026-03-14 14:40:21,847 [INFO] src.sweep: [615/1080] Running 5516203d2d78b8ea — ctx=10364 pos=0.90 span=8 type=delete
+2026-03-14 14:40:30,619 [INFO] src.sweep: [616/1080] Running e2c7498ccd889906 — ctx=10364 pos=0.90 span=8 type=compress
+2026-03-14 14:40:38,999 [INFO] src.sweep: [617/1080] Running 695f6557a0bd147f — ctx=10364 pos=0.90 span=8 type=paraphrase
+2026-03-14 14:40:47,751 [INFO] src.sweep: [618/1080] Running e51937e3afa60115 — ctx=10364 pos=0.90 span=8 type=semantic_change
+2026-03-14 14:40:56,544 [INFO] src.sweep: [619/1080] Running 6df4b035c7411ef6 — ctx=10364 pos=0.90 span=32 type=random_replace
+2026-03-14 14:41:05,339 [INFO] src.sweep: [620/1080] Running 7f848f2089bcbf30 — ctx=10364 pos=0.90 span=32 type=mask
+2026-03-14 14:41:14,157 [INFO] src.storage: Flushed 8844 records to Llama-3-8B-agent-results/results_part_000061.parquet.
+2026-03-14 14:41:14,160 [INFO] src.sweep: [621/1080] Running 0590059b8d7f60d8 — ctx=10364 pos=0.90 span=32 type=delete
+2026-03-14 14:41:22,873 [INFO] src.sweep: [622/1080] Running 2f25ac6a0e9139a0 — ctx=10364 pos=0.90 span=32 type=compress
+2026-03-14 14:41:31,634 [INFO] src.sweep: [623/1080] Running df9485fa2d23464d — ctx=10364 pos=0.90 span=32 type=paraphrase
+2026-03-14 14:41:40,412 [INFO] src.sweep: [624/1080] Running 5bdabcaea14fbd4d — ctx=10364 pos=0.90 span=32 type=semantic_change
+2026-03-14 14:41:49,192 [INFO] src.sweep: [625/1080] Running 2612d5a9176254e2 — ctx=10364 pos=0.90 span=128 type=random_replace
+2026-03-14 14:41:57,968 [INFO] src.sweep: [626/1080] Running 2cb9880789b73587 — ctx=10364 pos=0.90 span=128 type=mask
+2026-03-14 14:42:06,743 [INFO] src.sweep: [627/1080] Running cecd9250e515ae29 — ctx=10364 pos=0.90 span=128 type=delete
+2026-03-14 14:42:15,451 [INFO] src.sweep: [628/1080] Running 05132bb5a23670a5 — ctx=10364 pos=0.90 span=128 type=compress
+2026-03-14 14:42:24,187 [INFO] src.sweep: [629/1080] Running 87c779167ff8f4d6 — ctx=10364 pos=0.90 span=128 type=paraphrase
+2026-03-14 14:42:33,127 [INFO] src.sweep: [630/1080] Running bded5c1b7c1666a3 — ctx=10364 pos=0.90 span=128 type=semantic_change
+2026-03-14 14:42:42,766 [INFO] src.storage: Flushed 7722 records to Llama-3-8B-agent-results/results_part_000062.parquet.
+2026-03-14 14:42:42,768 [INFO] src.sweep: [631/1080] Running 4c0bb3f9e5b0e0f8 — ctx=10990 pos=0.10 span=8 type=random_replace
+2026-03-14 14:42:53,006 [INFO] src.sweep: [632/1080] Running 8f24e113fc948023 — ctx=10990 pos=0.10 span=8 type=mask
+2026-03-14 14:43:03,427 [INFO] src.sweep: [633/1080] Running f4b945e375e8145d — ctx=10990 pos=0.10 span=8 type=delete
+2026-03-14 14:43:13,438 [INFO] src.sweep: [634/1080] Running 4f84ee23d45dac75 — ctx=10990 pos=0.10 span=8 type=compress
+2026-03-14 14:43:23,496 [INFO] src.sweep: [635/1080] Running 255e0701c9eabf71 — ctx=10990 pos=0.10 span=8 type=paraphrase
+2026-03-14 14:43:33,534 [INFO] src.sweep: [636/1080] Running 9d8af0481521f7ac — ctx=10990 pos=0.10 span=8 type=semantic_change
+2026-03-14 14:43:43,559 [INFO] src.sweep: [637/1080] Running d3bae0363d6d14a1 — ctx=10990 pos=0.10 span=32 type=random_replace
+2026-03-14 14:43:53,625 [INFO] src.sweep: [638/1080] Running bcc7b14f1426664b — ctx=10990 pos=0.10 span=32 type=mask
+2026-03-14 14:44:03,642 [INFO] src.sweep: [639/1080] Running 3e3f9dfea840f343 — ctx=10990 pos=0.10 span=32 type=delete
+2026-03-14 14:44:13,679 [INFO] src.sweep: [640/1080] Running 90bf2444a06e7094 — ctx=10990 pos=0.10 span=32 type=compress
+2026-03-14 14:44:23,804 [INFO] src.storage: Flushed 36960 records to Llama-3-8B-agent-results/results_part_000063.parquet.
+2026-03-14 14:44:23,811 [INFO] src.sweep: [641/1080] Running 8adff9a6b8eaf198 — ctx=10990 pos=0.10 span=32 type=paraphrase
+2026-03-14 14:44:33,757 [INFO] src.sweep: [642/1080] Running 3007ef78b806f417 — ctx=10990 pos=0.10 span=32 type=semantic_change
+2026-03-14 14:44:43,794 [INFO] src.sweep: [643/1080] Running 92c03320858c56b4 — ctx=10990 pos=0.10 span=128 type=random_replace
+2026-03-14 14:44:53,818 [INFO] src.sweep: [644/1080] Running 7528e2b57b644b55 — ctx=10990 pos=0.10 span=128 type=mask
+2026-03-14 14:45:03,864 [INFO] src.sweep: [645/1080] Running 71fe34e881aabe5d — ctx=10990 pos=0.10 span=128 type=delete
+2026-03-14 14:45:13,807 [INFO] src.sweep: [646/1080] Running 09dac98e3f99f15b — ctx=10990 pos=0.10 span=128 type=compress
+2026-03-14 14:45:23,799 [INFO] src.sweep: [647/1080] Running c4855d659be70838 — ctx=10990 pos=0.10 span=128 type=paraphrase
+2026-03-14 14:45:34,887 [INFO] src.sweep: [648/1080] Running bb5093e9dd73ce7c — ctx=10990 pos=0.10 span=128 type=semantic_change
+2026-03-14 14:45:44,958 [INFO] src.sweep: [649/1080] Running b81c2c48342bad17 — ctx=10990 pos=0.25 span=8 type=random_replace
+2026-03-14 14:45:54,989 [INFO] src.sweep: [650/1080] Running ffef4ffd1cb20d1a — ctx=10990 pos=0.25 span=8 type=mask
+2026-03-14 14:46:05,104 [INFO] src.storage: Flushed 35706 records to Llama-3-8B-agent-results/results_part_000064.parquet.
+2026-03-14 14:46:05,110 [INFO] src.sweep: [651/1080] Running 9440389d6c1236cb — ctx=10990 pos=0.25 span=8 type=delete
+2026-03-14 14:46:15,030 [INFO] src.sweep: [652/1080] Running dbf68ea9f4d3c014 — ctx=10990 pos=0.25 span=8 type=compress
+2026-03-14 14:46:25,026 [INFO] src.sweep: [653/1080] Running d54e776a26b74347 — ctx=10990 pos=0.25 span=8 type=paraphrase
+2026-03-14 14:46:35,053 [INFO] src.sweep: [654/1080] Running 5b55f81ea77763af — ctx=10990 pos=0.25 span=8 type=semantic_change
+2026-03-14 14:46:45,062 [INFO] src.sweep: [655/1080] Running d10477c86ebe55d5 — ctx=10990 pos=0.25 span=32 type=random_replace
+2026-03-14 14:46:55,091 [INFO] src.sweep: [656/1080] Running df46ed999bf17285 — ctx=10990 pos=0.25 span=32 type=mask
+2026-03-14 14:47:05,097 [INFO] src.sweep: [657/1080] Running da90329dcd335115 — ctx=10990 pos=0.25 span=32 type=delete
+2026-03-14 14:47:15,102 [INFO] src.sweep: [658/1080] Running 755c587108cbbbe1 — ctx=10990 pos=0.25 span=32 type=compress
+2026-03-14 14:47:25,115 [INFO] src.sweep: [659/1080] Running 39a3c51ff0fe2b05 — ctx=10990 pos=0.25 span=32 type=paraphrase
+2026-03-14 14:47:36,177 [INFO] src.sweep: [660/1080] Running b7a87a1f9d5d04a4 — ctx=10990 pos=0.25 span=32 type=semantic_change
+2026-03-14 14:47:46,267 [INFO] src.storage: Flushed 31680 records to Llama-3-8B-agent-results/results_part_000065.parquet.
+2026-03-14 14:47:46,273 [INFO] src.sweep: [661/1080] Running c52d12f342def9d6 — ctx=10990 pos=0.25 span=128 type=random_replace
+2026-03-14 14:47:56,191 [INFO] src.sweep: [662/1080] Running 1ca35ab964d4b1e5 — ctx=10990 pos=0.25 span=128 type=mask
+2026-03-14 14:48:06,227 [INFO] src.sweep: [663/1080] Running a1940182c7ddd063 — ctx=10990 pos=0.25 span=128 type=delete
+2026-03-14 14:48:16,170 [INFO] src.sweep: [664/1080] Running 8038978f19f16f59 — ctx=10990 pos=0.25 span=128 type=compress
+2026-03-14 14:48:26,167 [INFO] src.sweep: [665/1080] Running b3be6aa8ab41a33d — ctx=10990 pos=0.25 span=128 type=paraphrase
+2026-03-14 14:48:36,089 [INFO] src.sweep: [666/1080] Running ca9611ec14ca30c9 — ctx=10990 pos=0.25 span=128 type=semantic_change
+2026-03-14 14:48:46,094 [INFO] src.sweep: [667/1080] Running 8ce53025250f45a9 — ctx=10990 pos=0.50 span=8 type=random_replace
+2026-03-14 14:48:56,080 [INFO] src.sweep: [668/1080] Running 225ca31c7ea8a9ed — ctx=10990 pos=0.50 span=8 type=mask
+2026-03-14 14:49:06,071 [INFO] src.sweep: [669/1080] Running 1b7238cf0f0b4b2f — ctx=10990 pos=0.50 span=8 type=delete
+2026-03-14 14:49:16,061 [INFO] src.sweep: [670/1080] Running 9bebd091f2473bab — ctx=10990 pos=0.50 span=8 type=compress
+2026-03-14 14:49:26,138 [INFO] src.storage: Flushed 27786 records to Llama-3-8B-agent-results/results_part_000066.parquet.
+2026-03-14 14:49:26,143 [INFO] src.sweep: [671/1080] Running c5d7ecb661bb82f6 — ctx=10990 pos=0.50 span=8 type=paraphrase
+2026-03-14 14:49:36,048 [INFO] src.sweep: [672/1080] Running 1747c8dae867a39c — ctx=10990 pos=0.50 span=8 type=semantic_change
+2026-03-14 14:49:46,036 [INFO] src.sweep: [673/1080] Running a6b2bc619e2de6c3 — ctx=10990 pos=0.50 span=32 type=random_replace
+2026-03-14 14:49:56,016 [INFO] src.sweep: [674/1080] Running 8ace4e453ba16fdc — ctx=10990 pos=0.50 span=32 type=mask
+2026-03-14 14:50:05,996 [INFO] src.sweep: [675/1080] Running 5c3b8c0f078b326e — ctx=10990 pos=0.50 span=32 type=delete
+2026-03-14 14:50:15,995 [INFO] src.sweep: [676/1080] Running 1187db931d339bc0 — ctx=10990 pos=0.50 span=32 type=compress
+2026-03-14 14:50:26,027 [INFO] src.sweep: [677/1080] Running 21711fcc0486419a — ctx=10990 pos=0.50 span=32 type=paraphrase
+2026-03-14 14:50:36,060 [INFO] src.sweep: [678/1080] Running c3ab59b9a23927d4 — ctx=10990 pos=0.50 span=32 type=semantic_change
+2026-03-14 14:50:46,080 [INFO] src.sweep: [679/1080] Running fc7abd4938cde947 — ctx=10990 pos=0.50 span=128 type=random_replace
+2026-03-14 14:50:56,093 [INFO] src.sweep: [680/1080] Running 5f7f13dafc3f8d3c — ctx=10990 pos=0.50 span=128 type=mask
+2026-03-14 14:51:06,160 [INFO] src.storage: Flushed 22374 records to Llama-3-8B-agent-results/results_part_000067.parquet.
+2026-03-14 14:51:06,164 [INFO] src.sweep: [681/1080] Running d85226fd5427e3a6 — ctx=10990 pos=0.50 span=128 type=delete
+2026-03-14 14:51:16,002 [INFO] src.sweep: [682/1080] Running 76f3cfddc6840c58 — ctx=10990 pos=0.50 span=128 type=compress
+2026-03-14 14:51:25,952 [INFO] src.sweep: [683/1080] Running ce97a00bb50cd17e — ctx=10990 pos=0.50 span=128 type=paraphrase
+2026-03-14 14:51:35,967 [INFO] src.sweep: [684/1080] Running 8bcd9f0315d516b6 — ctx=10990 pos=0.50 span=128 type=semantic_change
+2026-03-14 14:51:45,936 [INFO] src.sweep: [685/1080] Running e3d1ece493821202 — ctx=10990 pos=0.75 span=8 type=random_replace
+2026-03-14 14:51:55,911 [INFO] src.sweep: [686/1080] Running db8b9ddd2b78784c — ctx=10990 pos=0.75 span=8 type=mask
+2026-03-14 14:52:05,862 [INFO] src.sweep: [687/1080] Running 4e2251e5d48ed70d — ctx=10990 pos=0.75 span=8 type=delete
+2026-03-14 14:52:15,812 [INFO] src.sweep: [688/1080] Running c289a6698ebfd1a4 — ctx=10990 pos=0.75 span=8 type=compress
+2026-03-14 14:52:25,773 [INFO] src.sweep: [689/1080] Running 108680dd4e160646 — ctx=10990 pos=0.75 span=8 type=paraphrase
+2026-03-14 14:52:35,719 [INFO] src.sweep: [690/1080] Running 8b211f8c6dc91cc2 — ctx=10990 pos=0.75 span=8 type=semantic_change
+2026-03-14 14:52:45,744 [INFO] src.storage: Flushed 16962 records to Llama-3-8B-agent-results/results_part_000068.parquet.
+2026-03-14 14:52:45,748 [INFO] src.sweep: [691/1080] Running e0fee1f8405e59a3 — ctx=10990 pos=0.75 span=32 type=random_replace
+2026-03-14 14:52:55,652 [INFO] src.sweep: [692/1080] Running e00e1eda2747895d — ctx=10990 pos=0.75 span=32 type=mask
+2026-03-14 14:53:05,617 [INFO] src.sweep: [693/1080] Running e091f6023c58ce1d — ctx=10990 pos=0.75 span=32 type=delete
+2026-03-14 14:53:15,567 [INFO] src.sweep: [694/1080] Running d6319ea11acd514c — ctx=10990 pos=0.75 span=32 type=compress
+2026-03-14 14:53:25,518 [INFO] src.sweep: [695/1080] Running a718805baac2ef73 — ctx=10990 pos=0.75 span=32 type=paraphrase
+2026-03-14 14:53:35,460 [INFO] src.sweep: [696/1080] Running 4192a9d63cc5d4b0 — ctx=10990 pos=0.75 span=32 type=semantic_change
+2026-03-14 14:53:45,415 [INFO] src.sweep: [697/1080] Running 301cb41d24f9d8ca — ctx=10990 pos=0.75 span=128 type=random_replace
+2026-03-14 14:53:55,381 [INFO] src.sweep: [698/1080] Running d6899b32444d3fe5 — ctx=10990 pos=0.75 span=128 type=mask
+2026-03-14 14:54:05,330 [INFO] src.sweep: [699/1080] Running 797a9b9c1cf208ff — ctx=10990 pos=0.75 span=128 type=delete
+2026-03-14 14:54:15,218 [INFO] src.sweep: [700/1080] Running 4252882129da4f6a — ctx=10990 pos=0.75 span=128 type=compress
+2026-03-14 14:54:25,172 [INFO] src.storage: Flushed 13398 records to Llama-3-8B-agent-results/results_part_000069.parquet.
+2026-03-14 14:54:25,174 [INFO] src.sweep: [701/1080] Running 67b7d81246fdaae6 — ctx=10990 pos=0.75 span=128 type=paraphrase
+2026-03-14 14:54:35,545 [INFO] src.sweep: [702/1080] Running 4a3787fec2219028 — ctx=10990 pos=0.75 span=128 type=semantic_change
+2026-03-14 14:54:46,046 [INFO] src.sweep: [703/1080] Running 0fbd2b1edd4b0358 — ctx=10990 pos=0.90 span=8 type=random_replace
+2026-03-14 14:54:55,985 [INFO] src.sweep: [704/1080] Running 0441e8ba435880c8 — ctx=10990 pos=0.90 span=8 type=mask
+2026-03-14 14:55:05,938 [INFO] src.sweep: [705/1080] Running 0c23df7386d5a275 — ctx=10990 pos=0.90 span=8 type=delete
+2026-03-14 14:55:15,877 [INFO] src.sweep: [706/1080] Running 33f347a8fe45fcd7 — ctx=10990 pos=0.90 span=8 type=compress
+2026-03-14 14:55:25,816 [INFO] src.sweep: [707/1080] Running d1056b9cb127e3ad — ctx=10990 pos=0.90 span=8 type=paraphrase
+2026-03-14 14:55:35,756 [INFO] src.sweep: [708/1080] Running a54839d778d15f1f — ctx=10990 pos=0.90 span=8 type=semantic_change
+2026-03-14 14:55:45,681 [INFO] src.sweep: [709/1080] Running 71a8370ff8df09e0 — ctx=10990 pos=0.90 span=32 type=random_replace
+2026-03-14 14:55:55,605 [INFO] src.sweep: [710/1080] Running d5b77b3f39e9506c — ctx=10990 pos=0.90 span=32 type=mask
+2026-03-14 14:56:05,554 [INFO] src.storage: Flushed 8976 records to Llama-3-8B-agent-results/results_part_000070.parquet.
+2026-03-14 14:56:05,556 [INFO] src.sweep: [711/1080] Running bfb54dd8e61907cc — ctx=10990 pos=0.90 span=32 type=delete
+2026-03-14 14:56:15,474 [INFO] src.sweep: [712/1080] Running c95fad59de2c5976 — ctx=10990 pos=0.90 span=32 type=compress
+2026-03-14 14:56:25,409 [INFO] src.sweep: [713/1080] Running 1de089876e150ed5 — ctx=10990 pos=0.90 span=32 type=paraphrase
+2026-03-14 14:56:35,346 [INFO] src.sweep: [714/1080] Running 350ecc92a670b05f — ctx=10990 pos=0.90 span=32 type=semantic_change
+2026-03-14 14:56:45,294 [INFO] src.sweep: [715/1080] Running a87253ac2c948aee — ctx=10990 pos=0.90 span=128 type=random_replace
+2026-03-14 14:56:55,215 [INFO] src.sweep: [716/1080] Running fd80466350a97bb6 — ctx=10990 pos=0.90 span=128 type=mask
+2026-03-14 14:57:05,138 [INFO] src.sweep: [717/1080] Running 610c1275919bdd6c — ctx=10990 pos=0.90 span=128 type=delete
+2026-03-14 14:57:14,978 [INFO] src.sweep: [718/1080] Running f3c0181fdd049515 — ctx=10990 pos=0.90 span=128 type=compress
+2026-03-14 14:57:24,857 [INFO] src.sweep: [719/1080] Running 3aae5581fc4bafaf — ctx=10990 pos=0.90 span=128 type=paraphrase
+2026-03-14 14:57:35,284 [INFO] src.sweep: [720/1080] Running 7f283f3aa9ce2437 — ctx=10990 pos=0.90 span=128 type=semantic_change
+2026-03-14 14:57:45,789 [INFO] src.storage: Flushed 7722 records to Llama-3-8B-agent-results/results_part_000071.parquet.
+2026-03-14 14:57:45,791 [INFO] src.sweep: [721/1080] Running 209a608d7d13849b — ctx=11558 pos=0.10 span=8 type=random_replace
+2026-03-14 14:57:57,138 [INFO] src.sweep: [722/1080] Running 0845c477b1430e18 — ctx=11558 pos=0.10 span=8 type=mask
+2026-03-14 14:58:08,629 [INFO] src.sweep: [723/1080] Running 02090c635ad1c3c4 — ctx=11558 pos=0.10 span=8 type=delete
+2026-03-14 14:58:20,122 [INFO] src.sweep: [724/1080] Running 1b7fd66b3780175b — ctx=11558 pos=0.10 span=8 type=compress
+2026-03-14 14:58:31,589 [INFO] src.sweep: [725/1080] Running 7c0febb1f6c67e2a — ctx=11558 pos=0.10 span=8 type=paraphrase
+2026-03-14 14:58:42,924 [INFO] src.sweep: [726/1080] Running c4c2543b2080c0f1 — ctx=11558 pos=0.10 span=8 type=semantic_change
+2026-03-14 14:58:54,434 [INFO] src.sweep: [727/1080] Running 289225ebc5c269d2 — ctx=11558 pos=0.10 span=32 type=random_replace
+2026-03-14 14:59:05,947 [INFO] src.sweep: [728/1080] Running 7b162158671e0065 — ctx=11558 pos=0.10 span=32 type=mask
+2026-03-14 14:59:17,433 [INFO] src.sweep: [729/1080] Running b26eebe74fdc587f — ctx=11558 pos=0.10 span=32 type=delete
+2026-03-14 14:59:28,903 [INFO] src.sweep: [730/1080] Running 9b9845d7ce9317e0 — ctx=11558 pos=0.10 span=32 type=compress
+2026-03-14 14:59:40,485 [INFO] src.storage: Flushed 38610 records to Llama-3-8B-agent-results/results_part_000072.parquet.
+2026-03-14 14:59:40,492 [INFO] src.sweep: [731/1080] Running 9248976211970b78 — ctx=11558 pos=0.10 span=32 type=paraphrase
+2026-03-14 14:59:51,730 [INFO] src.sweep: [732/1080] Running f0c8a26638db9959 — ctx=11558 pos=0.10 span=32 type=semantic_change
+2026-03-14 15:00:03,259 [INFO] src.sweep: [733/1080] Running ebc0fa4f02840bb2 — ctx=11558 pos=0.10 span=128 type=random_replace
+2026-03-14 15:00:14,749 [INFO] src.sweep: [734/1080] Running 4c6020ecf4aef3b4 — ctx=11558 pos=0.10 span=128 type=mask
+2026-03-14 15:00:26,238 [INFO] src.sweep: [735/1080] Running 0e2e65ae591d3c31 — ctx=11558 pos=0.10 span=128 type=delete
+2026-03-14 15:00:37,620 [INFO] src.sweep: [736/1080] Running 40d3424e568df8bd — ctx=11558 pos=0.10 span=128 type=compress
+2026-03-14 15:00:49,054 [INFO] src.sweep: [737/1080] Running adb0c511023c71ba — ctx=11558 pos=0.10 span=128 type=paraphrase
+2026-03-14 15:01:00,400 [INFO] src.sweep: [738/1080] Running 6935bda75321f380 — ctx=11558 pos=0.10 span=128 type=semantic_change
+2026-03-14 15:01:11,908 [INFO] src.sweep: [739/1080] Running 60d538600a028e94 — ctx=11558 pos=0.25 span=8 type=random_replace
+2026-03-14 15:01:23,379 [INFO] src.sweep: [740/1080] Running 18102828b3d2767a — ctx=11558 pos=0.25 span=8 type=mask
+2026-03-14 15:01:34,970 [INFO] src.storage: Flushed 37290 records to Llama-3-8B-agent-results/results_part_000073.parquet.
+2026-03-14 15:01:34,977 [INFO] src.sweep: [741/1080] Running 0267f31d14afc0f4 — ctx=11558 pos=0.25 span=8 type=delete
+2026-03-14 15:01:46,329 [INFO] src.sweep: [742/1080] Running bba0e8f29f263d3b — ctx=11558 pos=0.25 span=8 type=compress
+2026-03-14 15:01:57,795 [INFO] src.sweep: [743/1080] Running 3cf9ef7fc1db8b48 — ctx=11558 pos=0.25 span=8 type=paraphrase
+2026-03-14 15:02:09,249 [INFO] src.sweep: [744/1080] Running de0b1184a52c76c7 — ctx=11558 pos=0.25 span=8 type=semantic_change
+2026-03-14 15:02:20,735 [INFO] src.sweep: [745/1080] Running fe8c8d712e8bcc79 — ctx=11558 pos=0.25 span=32 type=random_replace
+2026-03-14 15:02:32,196 [INFO] src.sweep: [746/1080] Running af62cdb7cbeb73dd — ctx=11558 pos=0.25 span=32 type=mask
+2026-03-14 15:02:43,668 [INFO] src.sweep: [747/1080] Running 9ac4130676e6e396 — ctx=11558 pos=0.25 span=32 type=delete
+2026-03-14 15:02:55,134 [INFO] src.sweep: [748/1080] Running 0832055966899e24 — ctx=11558 pos=0.25 span=32 type=compress
+2026-03-14 15:03:06,595 [INFO] src.sweep: [749/1080] Running 4e4fbb47d00bab27 — ctx=11558 pos=0.25 span=32 type=paraphrase
+2026-03-14 15:03:18,113 [INFO] src.sweep: [750/1080] Running 613017573d414089 — ctx=11558 pos=0.25 span=32 type=semantic_change
+2026-03-14 15:03:29,734 [INFO] src.storage: Flushed 33000 records to Llama-3-8B-agent-results/results_part_000074.parquet.
+2026-03-14 15:03:29,741 [INFO] src.sweep: [751/1080] Running 4f2b0006ec363183 — ctx=11558 pos=0.25 span=128 type=random_replace
+2026-03-14 15:03:41,156 [INFO] src.sweep: [752/1080] Running 65804c801a1d7800 — ctx=11558 pos=0.25 span=128 type=mask
+2026-03-14 15:03:52,660 [INFO] src.sweep: [753/1080] Running a8d1d30e647fac19 — ctx=11558 pos=0.25 span=128 type=delete
+2026-03-14 15:04:04,039 [INFO] src.sweep: [754/1080] Running 97d9ed31de4affae — ctx=11558 pos=0.25 span=128 type=compress
+2026-03-14 15:04:15,456 [INFO] src.sweep: [755/1080] Running 1587922e2ba90104 — ctx=11558 pos=0.25 span=128 type=paraphrase
+2026-03-14 15:04:26,383 [INFO] src.sweep: [756/1080] Running b5053161a0bd1d55 — ctx=11558 pos=0.25 span=128 type=semantic_change
+2026-03-14 15:04:37,916 [INFO] src.sweep: [757/1080] Running dbc35efb7a57c749 — ctx=11558 pos=0.50 span=8 type=random_replace
+2026-03-14 15:04:49,390 [INFO] src.sweep: [758/1080] Running 929968690bcc1dc0 — ctx=11558 pos=0.50 span=8 type=mask
+2026-03-14 15:05:00,818 [INFO] src.sweep: [759/1080] Running 0cfb13d4f385707e — ctx=11558 pos=0.50 span=8 type=delete
+2026-03-14 15:05:12,287 [INFO] src.sweep: [760/1080] Running 0146fc5cc0e86e37 — ctx=11558 pos=0.50 span=8 type=compress
+2026-03-14 15:05:23,800 [INFO] src.storage: Flushed 28974 records to Llama-3-8B-agent-results/results_part_000075.parquet.
+2026-03-14 15:05:23,806 [INFO] src.sweep: [761/1080] Running 35e6590c2ebf166c — ctx=11558 pos=0.50 span=8 type=paraphrase
+2026-03-14 15:05:35,194 [INFO] src.sweep: [762/1080] Running c5455d7b0ea6f70d — ctx=11558 pos=0.50 span=8 type=semantic_change
+2026-03-14 15:05:46,640 [INFO] src.sweep: [763/1080] Running 1552eb349d816f3b — ctx=11558 pos=0.50 span=32 type=random_replace
+2026-03-14 15:05:58,062 [INFO] src.sweep: [764/1080] Running 7ca60b59694212c3 — ctx=11558 pos=0.50 span=32 type=mask
+2026-03-14 15:06:09,526 [INFO] src.sweep: [765/1080] Running 608750d1f0723860 — ctx=11558 pos=0.50 span=32 type=delete
+2026-03-14 15:06:20,930 [INFO] src.sweep: [766/1080] Running d5e306be595e3608 — ctx=11558 pos=0.50 span=32 type=compress
+2026-03-14 15:06:32,366 [INFO] src.sweep: [767/1080] Running f67153158766daf4 — ctx=11558 pos=0.50 span=32 type=paraphrase
+2026-03-14 15:06:43,786 [INFO] src.sweep: [768/1080] Running a5e9b949cc138ecc — ctx=11558 pos=0.50 span=32 type=semantic_change
+2026-03-14 15:06:55,245 [INFO] src.sweep: [769/1080] Running 919d906a759ee39c — ctx=11558 pos=0.50 span=128 type=random_replace
+2026-03-14 15:07:06,703 [INFO] src.sweep: [770/1080] Running 8c5e618911600ce2 — ctx=11558 pos=0.50 span=128 type=mask
+2026-03-14 15:07:18,204 [INFO] src.storage: Flushed 23364 records to Llama-3-8B-agent-results/results_part_000076.parquet.
+2026-03-14 15:07:18,209 [INFO] src.sweep: [771/1080] Running 15ad2a1552aa8552 — ctx=11558 pos=0.50 span=128 type=delete
+2026-03-14 15:07:29,470 [INFO] src.sweep: [772/1080] Running 7d1184db5257d570 — ctx=11558 pos=0.50 span=128 type=compress
+2026-03-14 15:07:40,871 [INFO] src.sweep: [773/1080] Running 7c48e2124a995f31 — ctx=11558 pos=0.50 span=128 type=paraphrase
+2026-03-14 15:07:52,307 [INFO] src.sweep: [774/1080] Running b6ed017b7e4c41ba — ctx=11558 pos=0.50 span=128 type=semantic_change
+2026-03-14 15:08:03,758 [INFO] src.sweep: [775/1080] Running e3af6f494e5863f0 — ctx=11558 pos=0.75 span=8 type=random_replace
+2026-03-14 15:08:15,176 [INFO] src.sweep: [776/1080] Running 0824d70e0bddc360 — ctx=11558 pos=0.75 span=8 type=mask
+2026-03-14 15:08:26,597 [INFO] src.sweep: [777/1080] Running 007f6788ec57613b — ctx=11558 pos=0.75 span=8 type=delete
+2026-03-14 15:08:37,989 [INFO] src.sweep: [778/1080] Running 46d22af4faf80cb9 — ctx=11558 pos=0.75 span=8 type=compress
+2026-03-14 15:08:49,392 [INFO] src.sweep: [779/1080] Running 0a607ca93dfe4195 — ctx=11558 pos=0.75 span=8 type=paraphrase
+2026-03-14 15:09:00,788 [INFO] src.sweep: [780/1080] Running 2ea2166c62fa6791 — ctx=11558 pos=0.75 span=8 type=semantic_change
+2026-03-14 15:09:12,247 [INFO] src.storage: Flushed 17556 records to Llama-3-8B-agent-results/results_part_000077.parquet.
+2026-03-14 15:09:12,251 [INFO] src.sweep: [781/1080] Running 1003bbb8e7da3221 — ctx=11558 pos=0.75 span=32 type=random_replace
+2026-03-14 15:09:23,633 [INFO] src.sweep: [782/1080] Running 9b7b5e374a219ac7 — ctx=11558 pos=0.75 span=32 type=mask
+2026-03-14 15:09:35,035 [INFO] src.sweep: [783/1080] Running e4bcc9362a3d0090 — ctx=11558 pos=0.75 span=32 type=delete
+2026-03-14 15:09:46,435 [INFO] src.sweep: [784/1080] Running cc5c91b084e1155b — ctx=11558 pos=0.75 span=32 type=compress
+2026-03-14 15:09:57,822 [INFO] src.sweep: [785/1080] Running 89ff25676544532f — ctx=11558 pos=0.75 span=32 type=paraphrase
+2026-03-14 15:10:10,378 [INFO] src.sweep: [786/1080] Running e17438f2ef6c1869 — ctx=11558 pos=0.75 span=32 type=semantic_change
+2026-03-14 15:10:21,771 [INFO] src.sweep: [787/1080] Running a9dc5bf9a1775e6c — ctx=11558 pos=0.75 span=128 type=random_replace
+2026-03-14 15:10:33,211 [INFO] src.sweep: [788/1080] Running 06079b8f4b4e3256 — ctx=11558 pos=0.75 span=128 type=mask
+2026-03-14 15:10:44,629 [INFO] src.sweep: [789/1080] Running bf5725f65a51fec7 — ctx=11558 pos=0.75 span=128 type=delete
+2026-03-14 15:10:55,937 [INFO] src.sweep: [790/1080] Running d19c9c7fea32c74c — ctx=11558 pos=0.75 span=128 type=compress
+2026-03-14 15:11:07,321 [INFO] src.storage: Flushed 13728 records to Llama-3-8B-agent-results/results_part_000078.parquet.
+2026-03-14 15:11:07,325 [INFO] src.sweep: [791/1080] Running c982e1d8c5604a08 — ctx=11558 pos=0.75 span=128 type=paraphrase
+2026-03-14 15:11:18,687 [INFO] src.sweep: [792/1080] Running 56e3c32a641a62a8 — ctx=11558 pos=0.75 span=128 type=semantic_change
+2026-03-14 15:11:30,110 [INFO] src.sweep: [793/1080] Running 59f07091efbc4fba — ctx=11558 pos=0.90 span=8 type=random_replace
+2026-03-14 15:11:41,537 [INFO] src.sweep: [794/1080] Running 9d59c39c062fc755 — ctx=11558 pos=0.90 span=8 type=mask
+2026-03-14 15:11:52,920 [INFO] src.sweep: [795/1080] Running 72bd292cf7cf2b7c — ctx=11558 pos=0.90 span=8 type=delete
+2026-03-14 15:12:04,316 [INFO] src.sweep: [796/1080] Running 02bcb3aea50e0d52 — ctx=11558 pos=0.90 span=8 type=compress
+2026-03-14 15:12:15,702 [INFO] src.sweep: [797/1080] Running e5df39d5f8213886 — ctx=11558 pos=0.90 span=8 type=paraphrase
+2026-03-14 15:12:27,158 [INFO] src.sweep: [798/1080] Running 768755451f23e72d — ctx=11558 pos=0.90 span=8 type=semantic_change
+2026-03-14 15:12:38,588 [INFO] src.sweep: [799/1080] Running d33d4e017ead3158 — ctx=11558 pos=0.90 span=32 type=random_replace
+2026-03-14 15:12:49,996 [INFO] src.sweep: [800/1080] Running dfb3a4ae1f704842 — ctx=11558 pos=0.90 span=32 type=mask
+2026-03-14 15:13:01,426 [INFO] src.storage: Flushed 9306 records to Llama-3-8B-agent-results/results_part_000079.parquet.
+2026-03-14 15:13:01,428 [INFO] src.sweep: [801/1080] Running f9e5c3b9b07c3239 — ctx=11558 pos=0.90 span=32 type=delete
+2026-03-14 15:13:12,760 [INFO] src.sweep: [802/1080] Running 104e28b4f68cd2f2 — ctx=11558 pos=0.90 span=32 type=compress
+2026-03-14 15:13:24,168 [INFO] src.sweep: [803/1080] Running 8b3114dab4dc247f — ctx=11558 pos=0.90 span=32 type=paraphrase
+2026-03-14 15:13:35,564 [INFO] src.sweep: [804/1080] Running c38169b61901d645 — ctx=11558 pos=0.90 span=32 type=semantic_change
+2026-03-14 15:13:46,940 [INFO] src.sweep: [805/1080] Running f76747f0a8a92b83 — ctx=11558 pos=0.90 span=128 type=random_replace
+2026-03-14 15:13:58,339 [INFO] src.sweep: [806/1080] Running 02f8855418e707ae — ctx=11558 pos=0.90 span=128 type=mask
+2026-03-14 15:14:09,712 [INFO] src.sweep: [807/1080] Running 808542f2d94d2a3a — ctx=11558 pos=0.90 span=128 type=delete
+2026-03-14 15:14:20,984 [INFO] src.sweep: [808/1080] Running 7281165682eaecc5 — ctx=11558 pos=0.90 span=128 type=compress
+2026-03-14 15:14:32,307 [INFO] src.sweep: [809/1080] Running 1a3ecd8a4120b86a — ctx=11558 pos=0.90 span=128 type=paraphrase
+2026-03-14 15:14:46,025 [INFO] src.sweep: [810/1080] Running c1b63a99936f21b9 — ctx=11558 pos=0.90 span=128 type=semantic_change
+2026-03-14 15:14:57,627 [INFO] src.storage: Flushed 8052 records to Llama-3-8B-agent-results/results_part_000080.parquet.
+2026-03-14 15:14:57,630 [INFO] src.sweep: [811/1080] Running 3a35aa26fa962aed — ctx=12087 pos=0.10 span=8 type=random_replace
+2026-03-14 15:15:05,790 [ERROR] src.sweep: Experiment 3a35aa26fa962aed failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 101, in run_single_experiment
+    pert_hidden = extract_hidden_states(model, result.perturbed_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 821, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 571, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 318, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 274, in forward
+    attn_output, attn_weights = attention_interface(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 206, in eager_attention_forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 17.42 GiB. GPU 0 has a total capacity of 79.32 GiB of which 1.96 GiB is free. Process 3572066 has 77.35 GiB memory in use. Of the allocated memory 45.06 GiB is allocated by PyTorch, and 31.80 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 15:15:05,792 [INFO] src.sweep: [812/1080] Running 455f2f4ba5f4e0a1 — ctx=12087 pos=0.10 span=8 type=mask
+2026-03-14 15:15:12,776 [ERROR] src.sweep: Experiment 455f2f4ba5f4e0a1 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 101, in run_single_experiment
+    pert_hidden = extract_hidden_states(model, result.perturbed_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 821, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 571, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 318, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 274, in forward
+    attn_output, attn_weights = attention_interface(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 206, in eager_attention_forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 17.42 GiB. GPU 0 has a total capacity of 79.32 GiB of which 1.96 GiB is free. Process 3572066 has 77.35 GiB memory in use. Of the allocated memory 45.06 GiB is allocated by PyTorch, and 31.80 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 15:15:12,776 [INFO] src.sweep: [813/1080] Running 423696a465e8ae70 — ctx=12087 pos=0.10 span=8 type=delete
+2026-03-14 15:15:19,760 [ERROR] src.sweep: Experiment 423696a465e8ae70 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 101, in run_single_experiment
+    pert_hidden = extract_hidden_states(model, result.perturbed_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 821, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 571, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 318, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 274, in forward
+    attn_output, attn_weights = attention_interface(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 206, in eager_attention_forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 17.39 GiB. GPU 0 has a total capacity of 79.32 GiB of which 1.96 GiB is free. Process 3572066 has 77.35 GiB memory in use. Of the allocated memory 45.02 GiB is allocated by PyTorch, and 31.83 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 15:15:19,761 [INFO] src.sweep: [814/1080] Running 9f5a83179094178b — ctx=12087 pos=0.10 span=8 type=compress
+2026-03-14 15:15:26,742 [ERROR] src.sweep: Experiment 9f5a83179094178b failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 101, in run_single_experiment
+    pert_hidden = extract_hidden_states(model, result.perturbed_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 821, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 571, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 318, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 274, in forward
+    attn_output, attn_weights = attention_interface(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 206, in eager_attention_forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 17.41 GiB. GPU 0 has a total capacity of 79.32 GiB of which 1.96 GiB is free. Process 3572066 has 77.35 GiB memory in use. Of the allocated memory 45.04 GiB is allocated by PyTorch, and 31.81 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 15:15:26,743 [INFO] src.sweep: [815/1080] Running 8591fd9f6e319ef1 — ctx=12087 pos=0.10 span=8 type=paraphrase
+2026-03-14 15:15:33,730 [ERROR] src.sweep: Experiment 8591fd9f6e319ef1 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 101, in run_single_experiment
+    pert_hidden = extract_hidden_states(model, result.perturbed_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 821, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 571, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 318, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 274, in forward
+    attn_output, attn_weights = attention_interface(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 206, in eager_attention_forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 17.42 GiB. GPU 0 has a total capacity of 79.32 GiB of which 1.96 GiB is free. Process 3572066 has 77.35 GiB memory in use. Of the allocated memory 45.06 GiB is allocated by PyTorch, and 31.80 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 15:15:33,731 [INFO] src.sweep: [816/1080] Running b94be7d954439aba — ctx=12087 pos=0.10 span=8 type=semantic_change
+2026-03-14 15:15:40,719 [ERROR] src.sweep: Experiment b94be7d954439aba failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 101, in run_single_experiment
+    pert_hidden = extract_hidden_states(model, result.perturbed_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 821, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 571, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 318, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 274, in forward
+    attn_output, attn_weights = attention_interface(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 206, in eager_attention_forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 17.42 GiB. GPU 0 has a total capacity of 79.32 GiB of which 1.96 GiB is free. Process 3572066 has 77.35 GiB memory in use. Of the allocated memory 45.06 GiB is allocated by PyTorch, and 31.80 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 15:15:40,720 [INFO] src.sweep: [817/1080] Running 1dabe0a22aeea55e — ctx=12087 pos=0.10 span=32 type=random_replace
+2026-03-14 15:15:47,715 [ERROR] src.sweep: Experiment 1dabe0a22aeea55e failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 101, in run_single_experiment
+    pert_hidden = extract_hidden_states(model, result.perturbed_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 821, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 571, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 318, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 274, in forward
+    attn_output, attn_weights = attention_interface(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 206, in eager_attention_forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 17.42 GiB. GPU 0 has a total capacity of 79.32 GiB of which 1.96 GiB is free. Process 3572066 has 77.35 GiB memory in use. Of the allocated memory 45.06 GiB is allocated by PyTorch, and 31.80 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 15:15:47,715 [INFO] src.sweep: [818/1080] Running fe62035b7ee0badf — ctx=12087 pos=0.10 span=32 type=mask
+2026-03-14 15:15:54,690 [ERROR] src.sweep: Experiment fe62035b7ee0badf failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 101, in run_single_experiment
+    pert_hidden = extract_hidden_states(model, result.perturbed_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 821, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/utils/generic.py", line 965, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 571, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 318, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 274, in forward
+    attn_output, attn_weights = attention_interface(
+  File "/usr/local/lib/python3.10/dist-packages/transformers/models/llama/modeling_llama.py", line 206, in eager_attention_forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 17.42 GiB. GPU 0 has a total capacity of 79.32 GiB of which 1.96 GiB is free. Process 3572066 has 77.35 GiB memory in use. Of the allocated memory 45.06 GiB is allocated by PyTorch, and 31.80 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 15:15:54,691 [INFO] src.sweep: [819/1080] Running dc3bca6839622ebf — ctx=12087 pos=0.10 span=32 type=delete

@@ -1,0 +1,15 @@
+cards_per_model: 2
+config_path: /root/context/context/activation_analysis/configs/auto_test.yaml
+gpu_groups:
+- - 0
+  - 1
+- - 2
+  - 3
+- - 4
+  - 5
+gpus: 0,1,2,3,4,5
+num_workers: 3
+output_dir: /root/context/context/activation_analysis/results/auto_test_20260312_065418
+phases: 1,2,3,4
+quick: false
+seed: 42

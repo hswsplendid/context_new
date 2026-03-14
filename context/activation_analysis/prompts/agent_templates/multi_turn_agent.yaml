@@ -1,0 +1,21 @@
+name: "multi_turn_agent"
+description: "Multi-turn conversation template where one user turn gets perturbed"
+
+system_prompt: |
+  You are a helpful AI coding assistant. You help users write, debug, and understand code. Always provide clear explanations with your code suggestions.
+
+prefix: |
+  User: Hi, I need help building a REST API in Python.
+  Assistant: I'd be happy to help you build a REST API in Python! There are several great frameworks available. Flask is lightweight and easy to get started with, while FastAPI offers automatic documentation and async support. What kind of API are you looking to build?
+  User: I want to use FastAPI. My API needs to handle user authentication and CRUD operations for a product catalog.
+  Assistant: Great choice! FastAPI is excellent for this. Let me help you set up the project structure. You'll need FastAPI, uvicorn for the server, SQLAlchemy for the database ORM, and python-jose for JWT authentication. Shall I start with the project setup and authentication module?
+
+segment: |
+  User: Yes, please start with authentication. I want to use JWT tokens with a PostgreSQL database for storing user credentials. The tokens should expire after 24 hours and support refresh tokens. I also need role-based access control with admin and regular user roles.
+  Assistant: Perfect, I'll set up a complete JWT authentication system with role-based access control. Here's the plan: First, we'll create the user model with SQLAlchemy, then the authentication routes for login, register, and token refresh, and finally a dependency injection system for role-based authorization.
+
+subsequent: |
+  User: That sounds good. Now can you show me the actual code for the user model?
+  Assistant: Here's the SQLAlchemy user model with password hashing and role support. I'll use passlib with bcrypt for secure password storage.
+  User: Can you also add the Pydantic schemas for request and response validation?
+  Assistant: Of course! Here are the Pydantic models for user creation, authentication, and response serialization. These will handle input validation automatically in FastAPI.

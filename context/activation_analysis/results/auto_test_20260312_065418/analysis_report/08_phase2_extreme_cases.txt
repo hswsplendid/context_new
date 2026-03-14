@@ -1,0 +1,27 @@
+======================================================================
+  EXTREME CASES (cosine_mean) — Phase 2 (Type1: Content Replacement)
+======================================================================
+
+  --- Top 10 LOWEST cosine_mean (most divergent) ---
+    experiment_id=multi_turn_agent_type1_L512_R0.25_Pbeginning_pair2, context_length=512, layer_index=48, perturbation_ratio=0.25, position=beginning, cosine_mean=0.7841746807098389
+    experiment_id=multi_turn_agent_type1_L512_R0.25_Pbeginning_pair2, context_length=512, layer_index=44, perturbation_ratio=0.25, position=beginning, cosine_mean=0.7944177985191345
+    experiment_id=multi_turn_agent_type1_L1024_R0.25_Pbeginning_pair1, context_length=1024, layer_index=44, perturbation_ratio=0.25, position=beginning, cosine_mean=0.8005950450897217
+    experiment_id=multi_turn_agent_type1_L1024_R0.25_Pbeginning_pair1, context_length=1024, layer_index=48, perturbation_ratio=0.25, position=beginning, cosine_mean=0.8027307391166687
+    experiment_id=multi_turn_agent_type1_L2048_R0.1_Pbeginning_pair2, context_length=2048, layer_index=44, perturbation_ratio=0.1, position=beginning, cosine_mean=0.8038357496261597
+    experiment_id=multi_turn_agent_type1_L1024_R0.25_Pbeginning_pair2, context_length=1024, layer_index=48, perturbation_ratio=0.25, position=beginning, cosine_mean=0.8054463267326355
+    experiment_id=multi_turn_agent_type1_L2048_R0.5_Pbeginning_pair1, context_length=2048, layer_index=44, perturbation_ratio=0.5, position=beginning, cosine_mean=0.8091727495193481
+    experiment_id=multi_turn_agent_type1_L1024_R0.25_Pbeginning_pair2, context_length=1024, layer_index=44, perturbation_ratio=0.25, position=beginning, cosine_mean=0.8093094229698181
+    experiment_id=multi_turn_agent_type1_L512_R0.25_Pbeginning_pair1, context_length=512, layer_index=48, perturbation_ratio=0.25, position=beginning, cosine_mean=0.8110043406486511
+    experiment_id=multi_turn_agent_type1_L2048_R0.1_Pbeginning_pair2, context_length=2048, layer_index=48, perturbation_ratio=0.1, position=beginning, cosine_mean=0.8115024566650391
+
+  --- Top 10 HIGHEST cosine_mean (most preserved) ---
+    experiment_id=tool_use_agent_type1_L4096_R0.5_Pmiddle_pair2, context_length=4096, layer_index=0, perturbation_ratio=0.5, position=middle, cosine_mean=0.9999927878379822
+    experiment_id=tool_use_agent_type1_L4096_R0.5_Pbeginning_pair2, context_length=4096, layer_index=0, perturbation_ratio=0.5, position=beginning, cosine_mean=0.9999924898147584
+    experiment_id=tool_use_agent_type1_L4096_R0.25_Pmiddle_pair2, context_length=4096, layer_index=0, perturbation_ratio=0.25, position=middle, cosine_mean=0.999990165233612
+    experiment_id=tool_use_agent_type1_L4096_R0.25_Pbeginning_pair2, context_length=4096, layer_index=0, perturbation_ratio=0.25, position=beginning, cosine_mean=0.9999882578849792
+    experiment_id=tool_use_agent_type1_L4096_R0.1_Pmiddle_pair2, context_length=4096, layer_index=0, perturbation_ratio=0.1, position=middle, cosine_mean=0.9999870657920836
+    experiment_id=tool_use_agent_type1_L2048_R0.5_Pmiddle_pair2, context_length=2048, layer_index=0, perturbation_ratio=0.5, position=middle, cosine_mean=0.9999831914901732
+    experiment_id=tool_use_agent_type1_L4096_R0.5_Pmiddle_pair2, context_length=4096, layer_index=4, perturbation_ratio=0.5, position=middle, cosine_mean=0.9999812841415404
+    experiment_id=tool_use_agent_type1_L4096_R0.1_Pbeginning_pair2, context_length=4096, layer_index=0, perturbation_ratio=0.1, position=beginning, cosine_mean=0.9999808073043824
+    experiment_id=tool_use_agent_type1_L2048_R0.5_Pbeginning_pair2, context_length=2048, layer_index=0, perturbation_ratio=0.5, position=beginning, cosine_mean=0.999979853630066
+    experiment_id=tool_use_agent_type1_L2048_R0.25_Pmiddle_pair2, context_length=2048, layer_index=0, perturbation_ratio=0.25, position=middle, cosine_mean=0.9999797940254213

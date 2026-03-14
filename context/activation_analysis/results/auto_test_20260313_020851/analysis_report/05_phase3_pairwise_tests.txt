@@ -1,0 +1,26 @@
+======================================================================
+  PAIRWISE STATISTICAL TESTS (cosine_segment) — Phase 3 (Type2: Semantic Paraphrasing)
+======================================================================
+
+  --- Depth Group Pairwise (Mann-Whitney U) ---
+    Shallow vs Middle: U=122512.0, p=3.00e-25, Cohen's d=0.7956, mean_diff=0.025634
+    Shallow vs Deep: U=131967.0, p=2.89e-39, Cohen's d=1.0035, mean_diff=0.034968
+    Middle vs Deep: U=97084.0, p=2.32e-03, Cohen's d=0.2379, mean_diff=0.009333
+
+  --- Ratio Pairwise (Mann-Whitney U, Bonferroni corrected) ---
+    ratio 0.1 vs 0.25: U=74729.0, p=1.45e-02, p_adj=4.35e-02, Cohen's d=-0.1932
+    ratio 0.1 vs 0.5: U=64305.0, p=2.92e-08, p_adj=8.77e-08, Cohen's d=-0.3675
+    ratio 0.25 vs 0.5: U=79376.0, p=1.45e-04, p_adj=4.35e-04, Cohen's d=-0.1894
+
+  --- Position Pairwise (Mann-Whitney U, Bonferroni corrected) ---
+    beginning vs end: U=105502.0, p=7.69e-07, p_adj=2.31e-06, Cohen's d=0.3646
+    beginning vs middle: U=99202.0, p=1.63e-03, p_adj=4.89e-03, Cohen's d=0.1915
+    end vs middle: U=75790.0, p=2.71e-02, p_adj=8.12e-02, Cohen's d=-0.1802
+
+  --- Context Length Pairwise (Mann-Whitney U) ---
+    L=512 vs L=1024: U=60091.0, p=3.95e-07, Cohen's d=0.3967
+    L=512 vs L=2048: U=50359.0, p=1.05e-02, Cohen's d=0.2026
+    L=512 vs L=4096: U=43140.0, p=9.80e-05, Cohen's d=-0.1812
+    L=1024 vs L=2048: U=39025.0, p=5.40e-03, Cohen's d=-0.1900
+    L=1024 vs L=4096: U=33861.0, p=6.58e-15, Cohen's d=-0.5536
+    L=2048 vs L=4096: U=34383.0, p=4.48e-10, Cohen's d=-0.3691

@@ -1,0 +1,7 @@
+======================================================================
+  METRIC CORRELATION ANALYSIS — Phase 3 (Type2: Semantic Paraphrasing)
+======================================================================
+
+  cosine_segment vs cka (n=2730):
+    Pearson:  r=0.419301, p=1.05e-116
+    Spearman: rho=0.512109, p=1.99e-182

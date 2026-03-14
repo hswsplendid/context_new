@@ -1,0 +1,183 @@
+ Plan to implement                                                                                     │
+│                                                                                                       │
+│ Plan: Auto-Test Script with Multi-GPU Optimization                                                    │
+│                                                                                                       │
+│ Context                                                                                               │
+│                                                                                                       │
+│ 用户需要一个完整的自动化实验脚本，能够：                                                              │
+│ 1. 支持用户指定 1-8 张任意 GPU（如 0,3,4,5）                                                          │
+│ 2. 自动优化 GPU 分配，最大化并行度以尽快完成实验                                                      │
+│ 3. 设计合理的完整实验来验证 idea（激活传播随层深度/扰动条件变化的规律）                               │
+│                                                                                                       │
+│ 核心挑战：当前 batch_runner.py                                                                        │
+│ 是单进程串行的——模型加载一次、逐个实验跑。要加速，需要多进程并行：每个进程独占一组                    │
+│ GPU、各自加载模型副本、各跑一部分实验网格。                                                           │
+│                                                                                                       │
+│ ---                                                                                                   │
+│ 实验设计                                                                                              │
+│                                                                                                       │
+│ 完整实验矩阵                                                                                          │
+│                                                                                                       │
+│ Phase 1: Sanity Checks（正确性验证）                                                                  │
+│ - Identity test：原文 vs 原文（完全相同），所有层 cosine 应 = 1.0                                     │
+│ - Minimal perturbation：只改 1 个词，浅层 cosine 应 > 0.95                                            │
+│                                                                                                       │
+│ Phase 2: Type 1 主实验（内容替换）                                                                    │
+│ - 2 个 Agent 模板 × 3 个替换对 × 4 个上下文长度 × 3 个扰动比例 × 3 个位置 = 216 次实验                │
+│ - 13 层采样，每次实验 2 次前向传播                                                                    │
+│ - 收集 token 级 + segment 级指标（cosine, L2, CKA）                                                   │
+│                                                                                                       │
+│ Phase 3: Type 2 主实验（语义改写）                                                                    │
+│ - 2 个 Agent 模板 × 3 个替换对 × 4 个上下文长度 × 3 个扰动比例 × 3 个位置 = 216 次实验                │
+│ - 先用模型生成改写（缓存），再做激活比较                                                              │
+│ - 只收集 segment 级指标（cosine_segment, CKA）                                                        │
+│                                                                                                       │
+│ Phase 4: 汇总分析 + 可视化                                                                            │
+│ - 合并所有 Phase 的 CSV                                                                               │
+│ - 生成 5 类标准图 + 跨模板/跨类型对比图                                                               │
+│                                                                                                       │
+│ 预期验证的假设                                                                                        │
+│                                                                                                       │
+│ ┌─────┬───────────────────────────────────────┬────────────────────────────┐                          │
+│ │  #  │                 假设                  │          验证方法          │                          │
+│ ├─────┼───────────────────────────────────────┼────────────────────────────┤                          │
+│ │ H1  │ 相似度随层深度递减（浅层高、深层低）  │ similarity_vs_depth 折线图 │                          │
+│ ├─────┼───────────────────────────────────────┼────────────────────────────┤                          │
+│ │ H2  │ 扰动比例越大，相似度下降越快          │ 按 ratio 分组的折线图      │                          │
+│ ├─────┼───────────────────────────────────────┼────────────────────────────┤                          │
+│ │ H3  │ 扰动在 beginning 对后续影响最大       │ position_effect 图         │                          │
+│ ├─────┼───────────────────────────────────────┼────────────────────────────┤                          │
+│ │ H4  │ 长上下文稀释扰动影响                  │ context_length_effect 图   │                          │
+│ ├─────┼───────────────────────────────────────┼────────────────────────────┤                          │
+│ │ H5  │ Type2（改写）比 Type1（替换）影响更小 │ 跨类型对比图               │                          │
+│ └─────┴───────────────────────────────────────┴────────────────────────────┘                          │
+│                                                                                                       │
+│ ---                                                                                                   │
+│ GPU 分配策略                                                                                          │
+│                                                                                                       │
+│ Qwen3-30B-A3B（bfloat16）约需 ~60GB 显存。A800 80GB 单卡可容纳但紧张。                                │
+│                                                                                                       │
+│ 分配逻辑：                                                                                            │
+│ - 用户输入 GPU 列表（如 0,3,4,5），共 N 张卡                                                          │
+│ - Qwen3-30B-A3B 需要 cards_per_model 张卡（默认 2，可配置 1-4）                                       │
+│ - num_workers = N // cards_per_model 个并行 worker                                                    │
+│ - 每个 worker 分配连续的 cards_per_model 张卡                                                         │
+│ - 实验网格均匀分配到 worker（按 chunk 切分）                                                          │
+│                                                                                                       │
+│ 示例：                                                                                                │
+│ - --gpus 0,1,2,3 + --cards-per-model 2 → 2 workers：[0,1] 和 [2,3]                                    │
+│ - --gpus 0,1,2,3,4,5,6,7 + --cards-per-model 2 → 4 workers                                            │
+│ - --gpus 0 + --cards-per-model 1 → 1 worker（串行）                                                   │
+│                                                                                                       │
+│ 实现方式：torch.multiprocessing.spawn，每个子进程设置自己的 CUDA_VISIBLE_DEVICES，独立加载模型。      │
+│                                                                                                       │
+│ ---                                                                                                   │
+│ 脚本设计                                                                                              │
+│                                                                                                       │
+│ 新增文件：scripts/run_auto_test.py                                                                    │
+│                                                                                                       │
+│ CLI 接口：                                                                                            │
+│ python scripts/run_auto_test.py \                                                                     │
+│     --gpus 0,3,4,5 \                                                                                  │
+│     --cards-per-model 2 \                                                                             │
+│     --model-path Qwen/Qwen3-30B-A3B \                                                                 │
+│     --output-dir results/full_experiment \                                                            │
+│     --phases 1,2,3,4 \                                                                                │
+│     --seed 42                                                                                         │
+│                                                                                                       │
+│ 脚本内部结构（单文件，约 600 行）：                                                                   │
+│                                                                                                       │
+│ 1. parse_args()：解析 CLI 参数                                                                        │
+│ 2. build_experiment_grid()：根据 phase 构建完整实验列表                                               │
+│ 3. allocate_gpus()：将 GPU 分成 worker 组                                                             │
+│ 4. worker_fn(worker_id, gpu_ids, experiments, ...)：                                                  │
+│   - 设置 CUDA_VISIBLE_DEVICES                                                                         │
+│   - 加载模型                                                                                          │
+│   - 遍历分配到的实验子集                                                                              │
+│   - 保存结果到 worker 独立的 CSV                                                                      │
+│ 5. run_sanity_checks()：Phase 1，单 worker 快速验证                                                   │
+│ 6. merge_results()：合并所有 worker 的 CSV                                                            │
+│ 7. generate_analysis_report()：Phase 4，汇总统计 + 全部可视化 + 假设验证总结                          │
+│ 8. main()：编排所有 phase                                                                             │
+│                                                                                                       │
+│ 需要新增的配置/模板                                                                                   │
+│                                                                                                       │
+│ 新增 prompts/perturbations/type1_replacements_multi_turn.yaml：                                       │
+│ - 为 multi_turn_agent 模板准备专门的替换对（当前只有 tool_use 的替换对）                              │
+│                                                                                                       │
+│ 新增 configs/auto_test.yaml：                                                                         │
+│ - 完整实验配置，包含所有模板和替换对的路径                                                            │
+│                                                                                                       │
+│ ---                                                                                                   │
+│ 关键实现细节                                                                                          │
+│                                                                                                       │
+│ 多进程并行                                                                                            │
+│                                                                                                       │
+│ - 使用 torch.multiprocessing 的 start_method="spawn"（CUDA 安全）                                     │
+│ - 每个 worker 写独立 CSV：metrics_worker{i}.csv，避免文件锁竞争                                       │
+│ - Phase 结束后主进程合并所有 worker CSV                                                               │
+│                                                                                                       │
+│ Sanity Check 验证逻辑                                                                                 │
+│                                                                                                       │
+│ # Identity: same prompt → cosine must be 1.0                                                          │
+│ assert all(cos > 0.999 for cos in identity_cosines)                                                   │
+│ # Minimal: 1-word change → shallow cosine > 0.95                                                      │
+│ assert shallow_layer_cosine > 0.95                                                                    │
+│                                                                                                       │
+│ 进度追踪                                                                                              │
+│                                                                                                       │
+│ - 每个 worker 用 tqdm 独立显示进度                                                                    │
+│ - 主进程显示总体 phase 进度                                                                           │
+│ - 实时打印完成的实验数 / 总数                                                                         │
+│                                                                                                       │
+│ 容错                                                                                                  │
+│                                                                                                       │
+│ - 单个实验 OOM → 清理缓存，跳过继续                                                                   │
+│ - Worker 异常退出 → 主进程记录错误，其他 worker 继续                                                  │
+│ - 部分结果可恢复 → 检查已有 CSV，跳过已完成的实验                                                     │
+│                                                                                                       │
+│ ---                                                                                                   │
+│ 文件修改清单                                                                                          │
+│                                                                                                       │
+│ ┌──────────────────────────────────────────────────────────┬──────┬─────────────────────────┐         │
+│ │                           文件                           │ 操作 │          说明           │         │
+│ ├──────────────────────────────────────────────────────────┼──────┼─────────────────────────┤         │
+│ │ scripts/run_auto_test.py                                 │ 新增 │ 主自动化脚本（~600行）  │         │
+│ ├──────────────────────────────────────────────────────────┼──────┼─────────────────────────┤         │
+│ │ prompts/perturbations/type1_replacements_multi_turn.yaml │ 新增 │ multi_turn 模板的替换对 │         │
+│ ├──────────────────────────────────────────────────────────┼──────┼─────────────────────────┤         │
+│ │ configs/auto_test.yaml                                   │ 新增 │ 自动测试专用配置        │         │
+│ └──────────────────────────────────────────────────────────┴──────┴─────────────────────────┘         │
+│                                                                                                       │
+│ 不修改任何现有 src/ 模块——完全复用现有接口。                                                          │
+│                                                                                                       │
+│ ---                                                                                                   │
+│ 验证方法                                                                                              │
+│                                                                                                       │
+│ 1. dry-run 模式：--dry-run 打印实验网格和 GPU 分配，不执行                                            │
+│ 2. 快速模式：--quick 只跑 Phase 1 + 少量 Phase 2（1 长度 × 1 比例 × 1 位置）                          │
+│ 3. 完整运行后检查：                                                                                   │
+│   - results/full_experiment/ 下有 phase1/2/3/4 子目录                                                 │
+│   - merged_metrics.csv 行数 = 成功实验数 × 13 层                                                      │
+│   - plots/ 下有所有图表                                                                               │
+│   - report.txt 中假设验证结果                                                                         │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+❯ Please continue to Create scripts/run_auto_test.py                                                         
+* Create scripts/run_auto_test.py… (2m 5s · ↓ 22 tokens)                                                 
+  ⎿  ✔ Create type1_replacements_multi_turn.yaml                                                              ✔ Create configs/auto_test.yaml                                                                     
+     ◼ Create scripts/run_auto_test.py        
+
+
+@scripts/analyze_results.py can analyse the results. Please modify the analyse program so that it will generate more txt analysis result.    
+And you should directly read these txt files and analyse them. Give me a complete and comprehensive, detailed report in markdown file. The     
+test results are in ./activation_analysis/results/auto_test_20260312_065418                                                                    
+  ⎿  Read scripts/analyze_results.py (659 lines)
+
+continue 
+
+
+
+
+

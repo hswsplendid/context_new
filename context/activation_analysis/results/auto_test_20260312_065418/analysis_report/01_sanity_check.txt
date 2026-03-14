@@ -1,0 +1,41 @@
+======================================================================
+  SANITY CHECK ANALYSIS
+======================================================================
+
+  --- identity_metrics.csv (13 rows) ---
+    cosine_mean: mean=1.00000099, min=1.00000083, max=1.00000119
+    cosine_std: mean=0.00000023, min=0.00000017, max=0.00000028
+    cosine_segment: mean=0.99999999, min=0.99999958, max=1.00000024
+    Per-layer cosine_mean:
+      layer   0: cosine_mean=1.00000083
+      layer   4: cosine_mean=1.00000083
+      layer   8: cosine_mean=1.00000083
+      layer  12: cosine_mean=1.00000083
+      layer  16: cosine_mean=1.00000095
+      layer  20: cosine_mean=1.00000083
+      layer  24: cosine_mean=1.00000095
+      layer  28: cosine_mean=1.00000107
+      layer  32: cosine_mean=1.00000119
+      layer  36: cosine_mean=1.00000107
+      layer  40: cosine_mean=1.00000107
+      layer  44: cosine_mean=1.00000119
+      layer  48: cosine_mean=1.00000119
+
+  --- minimal_metrics.csv (13 rows) ---
+    cosine_mean: mean=0.97921953, min=0.91218972, max=0.99978495
+    cosine_std: mean=0.03472083, min=0.00194007, max=0.12074752
+    cosine_segment: mean=0.99871373, min=0.99460018, max=0.99994689
+    Per-layer cosine_mean:
+      layer   0: cosine_mean=0.99978495
+      layer   4: cosine_mean=0.99914879
+      layer   8: cosine_mean=0.99835008
+      layer  12: cosine_mean=0.99833935
+      layer  16: cosine_mean=0.99793822
+      layer  20: cosine_mean=0.99748808
+      layer  24: cosine_mean=0.99704617
+      layer  28: cosine_mean=0.99590510
+      layer  32: cosine_mean=0.99037862
+      layer  36: cosine_mean=0.97448456
+      layer  40: cosine_mean=0.94928598
+      layer  44: cosine_mean=0.91951430
+      layer  48: cosine_mean=0.91218972

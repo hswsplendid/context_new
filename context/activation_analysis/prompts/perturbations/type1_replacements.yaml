@@ -1,0 +1,33 @@
+replacements:
+  - original: |
+      3. **file_reader**: Read contents of a file from the local filesystem.
+         - Parameters: path (string, required), encoding (string, optional, default "utf-8")
+         - Returns: File contents as a string. Supports text files up to 10MB.
+         - Notes: This tool can read various text formats including .txt, .csv, .json, .yaml, .xml, and source code files. Binary files are not supported. The path must be an absolute path or relative to the working directory.
+    replacement: |
+      3. **database_query**: Execute SQL queries against a connected database.
+         - Parameters: query (string, required), database (string, optional, default "main")
+         - Returns: Query results as a list of dictionaries. Supports SELECT, INSERT, UPDATE, DELETE.
+         - Notes: This tool supports PostgreSQL, MySQL, and SQLite databases. The query is executed in a read-only transaction by default. Write operations require explicit confirmation. Maximum result set size is 10000 rows.
+
+  - original: |
+      3. **file_reader**: Read contents of a file from the local filesystem.
+         - Parameters: path (string, required), encoding (string, optional, default "utf-8")
+         - Returns: File contents as a string. Supports text files up to 10MB.
+         - Notes: This tool can read various text formats including .txt, .csv, .json, .yaml, .xml, and source code files. Binary files are not supported. The path must be an absolute path or relative to the working directory.
+    replacement: |
+      3. **api_caller**: Make HTTP requests to external REST APIs.
+         - Parameters: url (string, required), method (string, optional, default "GET"), headers (object, optional), body (string, optional)
+         - Returns: Response status code, headers, and body content. Supports JSON and text responses.
+         - Notes: This tool can make GET, POST, PUT, DELETE, and PATCH requests. Timeout is 30 seconds by default. HTTPS is required for all endpoints. Authentication headers can be passed via the headers parameter.
+
+  - original: |
+      3. **file_reader**: Read contents of a file from the local filesystem.
+         - Parameters: path (string, required), encoding (string, optional, default "utf-8")
+         - Returns: File contents as a string. Supports text files up to 10MB.
+         - Notes: This tool can read various text formats including .txt, .csv, .json, .yaml, .xml, and source code files. Binary files are not supported. The path must be an absolute path or relative to the working directory.
+    replacement: |
+      3. **image_analyzer**: Analyze images using computer vision capabilities.
+         - Parameters: image_path (string, required), analysis_type (string, optional, default "describe")
+         - Returns: Analysis results including detected objects, text, and scene description.
+         - Notes: This tool supports JPEG, PNG, GIF, and WebP formats. Maximum image size is 20MB. Analysis types include describe, ocr, object_detection, and face_detection. Processing time varies by image complexity.

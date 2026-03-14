@@ -1,0 +1,65 @@
+# ============================================================
+# Activation Perturbation Analysis — Agent Prompts + Phi-3.5-MoE
+# ============================================================
+
+# --- Model ---------------------------------------------------
+model:
+  path: "/root/share/models/Phi-3.5-MoE-instruct"
+  dtype: "bfloat16"
+  max_memory_per_gpu_gb: 75
+  trust_remote_code: true
+
+# --- GPU scheduling ------------------------------------------
+gpu:
+  min_free_memory_gb: 20
+  max_parallel_experiments: 1
+  detect_automatically: true
+
+# --- Experiment sweep ----------------------------------------
+sweep:
+  context_lengths: []
+
+  perturbation_positions:
+    - 0.10
+    - 0.25
+    - 0.50
+    - 0.75
+    - 0.90
+
+  perturbation_span_lengths:
+    - 8
+    - 32
+    - 128
+
+  perturbation_types:
+    - "random_replace"
+    - "mask"
+    - "delete"
+    - "compress"
+    - "paraphrase"
+    - "semantic_change"
+
+# --- Distance-based measurement -----------------------------
+measurement:
+  immediate_window: 10
+  short_window: 100
+  periodic_sampling_step: 100
+  periodic_sampling_width: 10
+
+# --- Prompt generation (jsonfile mode) ----------------------
+prompts:
+  source: "jsonfile"
+  jsonfile_path: "prompt/extracted_prompts.json"
+  seed: 42
+  num_prompt_candidates: 50
+
+# --- Result storage -----------------------------------------
+storage:
+  output_dir: "./Phi-3.5-MoE-agent-results"
+  format: "parquet"
+  checkpoint_every: 10
+
+# --- Logging ------------------------------------------------
+logging:
+  level: "INFO"
+  log_file: "./Phi-3.5-MoE-agent-results/experiment.log"

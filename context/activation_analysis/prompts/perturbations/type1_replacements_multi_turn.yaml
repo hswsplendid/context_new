@@ -1,0 +1,21 @@
+replacements:
+  - original: |
+      User: Yes, please start with authentication. I want to use JWT tokens with a PostgreSQL database for storing user credentials. The tokens should expire after 24 hours and support refresh tokens. I also need role-based access control with admin and regular user roles.
+      Assistant: Perfect, I'll set up a complete JWT authentication system with role-based access control. Here's the plan: First, we'll create the user model with SQLAlchemy, then the authentication routes for login, register, and token refresh, and finally a dependency injection system for role-based authorization.
+    replacement: |
+      User: Yes, please start with authentication. I want to use OAuth2 with Google and GitHub as identity providers, storing sessions in Redis. The sessions should expire after 8 hours with sliding window renewal. I also need attribute-based access control with department and clearance level policies.
+      Assistant: Perfect, I'll set up a complete OAuth2 authentication system with attribute-based access control. Here's the plan: First, we'll configure the OAuth2 providers and Redis session store, then the authentication callbacks for Google and GitHub login, and finally a middleware system for attribute-based policy enforcement.
+
+  - original: |
+      User: Yes, please start with authentication. I want to use JWT tokens with a PostgreSQL database for storing user credentials. The tokens should expire after 24 hours and support refresh tokens. I also need role-based access control with admin and regular user roles.
+      Assistant: Perfect, I'll set up a complete JWT authentication system with role-based access control. Here's the plan: First, we'll create the user model with SQLAlchemy, then the authentication routes for login, register, and token refresh, and finally a dependency injection system for role-based authorization.
+    replacement: |
+      User: Yes, please start with the database layer. I want to use MongoDB with Beanie ODM for document storage. The collections should support automatic timestamping and soft deletes. I also need a migration system that handles schema evolution gracefully.
+      Assistant: Perfect, I'll set up a complete MongoDB data layer with Beanie ODM. Here's the plan: First, we'll configure the MongoDB connection and initialize Beanie, then create the base document model with timestamps and soft delete mixins, and finally build a migration runner that tracks schema versions.
+
+  - original: |
+      User: Yes, please start with authentication. I want to use JWT tokens with a PostgreSQL database for storing user credentials. The tokens should expire after 24 hours and support refresh tokens. I also need role-based access control with admin and regular user roles.
+      Assistant: Perfect, I'll set up a complete JWT authentication system with role-based access control. Here's the plan: First, we'll create the user model with SQLAlchemy, then the authentication routes for login, register, and token refresh, and finally a dependency injection system for role-based authorization.
+    replacement: |
+      User: Yes, please start with the caching layer. I want to use Redis with a write-through cache strategy for frequently accessed product data. The cache should support automatic invalidation with TTL of 15 minutes and tag-based bulk purging. I also need cache warming on startup for the top 1000 products.
+      Assistant: Perfect, I'll set up a complete Redis caching layer with write-through strategy. Here's the plan: First, we'll configure the Redis connection pool and serialization, then implement the cache decorator with TTL and tag-based invalidation, and finally build a startup cache warmer that pre-loads popular product data.

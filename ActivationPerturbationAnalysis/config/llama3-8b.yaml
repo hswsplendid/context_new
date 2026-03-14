@@ -1,0 +1,72 @@
+# ============================================================
+# Activation Perturbation Analysis — Default Configuration
+# ============================================================
+
+# --- Model ---------------------------------------------------
+model:
+  path: "/root/share/models/Meta-Llama-3-8B-Instruct"
+  dtype: "bfloat16"
+  max_memory_per_gpu_gb: 75
+  trust_remote_code: true
+
+# --- GPU scheduling ------------------------------------------
+gpu:
+  min_free_memory_gb: 40
+  max_parallel_experiments: 1
+  detect_automatically: true
+
+# --- Experiment sweep ----------------------------------------
+sweep:
+  context_lengths:
+    - 256
+    - 512
+    - 1024
+    - 2048
+    - 4096
+
+  perturbation_positions:
+    - 0.10
+    - 0.25
+    - 0.50
+    - 0.75
+    - 0.90
+
+  perturbation_span_lengths:
+    - 8
+    - 32
+    - 128
+
+  perturbation_types:
+    - "random_replace"
+    - "mask"
+    - "delete"
+    - "compress"
+    - "paraphrase"
+    - "semantic_change"
+
+# --- Distance-based measurement -----------------------------
+measurement:
+  immediate_window: 10
+  short_window: 100
+  periodic_sampling_step: 100
+  periodic_sampling_width: 10
+
+# --- Prompt generation --------------------------------------
+prompts:
+  source: "dataset"
+  dataset_name: "/root/share/dataset/wikitext-2-raw-v1"
+  dataset_config: "default"
+  dataset_split: "test"
+  seed: 42
+  num_prompt_candidates: 50
+
+# --- Result storage -----------------------------------------
+storage:
+  output_dir: "./Llama-3-8B-results"
+  format: "parquet"
+  checkpoint_every: 10
+
+# --- Logging ------------------------------------------------
+logging:
+  level: "INFO"
+  log_file: "./results/experiment2.log"

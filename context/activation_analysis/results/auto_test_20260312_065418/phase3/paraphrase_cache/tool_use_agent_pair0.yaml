@@ -1,0 +1,18 @@
+? "3. **file_reader**: Read contents of a file from the local filesystem.\n   - Parameters:\
+  \ path (string, required), encoding (string, optional, default \"utf-8\")\n   -\
+  \ Returns: File contents as a string. Supports text files up to 10MB.\n   - Notes:\
+  \ This tool can read various text formats including .txt, .csv, .json, .yaml, .xml,\
+  \ and source code files. Binary files are not supported. The path must be an absolute\
+  \ path or relative to the working directory.\n"
+: '**file_reader**: Retrieves the content of a file located on the local filesystem.
+
+  - Parameters: path (string, mandatory), encoding (string, optional, default value
+  "utf-8")
+
+  - Returns: The content of the file in string format. Capable of handling text files
+  up to 10MB in size.
+
+  - Notes: This utility is designed to read multiple text file types such as .txt,
+  .csv, .json, .yaml, .xml, and source code files. It does not support binary files.
+  The specified path should either be absolute or relative to the current working
+  directory.'

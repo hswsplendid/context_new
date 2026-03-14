@@ -1,0 +1,33 @@
+? "3. **file_reader**: Read contents of a file from the local filesystem.\n   - Parameters:\
+  \ path (string, required), encoding (string, optional, default \"utf-8\")\n   -\
+  \ Returns: File contents as a string. Supports text files up to 10MB.\n   - Notes:\
+  \ This tool can read various text formats including .txt, .csv, .json, .yaml, .xml,\
+  \ and source code files. Binary files are not supported. The path must be an absolute\
+  \ path or relative to the working directory.\n"
+: "<think>\nOkay, let's see. The user wants me to paraphrase the given text about\
+  \ the file_reader tool. The original text has a section with parameters, returns,\
+  \ and notes. I need to make sure I keep all the same information but use different\
+  \ words.\n\nFirst, the title is \"file_reader\": Read contents of a file from the\
+  \ local filesystem. Maybe I can start with \"file_reader\" as the tool name and\
+  \ rephrase the description. Instead of \"Read contents,\" maybe \"Accesses the content\"\
+  \ or \"Retrieves the contents.\" \n\nNext, the parameters: path (string, required),\
+  \ encoding (string, optional, default \"utf-8\"). I can say \"Takes a path parameter\
+  \ (string, required) and an optional encoding (string) with a default of 'utf-8'.\"\
+  \ \n\nReturns: File contents as a string. Supports text files up to 10MB. Maybe\
+  \ \"Returns the file's content as a string, handling text files up to 10MB in size.\"\
+  \n\nNotes: This tool can read various text formats including .txt, .csv, .json,\
+  \ .yaml, .xml, and source code files. Binary files are not supported. The path must\
+  \ be an absolute path or relative to the working directory. I need to rephrase that.\
+  \ Perhaps \"This tool is capable of processing multiple text formats like .txt,\
+  \ .csv, .json, .yaml, .xml, and source code files. It does not support binary files.\
+  \ The path must be either absolute or relative to the current working directory.\"\
+  \n\nI should check if all the key points are covered: parameters, return value,\
+  \ supported formats, binary restriction, and path requirements. Also, make sure\
+  \ not to add any extra information or explanations. Just the rewritten text. Let\
+  \ me put it all together now.\n</think>\n\n3. **file_reader**: Accesses the content\
+  \ of a file from the local filesystem.  \n   - Parameters: path (string, required),\
+  \ encoding (string, optional, default \"utf-8\")  \n   - Returns: File content as\
+  \ a string. Compatible with text files up to 10MB.  \n   - Notes: This tool processes\
+  \ various text formats such as .txt, .csv, .json, .yaml, .xml, and source code files.\
+  \ Binary files are not supported. The path must be absolute or relative to the working\
+  \ directory."

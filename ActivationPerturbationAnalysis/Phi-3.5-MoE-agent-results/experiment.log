@@ -1,0 +1,1322 @@
+2026-03-14 13:26:16,633 [INFO] __main__: Configuration loaded from config/agent_prompts_phi3.yaml
+2026-03-14 13:26:19,384 [INFO] src.scheduler: GPU 0 (NVIDIA A800-SXM4-80GB): 14503 MB free — below threshold, skipping.
+2026-03-14 13:26:19,389 [INFO] src.scheduler: GPU 1 (NVIDIA A800-SXM4-80GB): 19561 MB free — below threshold, skipping.
+2026-03-14 13:26:19,422 [INFO] src.scheduler: GPU 7 (NVIDIA A800-SXM4-80GB): 16853 MB free — below threshold, skipping.
+2026-03-14 13:26:19,423 [INFO] src.scheduler: Detected 5 usable GPUs (min_free=20.0 GB).
+2026-03-14 13:26:19,492 [INFO] src.model: Loading tokenizer from /root/share/models/Phi-3.5-MoE-instruct
+2026-03-14 13:26:19,653 [INFO] src.model: Loading model from /root/share/models/Phi-3.5-MoE-instruct (dtype=bfloat16)
+2026-03-14 13:28:33,330 [INFO] src.model: Model loaded. Parameters: 41,873,153,344
+2026-03-14 13:28:33,348 [INFO] src.prompts: Loaded 12 prompts from prompt/extracted_prompts.json.
+2026-03-14 13:28:33,569 [INFO] src.sweep: jsonfile mode: 12 prompts, token counts: [9419, 9851, 10830, 11257, 11268, 12879, 14129, 15154, 16080, 16947, 17621, 18560]
+2026-03-14 13:28:33,575 [INFO] src.sweep: Built 1080 experiment jobs.
+2026-03-14 13:28:33,575 [INFO] src.sweep: Starting sweep: 1080 experiments.
+2026-03-14 13:28:33,575 [INFO] src.sweep: [1/1080] Running 7f0ec77728fa9e7c — ctx=9419 pos=0.10 span=8 type=random_replace
+2026-03-14 13:28:43,723 [INFO] src.sweep: [2/1080] Running 8c8ceaea6cefdaff — ctx=9419 pos=0.10 span=8 type=mask
+2026-03-14 13:28:54,175 [INFO] src.sweep: [3/1080] Running 0affc6fb5c10ab7f — ctx=9419 pos=0.10 span=8 type=delete
+2026-03-14 13:29:04,696 [INFO] src.sweep: [4/1080] Running 5c12be709043c56c — ctx=9419 pos=0.10 span=8 type=compress
+2026-03-14 13:29:15,174 [INFO] src.sweep: [5/1080] Running 7e87a2a642fdf09b — ctx=9419 pos=0.10 span=8 type=paraphrase
+2026-03-14 13:29:25,499 [INFO] src.sweep: [6/1080] Running 801ad41479a2c5f3 — ctx=9419 pos=0.10 span=8 type=semantic_change
+2026-03-14 13:29:35,993 [INFO] src.sweep: [7/1080] Running 5222f2380ef2f9a5 — ctx=9419 pos=0.10 span=32 type=random_replace
+2026-03-14 13:29:46,520 [INFO] src.sweep: [8/1080] Running ee752435ad208cb2 — ctx=9419 pos=0.10 span=32 type=mask
+2026-03-14 13:29:56,920 [INFO] src.sweep: [9/1080] Running 231f5cee5dde96f7 — ctx=9419 pos=0.10 span=32 type=delete
+2026-03-14 13:30:07,196 [INFO] src.sweep: [10/1080] Running 5f35ab47a4b43c32 — ctx=9419 pos=0.10 span=32 type=compress
+2026-03-14 13:30:17,630 [INFO] src.storage: Flushed 32340 records to Phi-3.5-MoE-agent-results/results_part_000000.parquet.
+2026-03-14 13:30:17,637 [INFO] src.sweep: [11/1080] Running 7772cac01d251dff — ctx=9419 pos=0.10 span=32 type=paraphrase
+2026-03-14 13:30:28,053 [INFO] src.sweep: [12/1080] Running 19d9ae6b0e123758 — ctx=9419 pos=0.10 span=32 type=semantic_change
+2026-03-14 13:30:38,403 [INFO] src.sweep: [13/1080] Running b53094ee5e8a8ae0 — ctx=9419 pos=0.10 span=128 type=random_replace
+2026-03-14 13:30:48,843 [INFO] src.sweep: [14/1080] Running 36d790e6b920e130 — ctx=9419 pos=0.10 span=128 type=mask
+2026-03-14 13:30:59,372 [INFO] src.sweep: [15/1080] Running f985ff6cf7847570 — ctx=9419 pos=0.10 span=128 type=delete
+2026-03-14 13:31:09,712 [INFO] src.sweep: [16/1080] Running 0bd96c0de182e898 — ctx=9419 pos=0.10 span=128 type=compress
+2026-03-14 13:31:20,115 [INFO] src.sweep: [17/1080] Running ed523f9711564a24 — ctx=9419 pos=0.10 span=128 type=paraphrase
+2026-03-14 13:31:30,651 [INFO] src.sweep: [18/1080] Running adfbe1d8b2997963 — ctx=9419 pos=0.10 span=128 type=semantic_change
+2026-03-14 13:31:41,260 [INFO] src.sweep: [19/1080] Running 7ada8a4bb5c7891f — ctx=9419 pos=0.25 span=8 type=random_replace
+2026-03-14 13:31:51,698 [INFO] src.sweep: [20/1080] Running f2382266f6bafc79 — ctx=9419 pos=0.25 span=8 type=mask
+2026-03-14 13:32:02,248 [INFO] src.storage: Flushed 31218 records to Phi-3.5-MoE-agent-results/results_part_000001.parquet.
+2026-03-14 13:32:02,255 [INFO] src.sweep: [21/1080] Running 33a89b35f0b404a8 — ctx=9419 pos=0.25 span=8 type=delete
+2026-03-14 13:32:12,704 [INFO] src.sweep: [22/1080] Running 30ba2e6b068a8ac9 — ctx=9419 pos=0.25 span=8 type=compress
+2026-03-14 13:32:23,114 [INFO] src.sweep: [23/1080] Running a71a2f0246d3e2c5 — ctx=9419 pos=0.25 span=8 type=paraphrase
+2026-03-14 13:32:32,643 [INFO] src.sweep: [24/1080] Running 3f44cfef87acde42 — ctx=9419 pos=0.25 span=8 type=semantic_change
+2026-03-14 13:32:42,995 [INFO] src.sweep: [25/1080] Running 250d0e89cb297118 — ctx=9419 pos=0.25 span=32 type=random_replace
+2026-03-14 13:32:53,277 [INFO] src.sweep: [26/1080] Running 5262ba28ffca699e — ctx=9419 pos=0.25 span=32 type=mask
+2026-03-14 13:33:03,632 [INFO] src.sweep: [27/1080] Running 8d237fd1ef9123d5 — ctx=9419 pos=0.25 span=32 type=delete
+2026-03-14 13:33:14,185 [INFO] src.sweep: [28/1080] Running 6685a2d2200d6a3c — ctx=9419 pos=0.25 span=32 type=compress
+2026-03-14 13:33:24,596 [INFO] src.sweep: [29/1080] Running 1cd72d161a904582 — ctx=9419 pos=0.25 span=32 type=paraphrase
+2026-03-14 13:33:34,993 [INFO] src.sweep: [30/1080] Running a066a33fac1270cf — ctx=9419 pos=0.25 span=32 type=semantic_change
+2026-03-14 13:33:45,409 [INFO] src.storage: Flushed 27720 records to Phi-3.5-MoE-agent-results/results_part_000002.parquet.
+2026-03-14 13:33:45,415 [INFO] src.sweep: [31/1080] Running 54210b7b9730aec1 — ctx=9419 pos=0.25 span=128 type=random_replace
+2026-03-14 13:33:55,990 [INFO] src.sweep: [32/1080] Running ee88c44d6bdf8785 — ctx=9419 pos=0.25 span=128 type=mask
+2026-03-14 13:34:06,388 [INFO] src.sweep: [33/1080] Running eb14687444987da3 — ctx=9419 pos=0.25 span=128 type=delete
+2026-03-14 13:34:16,855 [INFO] src.sweep: [34/1080] Running a9a31ca2385c4e31 — ctx=9419 pos=0.25 span=128 type=compress
+2026-03-14 13:34:27,408 [INFO] src.sweep: [35/1080] Running c67d8110dae10c84 — ctx=9419 pos=0.25 span=128 type=paraphrase
+2026-03-14 13:34:37,014 [INFO] src.sweep: [36/1080] Running a0c6f45fa62057d6 — ctx=9419 pos=0.25 span=128 type=semantic_change
+2026-03-14 13:34:47,432 [INFO] src.sweep: [37/1080] Running 301345c1ac965253 — ctx=9419 pos=0.50 span=8 type=random_replace
+2026-03-14 13:34:57,704 [INFO] src.sweep: [38/1080] Running 7ac0e8818222c342 — ctx=9419 pos=0.50 span=8 type=mask
+2026-03-14 13:35:07,952 [INFO] src.sweep: [39/1080] Running 37b18d600ac1325e — ctx=9419 pos=0.50 span=8 type=delete
+2026-03-14 13:35:18,698 [INFO] src.sweep: [40/1080] Running 6f9690d031897f69 — ctx=9419 pos=0.50 span=8 type=compress
+2026-03-14 13:35:29,851 [INFO] src.storage: Flushed 24486 records to Phi-3.5-MoE-agent-results/results_part_000003.parquet.
+2026-03-14 13:35:29,856 [INFO] src.sweep: [41/1080] Running 5f3869d020e698bb — ctx=9419 pos=0.50 span=8 type=paraphrase
+2026-03-14 13:35:40,755 [INFO] src.sweep: [42/1080] Running df052a63d153cd8a — ctx=9419 pos=0.50 span=8 type=semantic_change
+2026-03-14 13:35:51,607 [INFO] src.sweep: [43/1080] Running 5b30047db916c65e — ctx=9419 pos=0.50 span=32 type=random_replace
+2026-03-14 13:36:01,997 [INFO] src.sweep: [44/1080] Running 2b96ff7d0967d385 — ctx=9419 pos=0.50 span=32 type=mask
+2026-03-14 13:36:12,547 [INFO] src.sweep: [45/1080] Running 501f549db11185f9 — ctx=9419 pos=0.50 span=32 type=delete
+2026-03-14 13:36:22,960 [INFO] src.sweep: [46/1080] Running c65da010074fc8ba — ctx=9419 pos=0.50 span=32 type=compress
+2026-03-14 13:36:33,351 [INFO] src.sweep: [47/1080] Running 6987fe29a0f84c12 — ctx=9419 pos=0.50 span=32 type=paraphrase
+2026-03-14 13:36:43,777 [INFO] src.sweep: [48/1080] Running b559e2dd74542401 — ctx=9419 pos=0.50 span=32 type=semantic_change
+2026-03-14 13:36:54,840 [INFO] src.sweep: [49/1080] Running d443267577b60937 — ctx=9419 pos=0.50 span=128 type=random_replace
+2026-03-14 13:37:05,194 [INFO] src.sweep: [50/1080] Running e3bd0f0c00e3ce4d — ctx=9419 pos=0.50 span=128 type=mask
+2026-03-14 13:37:16,177 [INFO] src.storage: Flushed 19800 records to Phi-3.5-MoE-agent-results/results_part_000004.parquet.
+2026-03-14 13:37:16,181 [INFO] src.sweep: [51/1080] Running acc7b56976bce3de — ctx=9419 pos=0.50 span=128 type=delete
+2026-03-14 13:37:26,599 [INFO] src.sweep: [52/1080] Running fb726f8eb4dfa02c — ctx=9419 pos=0.50 span=128 type=compress
+2026-03-14 13:37:36,874 [INFO] src.sweep: [53/1080] Running 25031e440908443b — ctx=9419 pos=0.50 span=128 type=paraphrase
+2026-03-14 13:37:47,425 [INFO] src.sweep: [54/1080] Running 184a6c19b0f949f6 — ctx=9419 pos=0.50 span=128 type=semantic_change
+2026-03-14 13:37:57,710 [INFO] src.sweep: [55/1080] Running 5b4ebb61e2c7f23d — ctx=9419 pos=0.75 span=8 type=random_replace
+2026-03-14 13:38:07,997 [INFO] src.sweep: [56/1080] Running 4867ded521fdb758 — ctx=9419 pos=0.75 span=8 type=mask
+2026-03-14 13:38:18,242 [INFO] src.sweep: [57/1080] Running 22ada5177d1a7c78 — ctx=9419 pos=0.75 span=8 type=delete
+2026-03-14 13:38:28,439 [INFO] src.sweep: [58/1080] Running d023d36d4f45cd7d — ctx=9419 pos=0.75 span=8 type=compress
+2026-03-14 13:38:39,117 [INFO] src.sweep: [59/1080] Running 0908a6a2e2c7ddbf — ctx=9419 pos=0.75 span=8 type=paraphrase
+2026-03-14 13:38:51,208 [INFO] src.sweep: [60/1080] Running 2b1db632583fac98 — ctx=9419 pos=0.75 span=8 type=semantic_change
+2026-03-14 13:39:02,078 [INFO] src.storage: Flushed 15114 records to Phi-3.5-MoE-agent-results/results_part_000005.parquet.
+2026-03-14 13:39:02,082 [INFO] src.sweep: [61/1080] Running b896277df62eaede — ctx=9419 pos=0.75 span=32 type=random_replace
+2026-03-14 13:39:13,079 [INFO] src.sweep: [62/1080] Running 9d1edf74b1a02a60 — ctx=9419 pos=0.75 span=32 type=mask
+2026-03-14 13:39:23,427 [INFO] src.sweep: [63/1080] Running f4c9faba3b5a720c — ctx=9419 pos=0.75 span=32 type=delete
+2026-03-14 13:39:34,278 [INFO] src.sweep: [64/1080] Running 7c78636595139fcf — ctx=9419 pos=0.75 span=32 type=compress
+2026-03-14 13:39:44,494 [INFO] src.sweep: [65/1080] Running 6bc341190d01f1d9 — ctx=9419 pos=0.75 span=32 type=paraphrase
+2026-03-14 13:39:56,851 [INFO] src.sweep: [66/1080] Running 2c13373d542f6a2b — ctx=9419 pos=0.75 span=32 type=semantic_change
+2026-03-14 13:40:07,596 [INFO] src.sweep: [67/1080] Running efef67f309b4de5d — ctx=9419 pos=0.75 span=128 type=random_replace
+2026-03-14 13:40:18,544 [INFO] src.sweep: [68/1080] Running c6723d261ec3701d — ctx=9419 pos=0.75 span=128 type=mask
+2026-03-14 13:40:29,241 [INFO] src.sweep: [69/1080] Running e18cb610e812fb26 — ctx=9419 pos=0.75 span=128 type=delete
+2026-03-14 13:40:39,472 [INFO] src.sweep: [70/1080] Running f38c349c302a1778 — ctx=9419 pos=0.75 span=128 type=compress
+2026-03-14 13:40:49,730 [INFO] src.storage: Flushed 12078 records to Phi-3.5-MoE-agent-results/results_part_000006.parquet.
+2026-03-14 13:40:49,733 [INFO] src.sweep: [71/1080] Running b240fbd996784a84 — ctx=9419 pos=0.75 span=128 type=paraphrase
+2026-03-14 13:41:01,845 [INFO] src.sweep: [72/1080] Running 0aa029366b8c9cc8 — ctx=9419 pos=0.75 span=128 type=semantic_change
+2026-03-14 13:41:12,614 [INFO] src.sweep: [73/1080] Running 9130431e7641ddc9 — ctx=9419 pos=0.90 span=8 type=random_replace
+2026-03-14 13:41:23,286 [INFO] src.sweep: [74/1080] Running 3c65a700cead1a50 — ctx=9419 pos=0.90 span=8 type=mask
+2026-03-14 13:41:33,835 [INFO] src.sweep: [75/1080] Running ef7ba53c8057d01c — ctx=9419 pos=0.90 span=8 type=delete
+2026-03-14 13:41:44,421 [INFO] src.sweep: [76/1080] Running 343870a3d38bac47 — ctx=9419 pos=0.90 span=8 type=compress
+2026-03-14 13:41:54,763 [INFO] src.sweep: [77/1080] Running fff11fb4b13d13bf — ctx=9419 pos=0.90 span=8 type=paraphrase
+2026-03-14 13:42:06,648 [INFO] src.sweep: [78/1080] Running 3a80b7e3ceb9eaaa — ctx=9419 pos=0.90 span=8 type=semantic_change
+2026-03-14 13:42:17,130 [INFO] src.sweep: [79/1080] Running 7ec775d4331d6703 — ctx=9419 pos=0.90 span=32 type=random_replace
+2026-03-14 13:42:27,470 [INFO] src.sweep: [80/1080] Running d16f7187494901e8 — ctx=9419 pos=0.90 span=32 type=mask
+2026-03-14 13:42:37,798 [INFO] src.storage: Flushed 8448 records to Phi-3.5-MoE-agent-results/results_part_000007.parquet.
+2026-03-14 13:42:37,800 [INFO] src.sweep: [81/1080] Running 8a46a0a7a4c03fb3 — ctx=9419 pos=0.90 span=32 type=delete
+2026-03-14 13:42:48,295 [INFO] src.sweep: [82/1080] Running 98570c8843667112 — ctx=9419 pos=0.90 span=32 type=compress
+2026-03-14 13:42:58,537 [INFO] src.sweep: [83/1080] Running 367775b2d74806d3 — ctx=9419 pos=0.90 span=32 type=paraphrase
+2026-03-14 13:43:10,561 [INFO] src.sweep: [84/1080] Running 83d5ba73035d0e8d — ctx=9419 pos=0.90 span=32 type=semantic_change
+2026-03-14 13:43:21,457 [INFO] src.sweep: [85/1080] Running 4d2553943dee8e54 — ctx=9419 pos=0.90 span=128 type=random_replace
+2026-03-14 13:43:31,802 [INFO] src.sweep: [86/1080] Running 5b7f11a08f0c0080 — ctx=9419 pos=0.90 span=128 type=mask
+2026-03-14 13:43:42,200 [INFO] src.sweep: [87/1080] Running 97581546d9f4ecc8 — ctx=9419 pos=0.90 span=128 type=delete
+2026-03-14 13:43:52,257 [INFO] src.sweep: [88/1080] Running 963a61242ead4345 — ctx=9419 pos=0.90 span=128 type=compress
+2026-03-14 13:44:02,453 [INFO] src.sweep: [89/1080] Running ce076d1ec222fa4e — ctx=9419 pos=0.90 span=128 type=paraphrase
+2026-03-14 13:44:13,106 [INFO] src.sweep: [90/1080] Running a11a85459b426cce — ctx=9419 pos=0.90 span=128 type=semantic_change
+2026-03-14 13:44:23,473 [INFO] src.storage: Flushed 7392 records to Phi-3.5-MoE-agent-results/results_part_000008.parquet.
+2026-03-14 13:44:23,475 [INFO] src.sweep: [91/1080] Running 240790d2f93bfe6a — ctx=9851 pos=0.10 span=8 type=random_replace
+2026-03-14 13:44:34,830 [INFO] src.sweep: [92/1080] Running e9208d5bf9735b7b — ctx=9851 pos=0.10 span=8 type=mask
+2026-03-14 13:44:46,309 [INFO] src.sweep: [93/1080] Running 8c34626c514d20ff — ctx=9851 pos=0.10 span=8 type=delete
+2026-03-14 13:44:57,867 [INFO] src.sweep: [94/1080] Running 91162258dca24943 — ctx=9851 pos=0.10 span=8 type=compress
+2026-03-14 13:45:09,261 [INFO] src.sweep: [95/1080] Running 1f5af288b40ab4d6 — ctx=9851 pos=0.10 span=8 type=paraphrase
+2026-03-14 13:45:20,034 [INFO] src.sweep: [96/1080] Running cbf59bff93f3c8d7 — ctx=9851 pos=0.10 span=8 type=semantic_change
+2026-03-14 13:45:31,485 [INFO] src.sweep: [97/1080] Running 52c9634e779acc9a — ctx=9851 pos=0.10 span=32 type=random_replace
+2026-03-14 13:45:42,924 [INFO] src.sweep: [98/1080] Running 367344f467eb5400 — ctx=9851 pos=0.10 span=32 type=mask
+2026-03-14 13:45:54,415 [INFO] src.sweep: [99/1080] Running 4e7592ea4955ae5a — ctx=9851 pos=0.10 span=32 type=delete
+2026-03-14 13:46:06,104 [INFO] src.sweep: [100/1080] Running f7122d24a244e31f — ctx=9851 pos=0.10 span=32 type=compress
+2026-03-14 13:46:17,650 [INFO] src.storage: Flushed 33660 records to Phi-3.5-MoE-agent-results/results_part_000009.parquet.
+2026-03-14 13:46:17,656 [INFO] src.sweep: [101/1080] Running d9e60b424d706f9d — ctx=9851 pos=0.10 span=32 type=paraphrase
+2026-03-14 13:46:27,844 [INFO] src.sweep: [102/1080] Running 38c54d9b4d2bad54 — ctx=9851 pos=0.10 span=32 type=semantic_change
+2026-03-14 13:46:39,313 [INFO] src.sweep: [103/1080] Running 9f1474e29841b8b2 — ctx=9851 pos=0.10 span=128 type=random_replace
+2026-03-14 13:46:50,709 [INFO] src.sweep: [104/1080] Running 597f04e74dd556ee — ctx=9851 pos=0.10 span=128 type=mask
+2026-03-14 13:47:02,167 [INFO] src.sweep: [105/1080] Running 7ad38a288c4fe71a — ctx=9851 pos=0.10 span=128 type=delete
+2026-03-14 13:47:13,557 [INFO] src.sweep: [106/1080] Running e97655286c830f2e — ctx=9851 pos=0.10 span=128 type=compress
+2026-03-14 13:47:25,157 [INFO] src.sweep: [107/1080] Running 892912a8f96f3945 — ctx=9851 pos=0.10 span=128 type=paraphrase
+2026-03-14 13:47:35,340 [INFO] src.sweep: [108/1080] Running 5258df2bc026c48e — ctx=9851 pos=0.10 span=128 type=semantic_change
+2026-03-14 13:47:46,737 [INFO] src.sweep: [109/1080] Running 8ab30bd743c3a27f — ctx=9851 pos=0.25 span=8 type=random_replace
+2026-03-14 13:47:58,147 [INFO] src.sweep: [110/1080] Running ff43272ebc683fd0 — ctx=9851 pos=0.25 span=8 type=mask
+2026-03-14 13:48:09,916 [INFO] src.storage: Flushed 32472 records to Phi-3.5-MoE-agent-results/results_part_000010.parquet.
+2026-03-14 13:48:09,922 [INFO] src.sweep: [111/1080] Running 48f60094ca558a45 — ctx=9851 pos=0.25 span=8 type=delete
+2026-03-14 13:48:20,965 [INFO] src.sweep: [112/1080] Running 3fb18e1a2574f2bb — ctx=9851 pos=0.25 span=8 type=compress
+2026-03-14 13:48:32,094 [INFO] src.sweep: [113/1080] Running 1a93e2949cb43098 — ctx=9851 pos=0.25 span=8 type=paraphrase
+2026-03-14 13:48:42,736 [INFO] src.sweep: [114/1080] Running 830d57f26d9bb1f9 — ctx=9851 pos=0.25 span=8 type=semantic_change
+2026-03-14 13:48:54,283 [INFO] src.sweep: [115/1080] Running e695a80d8d4c139b — ctx=9851 pos=0.25 span=32 type=random_replace
+2026-03-14 13:49:05,672 [INFO] src.sweep: [116/1080] Running 5614e14c772b1518 — ctx=9851 pos=0.25 span=32 type=mask
+2026-03-14 13:49:17,181 [INFO] src.sweep: [117/1080] Running e44da7a0c574367c — ctx=9851 pos=0.25 span=32 type=delete
+2026-03-14 13:49:28,971 [INFO] src.sweep: [118/1080] Running 425f6d9c4911d6ad — ctx=9851 pos=0.25 span=32 type=compress
+2026-03-14 13:49:40,337 [INFO] src.sweep: [119/1080] Running 569dba89ee7183a6 — ctx=9851 pos=0.25 span=32 type=paraphrase
+2026-03-14 13:49:51,775 [INFO] src.sweep: [120/1080] Running cf14eb0a8a896896 — ctx=9851 pos=0.25 span=32 type=semantic_change
+2026-03-14 13:50:03,262 [INFO] src.storage: Flushed 28710 records to Phi-3.5-MoE-agent-results/results_part_000011.parquet.
+2026-03-14 13:50:03,267 [INFO] src.sweep: [121/1080] Running 53ae7c245fc9d6d9 — ctx=9851 pos=0.25 span=128 type=random_replace
+2026-03-14 13:50:14,606 [INFO] src.sweep: [122/1080] Running 164544cf4540eb81 — ctx=9851 pos=0.25 span=128 type=mask
+2026-03-14 13:50:26,103 [INFO] src.sweep: [123/1080] Running 71df2ca9cddfbf12 — ctx=9851 pos=0.25 span=128 type=delete
+2026-03-14 13:50:37,447 [INFO] src.sweep: [124/1080] Running 7a48f856e36f87b2 — ctx=9851 pos=0.25 span=128 type=compress
+2026-03-14 13:50:48,794 [INFO] src.sweep: [125/1080] Running e096d2488797f663 — ctx=9851 pos=0.25 span=128 type=paraphrase
+2026-03-14 13:51:00,164 [INFO] src.sweep: [126/1080] Running 6b46f0aa1a191b60 — ctx=9851 pos=0.25 span=128 type=semantic_change
+2026-03-14 13:51:11,589 [INFO] src.sweep: [127/1080] Running c8f1f6df2b5edfaa — ctx=9851 pos=0.50 span=8 type=random_replace
+2026-03-14 13:51:22,984 [INFO] src.sweep: [128/1080] Running a05a98d712e1f3db — ctx=9851 pos=0.50 span=8 type=mask
+2026-03-14 13:51:34,444 [INFO] src.sweep: [129/1080] Running 18a522c21b4c8af2 — ctx=9851 pos=0.50 span=8 type=delete
+2026-03-14 13:51:46,257 [INFO] src.sweep: [130/1080] Running c1d40ccf55b0fd67 — ctx=9851 pos=0.50 span=8 type=compress
+2026-03-14 13:51:57,358 [INFO] src.storage: Flushed 25344 records to Phi-3.5-MoE-agent-results/results_part_000012.parquet.
+2026-03-14 13:51:57,363 [INFO] src.sweep: [131/1080] Running 7ff70accc022ce46 — ctx=9851 pos=0.50 span=8 type=paraphrase
+2026-03-14 13:52:08,501 [INFO] src.sweep: [132/1080] Running 841dcf5b48a311f0 — ctx=9851 pos=0.50 span=8 type=semantic_change
+2026-03-14 13:52:19,998 [INFO] src.sweep: [133/1080] Running 7de7883f3f42a8f0 — ctx=9851 pos=0.50 span=32 type=random_replace
+2026-03-14 13:52:31,359 [INFO] src.sweep: [134/1080] Running fa8435a983dbafaf — ctx=9851 pos=0.50 span=32 type=mask
+2026-03-14 13:52:42,796 [INFO] src.sweep: [135/1080] Running 221792210e0b83c0 — ctx=9851 pos=0.50 span=32 type=delete
+2026-03-14 13:52:54,088 [INFO] src.sweep: [136/1080] Running 76fe6d09aabd0969 — ctx=9851 pos=0.50 span=32 type=compress
+2026-03-14 13:53:05,480 [INFO] src.sweep: [137/1080] Running 655fbc567e26d634 — ctx=9851 pos=0.50 span=32 type=paraphrase
+2026-03-14 13:53:15,933 [INFO] src.sweep: [138/1080] Running ae6414f522377e16 — ctx=9851 pos=0.50 span=32 type=semantic_change
+2026-03-14 13:53:27,620 [INFO] src.sweep: [139/1080] Running 251fdafa89cad0a4 — ctx=9851 pos=0.50 span=128 type=random_replace
+2026-03-14 13:53:38,969 [INFO] src.sweep: [140/1080] Running e4053b7a8e90e138 — ctx=9851 pos=0.50 span=128 type=mask
+2026-03-14 13:53:50,705 [INFO] src.storage: Flushed 20460 records to Phi-3.5-MoE-agent-results/results_part_000013.parquet.
+2026-03-14 13:53:50,710 [INFO] src.sweep: [141/1080] Running c1a155ba248ad6c0 — ctx=9851 pos=0.50 span=128 type=delete
+2026-03-14 13:54:02,463 [INFO] src.sweep: [142/1080] Running d6c44b0c2691d5c6 — ctx=9851 pos=0.50 span=128 type=compress
+2026-03-14 13:54:13,698 [INFO] src.sweep: [143/1080] Running 6cf89e0a7dbb78bc — ctx=9851 pos=0.50 span=128 type=paraphrase
+2026-03-14 13:54:25,017 [INFO] src.sweep: [144/1080] Running f32d243ecf1044ad — ctx=9851 pos=0.50 span=128 type=semantic_change
+2026-03-14 13:54:36,369 [INFO] src.sweep: [145/1080] Running b54ca2ddcc5d0a94 — ctx=9851 pos=0.75 span=8 type=random_replace
+2026-03-14 13:54:48,539 [INFO] src.sweep: [146/1080] Running eb5fa1535c717042 — ctx=9851 pos=0.75 span=8 type=mask
+2026-03-14 13:54:59,916 [INFO] src.sweep: [147/1080] Running 8060aff5d2e4ead0 — ctx=9851 pos=0.75 span=8 type=delete
+2026-03-14 13:55:11,273 [INFO] src.sweep: [148/1080] Running 4a5ff92553c036bf — ctx=9851 pos=0.75 span=8 type=compress
+2026-03-14 13:55:22,607 [INFO] src.sweep: [149/1080] Running 2985ddf349e98893 — ctx=9851 pos=0.75 span=8 type=paraphrase
+2026-03-14 13:55:35,111 [INFO] src.sweep: [150/1080] Running 514e5dd5aa35cf14 — ctx=9851 pos=0.75 span=8 type=semantic_change
+2026-03-14 13:55:46,598 [INFO] src.storage: Flushed 15576 records to Phi-3.5-MoE-agent-results/results_part_000014.parquet.
+2026-03-14 13:55:46,602 [INFO] src.sweep: [151/1080] Running b1fcdf191a105ec4 — ctx=9851 pos=0.75 span=32 type=random_replace
+2026-03-14 13:55:58,020 [INFO] src.sweep: [152/1080] Running bb18619e80762210 — ctx=9851 pos=0.75 span=32 type=mask
+2026-03-14 13:56:09,352 [INFO] src.sweep: [153/1080] Running 3625a3e09b7e0de0 — ctx=9851 pos=0.75 span=32 type=delete
+2026-03-14 13:56:20,979 [INFO] src.sweep: [154/1080] Running d2e26bea29eeedf0 — ctx=9851 pos=0.75 span=32 type=compress
+2026-03-14 13:56:32,283 [INFO] src.sweep: [155/1080] Running 496a0bc5597b7a19 — ctx=9851 pos=0.75 span=32 type=paraphrase
+2026-03-14 13:56:43,863 [INFO] src.sweep: [156/1080] Running 899d1b96347df296 — ctx=9851 pos=0.75 span=32 type=semantic_change
+2026-03-14 13:56:55,489 [INFO] src.sweep: [157/1080] Running 996802bd9e8829c1 — ctx=9851 pos=0.75 span=128 type=random_replace
+2026-03-14 13:57:06,894 [INFO] src.sweep: [158/1080] Running ad99466668345bfd — ctx=9851 pos=0.75 span=128 type=mask
+2026-03-14 13:57:18,239 [INFO] src.sweep: [159/1080] Running 8aa8729a649eb7eb — ctx=9851 pos=0.75 span=128 type=delete
+2026-03-14 13:57:29,202 [INFO] src.sweep: [160/1080] Running 87a3e6b48c1e793b — ctx=9851 pos=0.75 span=128 type=compress
+2026-03-14 13:57:40,791 [INFO] src.storage: Flushed 12408 records to Phi-3.5-MoE-agent-results/results_part_000015.parquet.
+2026-03-14 13:57:40,794 [INFO] src.sweep: [161/1080] Running 1b050e6f4e3476da — ctx=9851 pos=0.75 span=128 type=paraphrase
+2026-03-14 13:57:52,138 [INFO] src.sweep: [162/1080] Running 4ad6784f2399509e — ctx=9851 pos=0.75 span=128 type=semantic_change
+2026-03-14 13:58:03,551 [INFO] src.sweep: [163/1080] Running 022cd813b7e4ada9 — ctx=9851 pos=0.90 span=8 type=random_replace
+2026-03-14 13:58:15,370 [INFO] src.sweep: [164/1080] Running 5051c706af85e77d — ctx=9851 pos=0.90 span=8 type=mask
+2026-03-14 13:58:26,727 [INFO] src.sweep: [165/1080] Running 722b9ff40a354f4b — ctx=9851 pos=0.90 span=8 type=delete
+2026-03-14 13:58:38,269 [INFO] src.sweep: [166/1080] Running 826a84f2aab8c5ed — ctx=9851 pos=0.90 span=8 type=compress
+2026-03-14 13:58:50,821 [INFO] src.sweep: [167/1080] Running 2d26b8e9785763fe — ctx=9851 pos=0.90 span=8 type=paraphrase
+2026-03-14 13:59:01,289 [INFO] src.sweep: [168/1080] Running 7ca39850a1174601 — ctx=9851 pos=0.90 span=8 type=semantic_change
+2026-03-14 13:59:13,320 [INFO] src.sweep: [169/1080] Running 8141718a28c571f9 — ctx=9851 pos=0.90 span=32 type=random_replace
+2026-03-14 13:59:24,624 [INFO] src.sweep: [170/1080] Running 5d772c84df8c1e56 — ctx=9851 pos=0.90 span=32 type=mask
+2026-03-14 13:59:36,309 [INFO] src.storage: Flushed 8514 records to Phi-3.5-MoE-agent-results/results_part_000016.parquet.
+2026-03-14 13:59:36,312 [INFO] src.sweep: [171/1080] Running 29b6e4ed925d536d — ctx=9851 pos=0.90 span=32 type=delete
+2026-03-14 13:59:49,215 [INFO] src.sweep: [172/1080] Running 48515997042a01fc — ctx=9851 pos=0.90 span=32 type=compress
+2026-03-14 13:59:59,473 [INFO] src.sweep: [173/1080] Running a3fbbda964bd1f79 — ctx=9851 pos=0.90 span=32 type=paraphrase
+2026-03-14 14:00:09,371 [INFO] src.sweep: [174/1080] Running be812c29584bd4dc — ctx=9851 pos=0.90 span=32 type=semantic_change
+2026-03-14 14:00:20,254 [INFO] src.sweep: [175/1080] Running d7dee6bfc546c826 — ctx=9851 pos=0.90 span=128 type=random_replace
+2026-03-14 14:00:32,228 [INFO] src.sweep: [176/1080] Running 66e13d0f26e8ba09 — ctx=9851 pos=0.90 span=128 type=mask
+2026-03-14 14:00:43,157 [INFO] src.sweep: [177/1080] Running 655388168a5a6866 — ctx=9851 pos=0.90 span=128 type=delete
+2026-03-14 14:00:54,796 [INFO] src.sweep: [178/1080] Running fc415dc6ca7ac950 — ctx=9851 pos=0.90 span=128 type=compress
+2026-03-14 14:01:05,805 [INFO] src.sweep: [179/1080] Running 281d4054bf87354f — ctx=9851 pos=0.90 span=128 type=paraphrase
+2026-03-14 14:01:16,714 [INFO] src.sweep: [180/1080] Running a5b0d2f0214014b7 — ctx=9851 pos=0.90 span=128 type=semantic_change
+2026-03-14 14:01:27,760 [INFO] src.storage: Flushed 7392 records to Phi-3.5-MoE-agent-results/results_part_000017.parquet.
+2026-03-14 14:01:27,762 [INFO] src.sweep: [181/1080] Running 1f2c137d970407d8 — ctx=10830 pos=0.10 span=8 type=random_replace
+2026-03-14 14:01:39,903 [INFO] src.sweep: [182/1080] Running 8ffaa18e79b78333 — ctx=10830 pos=0.10 span=8 type=mask
+2026-03-14 14:01:52,176 [INFO] src.sweep: [183/1080] Running c5d5176b8498a595 — ctx=10830 pos=0.10 span=8 type=delete
+2026-03-14 14:02:04,170 [INFO] src.sweep: [184/1080] Running 56497bcaaa165485 — ctx=10830 pos=0.10 span=8 type=compress
+2026-03-14 14:02:16,129 [INFO] src.sweep: [185/1080] Running 70744e15b2c4dcee — ctx=10830 pos=0.10 span=8 type=paraphrase
+2026-03-14 14:02:28,377 [INFO] src.sweep: [186/1080] Running 4c6e181e4ee82881 — ctx=10830 pos=0.10 span=8 type=semantic_change
+2026-03-14 14:02:41,120 [INFO] src.sweep: [187/1080] Running 6012fe59238e9462 — ctx=10830 pos=0.10 span=32 type=random_replace
+2026-03-14 14:02:53,153 [INFO] src.sweep: [188/1080] Running 4ba5e3bfa67a1345 — ctx=10830 pos=0.10 span=32 type=mask
+2026-03-14 14:03:05,214 [INFO] src.sweep: [189/1080] Running a9d841ed94ef7a33 — ctx=10830 pos=0.10 span=32 type=delete
+2026-03-14 14:03:17,525 [INFO] src.sweep: [190/1080] Running 95c6e143baa8f576 — ctx=10830 pos=0.10 span=32 type=compress
+2026-03-14 14:03:30,548 [INFO] src.storage: Flushed 36630 records to Phi-3.5-MoE-agent-results/results_part_000018.parquet.
+2026-03-14 14:03:30,555 [INFO] src.sweep: [191/1080] Running 6abd47f6e0cadfed — ctx=10830 pos=0.10 span=32 type=paraphrase
+2026-03-14 14:03:42,592 [INFO] src.sweep: [192/1080] Running 7731c6fc9bee2aca — ctx=10830 pos=0.10 span=32 type=semantic_change
+2026-03-14 14:03:54,877 [INFO] src.sweep: [193/1080] Running 83bc7905d00c07a7 — ctx=10830 pos=0.10 span=128 type=random_replace
+2026-03-14 14:04:07,115 [INFO] src.sweep: [194/1080] Running 96cce982a16f63d7 — ctx=10830 pos=0.10 span=128 type=mask
+2026-03-14 14:04:19,207 [INFO] src.sweep: [195/1080] Running c7378dea169798a4 — ctx=10830 pos=0.10 span=128 type=delete
+2026-03-14 14:04:31,230 [INFO] src.sweep: [196/1080] Running 02761b758f14f31a — ctx=10830 pos=0.10 span=128 type=compress
+2026-03-14 14:04:43,576 [INFO] src.sweep: [197/1080] Running 8778f7e89ff39f52 — ctx=10830 pos=0.10 span=128 type=paraphrase
+2026-03-14 14:04:56,584 [INFO] src.sweep: [198/1080] Running 25d474fc6858f117 — ctx=10830 pos=0.10 span=128 type=semantic_change
+2026-03-14 14:05:09,507 [INFO] src.sweep: [199/1080] Running c6c525bf99382254 — ctx=10830 pos=0.25 span=8 type=random_replace
+2026-03-14 14:05:21,876 [INFO] src.sweep: [200/1080] Running cdd1c40dc8a720e9 — ctx=10830 pos=0.25 span=8 type=mask
+2026-03-14 14:05:34,443 [INFO] src.storage: Flushed 35376 records to Phi-3.5-MoE-agent-results/results_part_000019.parquet.
+2026-03-14 14:05:34,450 [INFO] src.sweep: [201/1080] Running b8e78a76e0fbcd48 — ctx=10830 pos=0.25 span=8 type=delete
+2026-03-14 14:05:46,403 [INFO] src.sweep: [202/1080] Running 5458e6d89141da8f — ctx=10830 pos=0.25 span=8 type=compress
+2026-03-14 14:05:58,421 [INFO] src.sweep: [203/1080] Running 22d6775dc8f6f657 — ctx=10830 pos=0.25 span=8 type=paraphrase
+2026-03-14 14:06:10,481 [INFO] src.sweep: [204/1080] Running a8ccba2fe84691b2 — ctx=10830 pos=0.25 span=8 type=semantic_change
+2026-03-14 14:06:22,525 [INFO] src.sweep: [205/1080] Running 26033f190f5c5239 — ctx=10830 pos=0.25 span=32 type=random_replace
+2026-03-14 14:06:34,880 [INFO] src.sweep: [206/1080] Running 2fd7c04e3c13d5b2 — ctx=10830 pos=0.25 span=32 type=mask
+2026-03-14 14:06:46,971 [INFO] src.sweep: [207/1080] Running 71327a527433dfe2 — ctx=10830 pos=0.25 span=32 type=delete
+2026-03-14 14:06:59,363 [INFO] src.sweep: [208/1080] Running 2c082ad3add85ace — ctx=10830 pos=0.25 span=32 type=compress
+2026-03-14 14:07:11,410 [INFO] src.sweep: [209/1080] Running 9b19ab8fb1260f65 — ctx=10830 pos=0.25 span=32 type=paraphrase
+2026-03-14 14:07:25,060 [INFO] src.sweep: [210/1080] Running 060383c764437652 — ctx=10830 pos=0.25 span=32 type=semantic_change
+2026-03-14 14:07:37,233 [INFO] src.storage: Flushed 31152 records to Phi-3.5-MoE-agent-results/results_part_000020.parquet.
+2026-03-14 14:07:37,239 [INFO] src.sweep: [211/1080] Running 885c00e4bab76453 — ctx=10830 pos=0.25 span=128 type=random_replace
+2026-03-14 14:07:48,988 [INFO] src.sweep: [212/1080] Running d3fb1242cf8c27bd — ctx=10830 pos=0.25 span=128 type=mask
+2026-03-14 14:08:01,008 [INFO] src.sweep: [213/1080] Running 25d8d323e14bdeac — ctx=10830 pos=0.25 span=128 type=delete
+2026-03-14 14:08:13,877 [INFO] src.sweep: [214/1080] Running d4971206b2dd2bc6 — ctx=10830 pos=0.25 span=128 type=compress
+2026-03-14 14:08:25,726 [INFO] src.sweep: [215/1080] Running 3355872234ab9479 — ctx=10830 pos=0.25 span=128 type=paraphrase
+2026-03-14 14:08:38,823 [INFO] src.sweep: [216/1080] Running f25f901021245560 — ctx=10830 pos=0.25 span=128 type=semantic_change
+2026-03-14 14:08:50,741 [INFO] src.sweep: [217/1080] Running 577b5210a9fc235d — ctx=10830 pos=0.50 span=8 type=random_replace
+2026-03-14 14:09:02,660 [INFO] src.sweep: [218/1080] Running 442727a9a351376d — ctx=10830 pos=0.50 span=8 type=mask
+2026-03-14 14:09:14,835 [INFO] src.sweep: [219/1080] Running e3a167bc206a4f4a — ctx=10830 pos=0.50 span=8 type=delete
+2026-03-14 14:09:26,969 [INFO] src.sweep: [220/1080] Running 175f3d1b5e433ab3 — ctx=10830 pos=0.50 span=8 type=compress
+2026-03-14 14:09:39,443 [INFO] src.storage: Flushed 27390 records to Phi-3.5-MoE-agent-results/results_part_000021.parquet.
+2026-03-14 14:09:39,449 [INFO] src.sweep: [221/1080] Running 247fbd85f5fabeca — ctx=10830 pos=0.50 span=8 type=paraphrase
+2026-03-14 14:09:52,536 [INFO] src.sweep: [222/1080] Running 0c6622c84d3318ab — ctx=10830 pos=0.50 span=8 type=semantic_change
+2026-03-14 14:10:05,051 [INFO] src.sweep: [223/1080] Running 82dc8f71a3886c10 — ctx=10830 pos=0.50 span=32 type=random_replace
+2026-03-14 14:10:17,354 [INFO] src.sweep: [224/1080] Running af0add1c4bd43a98 — ctx=10830 pos=0.50 span=32 type=mask
+2026-03-14 14:10:29,264 [INFO] src.sweep: [225/1080] Running 13561ff50ea66244 — ctx=10830 pos=0.50 span=32 type=delete
+2026-03-14 14:10:41,344 [INFO] src.sweep: [226/1080] Running 9d4a5daa065a2a7a — ctx=10830 pos=0.50 span=32 type=compress
+2026-03-14 14:10:53,547 [INFO] src.sweep: [227/1080] Running caee1380dfd99f98 — ctx=10830 pos=0.50 span=32 type=paraphrase
+2026-03-14 14:11:05,559 [INFO] src.sweep: [228/1080] Running 5b9df308c069fdc5 — ctx=10830 pos=0.50 span=32 type=semantic_change
+2026-03-14 14:11:17,708 [INFO] src.sweep: [229/1080] Running 2e29a8f9e2ec8ba4 — ctx=10830 pos=0.50 span=128 type=random_replace
+2026-03-14 14:11:29,591 [INFO] src.sweep: [230/1080] Running 2059c41c4533b5d0 — ctx=10830 pos=0.50 span=128 type=mask
+2026-03-14 14:11:42,542 [INFO] src.storage: Flushed 22110 records to Phi-3.5-MoE-agent-results/results_part_000022.parquet.
+2026-03-14 14:11:42,547 [INFO] src.sweep: [231/1080] Running bda5ebc3518f11ad — ctx=10830 pos=0.50 span=128 type=delete
+2026-03-14 14:11:54,385 [INFO] src.sweep: [232/1080] Running 45f8107c5afad135 — ctx=10830 pos=0.50 span=128 type=compress
+2026-03-14 14:12:06,558 [INFO] src.sweep: [233/1080] Running 9aa889278598be64 — ctx=10830 pos=0.50 span=128 type=paraphrase
+2026-03-14 14:12:18,507 [INFO] src.sweep: [234/1080] Running 4afab69c1f2604a4 — ctx=10830 pos=0.50 span=128 type=semantic_change
+2026-03-14 14:12:31,026 [INFO] src.sweep: [235/1080] Running e059b1018807c4ba — ctx=10830 pos=0.75 span=8 type=random_replace
+2026-03-14 14:12:42,536 [INFO] src.sweep: [236/1080] Running f17125762264a3d2 — ctx=10830 pos=0.75 span=8 type=mask
+2026-03-14 14:12:54,464 [INFO] src.sweep: [237/1080] Running 3ff41923f7037929 — ctx=10830 pos=0.75 span=8 type=delete
+2026-03-14 14:13:06,289 [INFO] src.sweep: [238/1080] Running 48f463d7e0039630 — ctx=10830 pos=0.75 span=8 type=compress
+2026-03-14 14:13:18,469 [INFO] src.sweep: [239/1080] Running 092530fb28fcb50b — ctx=10830 pos=0.75 span=8 type=paraphrase
+2026-03-14 14:13:30,791 [INFO] src.sweep: [240/1080] Running ec8e7ab2cca2a41c — ctx=10830 pos=0.75 span=8 type=semantic_change
+2026-03-14 14:13:42,728 [INFO] src.storage: Flushed 16632 records to Phi-3.5-MoE-agent-results/results_part_000023.parquet.
+2026-03-14 14:13:42,732 [INFO] src.sweep: [241/1080] Running 3f6121ac3f43dc81 — ctx=10830 pos=0.75 span=32 type=random_replace
+2026-03-14 14:13:54,581 [INFO] src.sweep: [242/1080] Running 731d336e6118d4e9 — ctx=10830 pos=0.75 span=32 type=mask
+2026-03-14 14:14:06,791 [INFO] src.sweep: [243/1080] Running e336d553c8907df0 — ctx=10830 pos=0.75 span=32 type=delete
+2026-03-14 14:14:18,710 [INFO] src.sweep: [244/1080] Running 4e5ed7e0f2ce73d5 — ctx=10830 pos=0.75 span=32 type=compress
+2026-03-14 14:14:30,546 [INFO] src.sweep: [245/1080] Running 7f25eb4307a0af88 — ctx=10830 pos=0.75 span=32 type=paraphrase
+2026-03-14 14:14:42,850 [INFO] src.sweep: [246/1080] Running 39a0803f954f5a51 — ctx=10830 pos=0.75 span=32 type=semantic_change
+2026-03-14 14:14:54,782 [INFO] src.sweep: [247/1080] Running 7ee1e266c2b19168 — ctx=10830 pos=0.75 span=128 type=random_replace
+2026-03-14 14:15:07,209 [INFO] src.sweep: [248/1080] Running bfe5c43a2a1fa675 — ctx=10830 pos=0.75 span=128 type=mask
+2026-03-14 14:15:18,995 [INFO] src.sweep: [249/1080] Running 779e20eb065885bc — ctx=10830 pos=0.75 span=128 type=delete
+2026-03-14 14:15:30,814 [INFO] src.sweep: [250/1080] Running abf37d7819666110 — ctx=10830 pos=0.75 span=128 type=compress
+2026-03-14 14:15:42,692 [INFO] src.storage: Flushed 13068 records to Phi-3.5-MoE-agent-results/results_part_000024.parquet.
+2026-03-14 14:15:42,695 [INFO] src.sweep: [251/1080] Running 05a8a5f37dfae352 — ctx=10830 pos=0.75 span=128 type=paraphrase
+2026-03-14 14:15:56,193 [INFO] src.sweep: [252/1080] Running da904921c5123c75 — ctx=10830 pos=0.75 span=128 type=semantic_change
+2026-03-14 14:16:08,050 [INFO] src.sweep: [253/1080] Running 381ff52d9aaaef81 — ctx=10830 pos=0.90 span=8 type=random_replace
+2026-03-14 14:16:20,868 [INFO] src.sweep: [254/1080] Running b7d5510881fa33e9 — ctx=10830 pos=0.90 span=8 type=mask
+2026-03-14 14:16:32,722 [INFO] src.sweep: [255/1080] Running 7b0d8c26fbae07cd — ctx=10830 pos=0.90 span=8 type=delete
+2026-03-14 14:16:46,062 [INFO] src.sweep: [256/1080] Running 181fc66f2d846c22 — ctx=10830 pos=0.90 span=8 type=compress
+2026-03-14 14:16:57,846 [INFO] src.sweep: [257/1080] Running d17918c116865cf1 — ctx=10830 pos=0.90 span=8 type=paraphrase
+2026-03-14 14:17:11,476 [INFO] src.sweep: [258/1080] Running dcbce75768e050e7 — ctx=10830 pos=0.90 span=8 type=semantic_change
+2026-03-14 14:17:23,246 [INFO] src.sweep: [259/1080] Running bb5047fd3673aa49 — ctx=10830 pos=0.90 span=32 type=random_replace
+2026-03-14 14:17:36,337 [INFO] src.sweep: [260/1080] Running 7712bc91fde5f47d — ctx=10830 pos=0.90 span=32 type=mask
+2026-03-14 14:17:48,280 [INFO] src.storage: Flushed 8910 records to Phi-3.5-MoE-agent-results/results_part_000025.parquet.
+2026-03-14 14:17:48,282 [INFO] src.sweep: [261/1080] Running 1e08ab725ee7a14b — ctx=10830 pos=0.90 span=32 type=delete
+2026-03-14 14:18:01,191 [INFO] src.sweep: [262/1080] Running c02ed0d3e466b17a — ctx=10830 pos=0.90 span=32 type=compress
+2026-03-14 14:18:14,235 [INFO] src.sweep: [263/1080] Running 6543d8823dd42377 — ctx=10830 pos=0.90 span=32 type=paraphrase
+2026-03-14 14:18:26,075 [INFO] src.sweep: [264/1080] Running 97dc690ffccada88 — ctx=10830 pos=0.90 span=32 type=semantic_change
+2026-03-14 14:18:38,005 [INFO] src.sweep: [265/1080] Running 614fccba1c16399a — ctx=10830 pos=0.90 span=128 type=random_replace
+2026-03-14 14:18:49,892 [INFO] src.sweep: [266/1080] Running e6e86784d5fe06c3 — ctx=10830 pos=0.90 span=128 type=mask
+2026-03-14 14:19:02,972 [INFO] src.sweep: [267/1080] Running 53a9c2742d239df3 — ctx=10830 pos=0.90 span=128 type=delete
+2026-03-14 14:19:14,893 [INFO] src.sweep: [268/1080] Running a2f9bee9cb886f47 — ctx=10830 pos=0.90 span=128 type=compress
+2026-03-14 14:19:27,265 [INFO] src.sweep: [269/1080] Running cb5679eb814e5581 — ctx=10830 pos=0.90 span=128 type=paraphrase
+2026-03-14 14:19:40,604 [INFO] src.sweep: [270/1080] Running d65c34e860414742 — ctx=10830 pos=0.90 span=128 type=semantic_change
+2026-03-14 14:19:53,431 [INFO] src.storage: Flushed 7722 records to Phi-3.5-MoE-agent-results/results_part_000026.parquet.
+2026-03-14 14:19:53,433 [INFO] src.sweep: [271/1080] Running 95b704761555977a — ctx=11257 pos=0.10 span=8 type=random_replace
+2026-03-14 14:19:57,791 [ERROR] src.sweep: Experiment 95b704761555977a failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 13.52 GiB is free. Process 3581755 has 65.79 GiB memory in use. Of the allocated memory 50.20 GiB is allocated by PyTorch, and 15.10 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:19:57,793 [INFO] src.sweep: [272/1080] Running df4dda1c766be229 — ctx=11257 pos=0.10 span=8 type=mask
+2026-03-14 14:20:00,285 [ERROR] src.sweep: Experiment df4dda1c766be229 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.08 GiB is free. Process 3581755 has 73.23 GiB memory in use. Of the allocated memory 50.07 GiB is allocated by PyTorch, and 22.67 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:00,285 [INFO] src.sweep: [273/1080] Running 036ce8e73596e385 — ctx=11257 pos=0.10 span=8 type=delete
+2026-03-14 14:20:02,329 [ERROR] src.sweep: Experiment 036ce8e73596e385 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.02 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:02,329 [INFO] src.sweep: [274/1080] Running 19f1aefa5369ab4e — ctx=11257 pos=0.10 span=8 type=compress
+2026-03-14 14:20:04,257 [ERROR] src.sweep: Experiment 19f1aefa5369ab4e failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:04,258 [INFO] src.sweep: [275/1080] Running 81b08ca188b7cf21 — ctx=11257 pos=0.10 span=8 type=paraphrase
+2026-03-14 14:20:06,186 [ERROR] src.sweep: Experiment 81b08ca188b7cf21 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:06,187 [INFO] src.sweep: [276/1080] Running 217b47da25d5f26d — ctx=11257 pos=0.10 span=8 type=semantic_change
+2026-03-14 14:20:08,114 [ERROR] src.sweep: Experiment 217b47da25d5f26d failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:08,114 [INFO] src.sweep: [277/1080] Running a0927b377c4352eb — ctx=11257 pos=0.10 span=32 type=random_replace
+2026-03-14 14:20:10,062 [ERROR] src.sweep: Experiment a0927b377c4352eb failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:10,062 [INFO] src.sweep: [278/1080] Running c98b7763514fedef — ctx=11257 pos=0.10 span=32 type=mask
+2026-03-14 14:20:11,991 [ERROR] src.sweep: Experiment c98b7763514fedef failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:11,992 [INFO] src.sweep: [279/1080] Running 54de026ced914ad1 — ctx=11257 pos=0.10 span=32 type=delete
+2026-03-14 14:20:13,925 [ERROR] src.sweep: Experiment 54de026ced914ad1 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:13,927 [INFO] src.sweep: [280/1080] Running 699d86584495323b — ctx=11257 pos=0.10 span=32 type=compress
+2026-03-14 14:20:15,866 [ERROR] src.sweep: Experiment 699d86584495323b failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:15,868 [INFO] src.sweep: [281/1080] Running c6a18d293286d208 — ctx=11257 pos=0.10 span=32 type=paraphrase
+2026-03-14 14:20:17,802 [ERROR] src.sweep: Experiment c6a18d293286d208 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:17,803 [INFO] src.sweep: [282/1080] Running 04d96bb36ce08f93 — ctx=11257 pos=0.10 span=32 type=semantic_change
+2026-03-14 14:20:20,071 [ERROR] src.sweep: Experiment 04d96bb36ce08f93 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:20,072 [INFO] src.sweep: [283/1080] Running 8f3216d837c2f415 — ctx=11257 pos=0.10 span=128 type=random_replace
+2026-03-14 14:20:22,005 [ERROR] src.sweep: Experiment 8f3216d837c2f415 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:22,006 [INFO] src.sweep: [284/1080] Running 558c0d2ee8873c63 — ctx=11257 pos=0.10 span=128 type=mask
+2026-03-14 14:20:23,936 [ERROR] src.sweep: Experiment 558c0d2ee8873c63 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:23,936 [INFO] src.sweep: [285/1080] Running 7659b60687d4255c — ctx=11257 pos=0.10 span=128 type=delete
+2026-03-14 14:20:25,866 [ERROR] src.sweep: Experiment 7659b60687d4255c failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:25,867 [INFO] src.sweep: [286/1080] Running debb71eb592743b4 — ctx=11257 pos=0.10 span=128 type=compress
+2026-03-14 14:20:27,913 [ERROR] src.sweep: Experiment debb71eb592743b4 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:27,914 [INFO] src.sweep: [287/1080] Running e1afbd2285e03886 — ctx=11257 pos=0.10 span=128 type=paraphrase
+2026-03-14 14:20:29,843 [ERROR] src.sweep: Experiment e1afbd2285e03886 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:29,844 [INFO] src.sweep: [288/1080] Running 036731cd2c4a12c3 — ctx=11257 pos=0.10 span=128 type=semantic_change
+2026-03-14 14:20:31,773 [ERROR] src.sweep: Experiment 036731cd2c4a12c3 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:31,773 [INFO] src.sweep: [289/1080] Running 689659ab9ff2b65f — ctx=11257 pos=0.25 span=8 type=random_replace
+2026-03-14 14:20:33,704 [ERROR] src.sweep: Experiment 689659ab9ff2b65f failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:33,705 [INFO] src.sweep: [290/1080] Running b3adb10c24f221a4 — ctx=11257 pos=0.25 span=8 type=mask
+2026-03-14 14:20:36,170 [ERROR] src.sweep: Experiment b3adb10c24f221a4 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:36,171 [INFO] src.sweep: [291/1080] Running 07c39b224bfcb8d8 — ctx=11257 pos=0.25 span=8 type=delete
+2026-03-14 14:20:38,100 [ERROR] src.sweep: Experiment 07c39b224bfcb8d8 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:38,100 [INFO] src.sweep: [292/1080] Running eb8effa302a79fb4 — ctx=11257 pos=0.25 span=8 type=compress
+2026-03-14 14:20:40,029 [ERROR] src.sweep: Experiment eb8effa302a79fb4 failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:40,030 [INFO] src.sweep: [293/1080] Running 28144e1ce36c1b3c — ctx=11257 pos=0.25 span=8 type=paraphrase
+2026-03-14 14:20:41,960 [ERROR] src.sweep: Experiment 28144e1ce36c1b3c failed.
+Traceback (most recent call last):
+  File "/root/context/ActivationPerturbationAnalysis/src/sweep.py", line 197, in run_sweep
+    records = run_single_experiment(
+  File "/root/context/ActivationPerturbationAnalysis/src/experiment.py", line 98, in run_single_experiment
+    orig_hidden = extract_hidden_states(model, result.original_ids)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/context/ActivationPerturbationAnalysis/src/model.py", line 95, in extract_hidden_states
+    outputs = model(input_ids=input_ids, output_hidden_states=True)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1541, in forward
+    outputs = self.model(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1409, in forward
+    layer_outputs = decoder_layer(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 1114, in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/Phi-3.5-MoE-instruct/modeling_phimoe.py", line 409, in forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 2142, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 15.11 GiB. GPU 1 has a total capacity of 79.32 GiB of which 6.10 GiB is free. Process 3581755 has 73.21 GiB memory in use. Of the allocated memory 50.03 GiB is allocated by PyTorch, and 22.69 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2026-03-14 14:20:41,961 [INFO] src.sweep: [294/1080] Running 5a9191545fc5177d — ctx=11257 pos=0.25 span=8 type=semantic_change

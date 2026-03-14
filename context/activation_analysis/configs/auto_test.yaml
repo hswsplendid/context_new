@@ -1,0 +1,59 @@
+# Auto-test configuration for full experiment pipeline
+# Used by scripts/run_auto_test.py
+
+model:
+  model_path: "Qwen/Qwen3-30B-A3B"
+  torch_dtype: "bfloat16"
+  device_map: "auto"
+  max_gpu_count: null
+  min_free_gpu_mb: 2048
+  num_layers: 49
+
+extraction:
+  layer_indices: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48]
+  save_full_hidden: false
+  use_hooks: true
+
+# Default perturbation grid (used by Phase 2 & 3)
+perturbation:
+  context_lengths: [512, 1024, 2048, 4096]
+  ratios: [0.10, 0.25, 0.50]
+  positions: ["beginning", "middle", "end"]
+
+# Quick mode overrides (subset for fast validation)
+quick_perturbation:
+  context_lengths: [1024]
+  ratios: [0.25]
+  positions: ["middle"]
+
+# Template and replacement configurations
+templates:
+  - name: "tool_use_agent"
+    template_path: "prompts/agent_templates/tool_use_agent.yaml"
+    replacements_path: "prompts/perturbations/type1_replacements.yaml"
+  - name: "multi_turn_agent"
+    template_path: "prompts/agent_templates/multi_turn_agent.yaml"
+    replacements_path: "prompts/perturbations/type1_replacements_multi_turn.yaml"
+
+# Type 1 metrics
+metrics_type1:
+  cosine: true
+  cka: true
+  l2: true
+  granularity: ["token", "segment"]
+
+# Type 2 metrics (no token-level, no L2)
+metrics_type2:
+  cosine: true
+  cka: true
+  l2: false
+  granularity: ["segment"]
+
+# Sanity check thresholds
+sanity:
+  identity_cosine_min: 0.999
+  minimal_perturbation_shallow_cosine_min: 0.95
+  # Shallow layers = layer_index <= 12
+  shallow_layer_threshold: 12
+
+seed: 42

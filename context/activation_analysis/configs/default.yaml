@@ -1,0 +1,27 @@
+model:
+  model_path: "Qwen/Qwen3-30B-A3B"
+  torch_dtype: "bfloat16"
+  device_map: "auto"
+  max_gpu_count: null
+
+extraction:
+  layer_indices: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48]
+  save_full_hidden: false
+  use_hooks: true
+
+perturbation:
+  type: "type1"
+  context_lengths: [512, 1024, 2048, 4096]
+  ratios: [0.10, 0.25, 0.50]
+  positions: ["beginning", "middle", "end"]
+
+metrics:
+  cosine: true
+  cka: true
+  l2: true
+  granularity: ["token", "segment"]
+
+output_dir: "results"
+seed: 42
+template_path: "prompts/agent_templates/tool_use_agent.yaml"
+replacements_path: "prompts/perturbations/type1_replacements.yaml"
