@@ -37,6 +37,8 @@ RESULT_COLUMNS = [
     "max_similarity",
     "std_similarity",
     "num_tokens",
+    "prompt_pair_index",
+    "common_prefix_length",
 ]
 
 

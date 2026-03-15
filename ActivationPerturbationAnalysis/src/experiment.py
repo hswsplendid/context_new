@@ -18,7 +18,7 @@ from transformers import PreTrainedTokenizerBase
 
 from .metrics import compute_distance_buckets
 from .model import extract_hidden_states
-from .perturbations import PerturbationResult, get_strategy
+from .perturbations import PerturbationResult, build_prompt_diff_result, get_strategy
 
 logger = logging.getLogger(__name__)
 
@@ -114,6 +114,104 @@ def run_single_experiment(
 
     # Free GPU memory eagerly.
     del orig_hidden, pert_hidden
+    import gc
+    gc.collect()
+    torch.cuda.empty_cache()
+
+    return records
+
+
+def run_prompt_diff_experiment(
+    model,
+    tokenizer: PreTrainedTokenizerBase,
+    prev_prompt: str,
+    curr_prompt: str,
+    measurement_cfg: Dict[str, int],
+    prompt_pair_index: int,
+) -> List[Dict[str, Any]]:
+    """Measure forward propagation of natural prompt diffs.
+
+    Treats the natural difference between two consecutive agent prompts as
+    the perturbation and measures — in the same forward direction as the
+    standard experiments — how the diff affects subsequent token hidden
+    states.
+
+    From the divergence point (LCP) onward, the two sequences contain
+    *different* token ids.  We compare their hidden states at aligned
+    offsets from the divergence point using the standard
+    :func:`compute_distance_buckets`.  This captures how divergent content
+    causes the hidden-state trajectory to separate as we move further
+    from the split.
+
+    Parameters
+    ----------
+    model:
+        HuggingFace causal LM with ``output_hidden_states=True``.
+    tokenizer:
+        Corresponding tokenizer.
+    prev_prompt, curr_prompt:
+        Two consecutive prompts (prev is typically a prefix of curr).
+    measurement_cfg:
+        Dict with keys ``immediate_window``, ``short_window``,
+        ``periodic_sampling_step``, ``periodic_sampling_width``.
+    prompt_pair_index:
+        Index of this consecutive pair (0 = prompts 0→1, etc.).
+
+    Returns
+    -------
+    List of metric records (dicts) ready for storage.
+    """
+    # 1. Tokenize both prompts ------------------------------------------
+    prev_ids = tokenizer.encode(prev_prompt, add_special_tokens=False)
+    curr_ids = tokenizer.encode(curr_prompt, add_special_tokens=False)
+
+    # 2. Find common prefix (LCP) --------------------------------------
+    result = build_prompt_diff_result(prev_ids, curr_ids)
+    lcp = result.post_perturbation_start  # longest common prefix length
+
+    tokens_after_prev = len(prev_ids) - lcp
+    tokens_after_curr = len(curr_ids) - lcp
+
+    if min(tokens_after_prev, tokens_after_curr) <= 0:
+        logger.warning(
+            "Prompt pair %d: one sequence has no tokens after the divergence "
+            "point (LCP=%d, prev=%d, curr=%d). "
+            "No forward-propagation measurement possible. Skipping.",
+            prompt_pair_index, lcp, len(prev_ids), len(curr_ids),
+        )
+        return []
+
+    logger.debug(
+        "Prompt diff pair %d: prev=%d tokens, curr=%d tokens, LCP=%d, "
+        "post-LCP prev=%d, post-LCP curr=%d",
+        prompt_pair_index,
+        len(prev_ids), len(curr_ids), lcp,
+        tokens_after_prev, tokens_after_curr,
+    )
+
+    # 3. Forward passes (hidden states stay on GPU) ---------------------
+    logger.debug("Running forward pass on prev (%d tokens)…", len(prev_ids))
+    prev_hidden = extract_hidden_states(model, prev_ids)
+
+    logger.debug("Running forward pass on curr (%d tokens)…", len(curr_ids))
+    curr_hidden = extract_hidden_states(model, curr_ids)
+
+    # 4. Compute forward-direction metrics from the divergence point ----
+    #    Identical to the standard experiment: compare hidden states at
+    #    aligned offsets from the point where the two sequences diverge.
+    records = compute_distance_buckets(
+        original_states=prev_hidden,
+        perturbed_states=curr_hidden,
+        post_perturbation_start_orig=lcp,
+        post_perturbation_start_pert=lcp,
+        immediate_window=measurement_cfg.get("immediate_window", 10),
+        short_window=measurement_cfg.get("short_window", 100),
+        periodic_step=measurement_cfg.get("periodic_sampling_step", 100),
+        periodic_width=measurement_cfg.get("periodic_sampling_width", 10),
+    )
+
+    # Free GPU memory eagerly.
+    del prev_hidden, curr_hidden
     import gc
     gc.collect()
     torch.cuda.empty_cache()

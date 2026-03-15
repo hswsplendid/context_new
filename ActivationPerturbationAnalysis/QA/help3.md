@@ -70,3 +70,4 @@
   sweep.context_lengths 在 jsonfile 模式下被忽略，实验自动使用每条 prompt 的真实 token 数作为
   context_length 维度。
 
+当我用prompt/extracted_prompts.json的真实agent的prompt跑测试时，要对比的就是这一条和上一条的prompt改变，这里的扰动就不需要人为规定了。扰动的其实就是这一个prompt相较于上一个prompt的有差别的地方。请你理解我的含义,设计plan，修改代码。

@@ -244,6 +244,53 @@ class SemanticChange(PerturbationStrategy):
 
 
 # -----------------------------------------------------------------------
+# Prompt-diff helper (not a strategy — takes two token lists)
+# -----------------------------------------------------------------------
+
+def build_prompt_diff_result(
+    prev_ids: List[int],
+    curr_ids: List[int],
+) -> PerturbationResult:
+    """Build a :class:`PerturbationResult` from the natural diff of two prompts.
+
+    Finds the longest common prefix (LCP) between *prev_ids* and *curr_ids*
+    and treats the diverging suffixes as the "perturbation".
+
+    This is designed for consecutive agent prompts where ``prompt[i]`` is
+    roughly a prefix of ``prompt[i+1]`` with new content appended.
+
+    Returns
+    -------
+    PerturbationResult
+        ``original_ids = prev_ids``, ``perturbed_ids = curr_ids``.
+        The spans describe the differing suffixes in each sequence, and
+        ``post_perturbation_start`` equals the LCP length (the divergence
+        point).
+    """
+    # Compute longest common prefix length.
+    lcp = 0
+    min_len = min(len(prev_ids), len(curr_ids))
+    for i in range(min_len):
+        if prev_ids[i] != curr_ids[i]:
+            break
+        lcp += 1
+    else:
+        # All tokens matched up to min_len.
+        lcp = min_len
+
+    return PerturbationResult(
+        original_ids=prev_ids,
+        perturbed_ids=curr_ids,
+        original_span_start=lcp,
+        original_span_end=len(prev_ids),
+        perturbed_span_start=lcp,
+        perturbed_span_end=len(curr_ids),
+        post_perturbation_start=lcp,
+        perturbation_type="prompt_diff",
+    )
+
+
+# -----------------------------------------------------------------------
 # Registry
 # -----------------------------------------------------------------------
 STRATEGY_REGISTRY: Dict[str, type] = {

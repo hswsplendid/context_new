@@ -15,7 +15,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from transformers import PreTrainedTokenizerBase
 
-from .experiment import run_single_experiment
+from .experiment import run_prompt_diff_experiment, run_single_experiment
 from .prompts import PromptGenerator
 from .scheduler import ExperimentJob, ExperimentScheduler, GPUInfo, detect_gpus
 from .storage import ResultStore
@@ -74,6 +74,31 @@ def build_sweep_jobs(
         jobs.append(ExperimentJob(job_id=job_id, params=params))
 
     logger.info("Built %d experiment jobs.", len(jobs))
+    return jobs
+
+
+def build_prompt_diff_jobs(
+    prompt_token_counts: List[int],
+) -> List[ExperimentJob]:
+    """Build jobs for consecutive prompt-pair comparisons.
+
+    For N prompts, produces N-1 jobs — one per consecutive pair
+    ``(prompt[i], prompt[i+1])``.
+    """
+    jobs: List[ExperimentJob] = []
+    for i in range(len(prompt_token_counts) - 1):
+        params = {
+            "perturbation_type": "prompt_diff",
+            "prompt_pair_index": i,
+            "prev_prompt_index": i,
+            "curr_prompt_index": i + 1,
+            "prev_token_count": prompt_token_counts[i],
+            "curr_token_count": prompt_token_counts[i + 1],
+        }
+        job_id = _make_experiment_id(params)
+        jobs.append(ExperimentJob(job_id=job_id, params=params))
+
+    logger.info("Built %d prompt-diff jobs.", len(jobs))
     return jobs
 
 
@@ -156,7 +181,17 @@ def run_sweep(config: Dict[str, Any]):
             prompt_token_counts,
         )
 
-    all_jobs = build_sweep_jobs(config, prompt_token_counts=prompt_token_counts)
+    # --- Detect prompt_diff mode --------------------------------------
+    sweep = config["sweep"]
+    is_prompt_diff = (
+        sweep["perturbation_types"] == ["prompt_diff"] and is_jsonfile
+    )
+
+    if is_prompt_diff:
+        all_jobs = build_prompt_diff_jobs(prompt_token_counts)
+    else:
+        all_jobs = build_sweep_jobs(config, prompt_token_counts=prompt_token_counts)
+
     measurement_cfg = config.get("measurement", {})
     model_id = model_cfg["path"]
 
@@ -173,53 +208,104 @@ def run_sweep(config: Dict[str, Any]):
             continue
 
         params = job.params
-        logger.info(
-            "[%d/%d] Running %s — ctx=%d pos=%.2f span=%d type=%s",
-            idx + 1,
-            total,
-            job.job_id,
-            params["context_length"],
-            params["perturbation_position_frac"],
-            params["perturbation_span_length"],
-            params["perturbation_type"],
-        )
 
-        if is_jsonfile:
-            # Use the specific prompt whose token count matches this job.
-            pidx = _ctx_to_prompt_idx[params["context_length"]]
-            prompt_text = prompt_gen.generate(target_length=0, index=pidx)
+        if params.get("perturbation_type") == "prompt_diff":
+            # --- Prompt-diff mode: consecutive pair comparison ---
+            pair_idx = params["prompt_pair_index"]
+            prev_idx = params["prev_prompt_index"]
+            curr_idx = params["curr_prompt_index"]
+            logger.info(
+                "[%d/%d] Running prompt_diff %s — pair=%d (prompt %d→%d)",
+                idx + 1, total, job.job_id, pair_idx, prev_idx, curr_idx,
+            )
+
+            prev_prompt = prompt_gen.generate(target_length=0, index=prev_idx)
+            curr_prompt = prompt_gen.generate(target_length=0, index=curr_idx)
+
+            try:
+                records = run_prompt_diff_experiment(
+                    model=model,
+                    tokenizer=tokenizer,
+                    prev_prompt=prev_prompt,
+                    curr_prompt=curr_prompt,
+                    measurement_cfg=measurement_cfg,
+                    prompt_pair_index=pair_idx,
+                )
+            except Exception:
+                logger.exception("Prompt-diff experiment %s failed.", job.job_id)
+                continue
+
+            # Compute actual diff position and length from token counts.
+            prev_ids = tokenizer.encode(prev_prompt, add_special_tokens=False)
+            curr_ids = tokenizer.encode(curr_prompt, add_special_tokens=False)
+            lcp = 0
+            for a, b in zip(prev_ids, curr_ids):
+                if a != b:
+                    break
+                lcp += 1
+            else:
+                lcp = min(len(prev_ids), len(curr_ids))
+
+            metadata = {
+                "model_id": model_id,
+                "context_length": len(curr_ids),
+                "perturbation_type": "prompt_diff",
+                "perturbation_position_frac": lcp / len(curr_ids) if len(curr_ids) > 0 else 0.0,
+                "perturbation_position_abs": lcp,
+                "perturbation_span_length": len(curr_ids) - lcp,
+                "prompt_pair_index": pair_idx,
+                "common_prefix_length": lcp,
+            }
+            store.add_records(job.job_id, records, metadata=metadata)
         else:
-            prompt_text = prompt_gen.generate(
-                target_length=params["context_length"], index=idx
+            # --- Standard perturbation mode ---
+            logger.info(
+                "[%d/%d] Running %s — ctx=%d pos=%.2f span=%d type=%s",
+                idx + 1,
+                total,
+                job.job_id,
+                params["context_length"],
+                params["perturbation_position_frac"],
+                params["perturbation_span_length"],
+                params["perturbation_type"],
             )
 
-        try:
-            records = run_single_experiment(
-                model=model,
-                tokenizer=tokenizer,
-                prompt_text=prompt_text,
-                perturbation_type=params["perturbation_type"],
-                perturbation_position_frac=params["perturbation_position_frac"],
-                perturbation_span_length=params["perturbation_span_length"],
-                measurement_cfg=measurement_cfg,
-                seed=prompt_cfg.get("seed", 42),
-                replacement_pool=_replacement_pool,
-            )
-        except Exception:
-            logger.exception("Experiment %s failed.", job.job_id)
-            continue
+            if is_jsonfile:
+                # Use the specific prompt whose token count matches this job.
+                pidx = _ctx_to_prompt_idx[params["context_length"]]
+                prompt_text = prompt_gen.generate(target_length=0, index=pidx)
+            else:
+                prompt_text = prompt_gen.generate(
+                    target_length=params["context_length"], index=idx
+                )
 
-        metadata = {
-            "model_id": model_id,
-            "context_length": params["context_length"],
-            "perturbation_type": params["perturbation_type"],
-            "perturbation_position_frac": params["perturbation_position_frac"],
-            "perturbation_position_abs": int(
-                params["perturbation_position_frac"] * params["context_length"]
-            ),
-            "perturbation_span_length": params["perturbation_span_length"],
-        }
-        store.add_records(job.job_id, records, metadata=metadata)
+            try:
+                records = run_single_experiment(
+                    model=model,
+                    tokenizer=tokenizer,
+                    prompt_text=prompt_text,
+                    perturbation_type=params["perturbation_type"],
+                    perturbation_position_frac=params["perturbation_position_frac"],
+                    perturbation_span_length=params["perturbation_span_length"],
+                    measurement_cfg=measurement_cfg,
+                    seed=prompt_cfg.get("seed", 42),
+                    replacement_pool=_replacement_pool,
+                )
+            except Exception:
+                logger.exception("Experiment %s failed.", job.job_id)
+                continue
+
+            metadata = {
+                "model_id": model_id,
+                "context_length": params["context_length"],
+                "perturbation_type": params["perturbation_type"],
+                "perturbation_position_frac": params["perturbation_position_frac"],
+                "perturbation_position_abs": int(
+                    params["perturbation_position_frac"] * params["context_length"]
+                ),
+                "perturbation_span_length": params["perturbation_span_length"],
+            }
+            store.add_records(job.job_id, records, metadata=metadata)
 
     store.flush()
     elapsed = time.time() - t0
