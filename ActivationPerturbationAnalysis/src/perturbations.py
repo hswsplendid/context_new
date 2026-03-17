@@ -247,6 +247,18 @@ class SemanticChange(PerturbationStrategy):
 # Prompt-diff helper (not a strategy — takes two token lists)
 # -----------------------------------------------------------------------
 
+def _longest_common_prefix_len(ids_a: List[int], ids_b: List[int]) -> int:
+    """Return the number of leading tokens shared by *ids_a* and *ids_b*."""
+    lcp = 0
+    for a, b in zip(ids_a, ids_b):
+        if a != b:
+            break
+        lcp += 1
+    else:
+        lcp = min(len(ids_a), len(ids_b))
+    return lcp
+
+
 def build_prompt_diff_result(
     prev_ids: List[int],
     curr_ids: List[int],
@@ -267,16 +279,7 @@ def build_prompt_diff_result(
         ``post_perturbation_start`` equals the LCP length (the divergence
         point).
     """
-    # Compute longest common prefix length.
-    lcp = 0
-    min_len = min(len(prev_ids), len(curr_ids))
-    for i in range(min_len):
-        if prev_ids[i] != curr_ids[i]:
-            break
-        lcp += 1
-    else:
-        # All tokens matched up to min_len.
-        lcp = min_len
+    lcp = _longest_common_prefix_len(prev_ids, curr_ids)
 
     return PerturbationResult(
         original_ids=prev_ids,
@@ -287,6 +290,92 @@ def build_prompt_diff_result(
         perturbed_span_end=len(curr_ids),
         post_perturbation_start=lcp,
         perturbation_type="prompt_diff",
+    )
+
+
+@dataclass
+class TripletResult:
+    """Outcome of building a triplet comparison from three consecutive prompts.
+
+    Given three prefix-chain prompts P_k ⊂ P_{k+1} ⊂ P_{k+2}:
+      - P_k     = [prefix]
+      - P_{k+1} = [prefix][D1]
+      - P_{k+2} = [prefix][D1][D2]
+
+    We construct:
+      - seq_full = P_{k+2}           = [prefix][D1][D2]  (D1 present)
+      - seq_skip = [prefix] + [D2]                        (D1 removed)
+
+    The "perturbation" is D1.  Forward measurement compares D2's hidden
+    states between seq_full and seq_skip.
+    """
+
+    seq_full_ids: List[int]         # P_{k+2} = [prefix][D1][D2]
+    seq_skip_ids: List[int]         # [prefix][D2]            (D1 removed)
+    prefix_len: int                 # len(P_k) = |prefix|
+    d1_len: int                     # len(D1) = len(P_{k+1}) - len(P_k)
+    d2_len: int                     # len(D2) = len(P_{k+2}) - len(P_{k+1})
+    # Where D2 starts in each sequence (= post-perturbation start):
+    d2_start_full: int              # prefix_len + d1_len
+    d2_start_skip: int              # prefix_len
+
+
+def build_triplet_result(
+    p_k_ids: List[int],
+    p_k1_ids: List[int],
+    p_k2_ids: List[int],
+) -> Optional[TripletResult]:
+    """Construct a triplet comparison from three consecutive prefix-chain prompts.
+
+    Assumes P_k ⊂ P_{k+1} ⊂ P_{k+2} (each is a strict prefix of the next).
+    Returns ``None`` if the prefix assumptions don't hold or D1/D2 are empty.
+    """
+    # Verify P_k is a prefix of P_{k+1}
+    lcp_01 = _longest_common_prefix_len(p_k_ids, p_k1_ids)
+    if lcp_01 != len(p_k_ids):
+        logger.warning(
+            "Triplet: P_k (%d tokens) is not a prefix of P_{k+1} (%d tokens). "
+            "LCP=%d. Skipping.",
+            len(p_k_ids), len(p_k1_ids), lcp_01,
+        )
+        return None
+
+    # Verify P_{k+1} is a prefix of P_{k+2}
+    lcp_12 = _longest_common_prefix_len(p_k1_ids, p_k2_ids)
+    if lcp_12 != len(p_k1_ids):
+        logger.warning(
+            "Triplet: P_{k+1} (%d tokens) is not a prefix of P_{k+2} (%d tokens). "
+            "LCP=%d. Skipping.",
+            len(p_k1_ids), len(p_k2_ids), lcp_12,
+        )
+        return None
+
+    prefix_len = len(p_k_ids)
+    d1_len = len(p_k1_ids) - prefix_len
+    d2_len = len(p_k2_ids) - len(p_k1_ids)
+
+    if d1_len <= 0 or d2_len <= 0:
+        logger.warning(
+            "Triplet: D1=%d tokens, D2=%d tokens — both must be >0. Skipping.",
+            d1_len, d2_len,
+        )
+        return None
+
+    # seq_full = P_{k+2} = [prefix][D1][D2]
+    seq_full_ids = list(p_k2_ids)
+
+    # seq_skip = [prefix][D2] = P_k + D2 portion of P_{k+2}
+    d2_tokens = p_k2_ids[len(p_k1_ids):]
+    seq_skip_ids = list(p_k_ids) + list(d2_tokens)
+
+    return TripletResult(
+        seq_full_ids=seq_full_ids,
+        seq_skip_ids=seq_skip_ids,
+        prefix_len=prefix_len,
+        d1_len=d1_len,
+        d2_len=d2_len,
+        d2_start_full=prefix_len + d1_len,
+        d2_start_skip=prefix_len,
     )
 
 

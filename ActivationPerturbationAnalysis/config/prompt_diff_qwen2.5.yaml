@@ -1,0 +1,60 @@
+# ============================================================
+# Activation Perturbation Analysis — Prompt-Diff Mode + Llama-3-8B
+# ============================================================
+# Uses natural differences between consecutive agent prompts as
+# the perturbation.  No artificial perturbation types are applied.
+#
+# Triplet mode (automatic when extracted_prompts.json has chain_id):
+#   For 3 consecutive prefix-chain prompts P_k ⊂ P_{k+1} ⊂ P_{k+2},
+#   constructs seq_full=[prefix][D1][D2] vs seq_skip=[prefix][D2].
+#   D1 is the natural "perturbation"; measures forward propagation
+#   through D2.
+
+# --- Model ---------------------------------------------------
+model:
+  path: "/root/share/models/Qwen2.5-32B-Instruct"
+  dtype: "bfloat16"
+  max_memory_per_gpu_gb: 75
+  trust_remote_code: false
+
+# --- GPU scheduling ------------------------------------------
+gpu:
+  min_free_memory_gb: 20
+  max_parallel_experiments: 1
+  detect_automatically: true
+
+# --- Experiment sweep ----------------------------------------
+# prompt_diff mode: perturbation_positions and perturbation_span_lengths
+# are not used — they come naturally from the diff between consecutive
+# prompts.  context_lengths is ignored when source=jsonfile.
+sweep:
+  context_lengths: []
+  perturbation_positions: []
+  perturbation_span_lengths: []
+  perturbation_types:
+    - "prompt_diff"
+
+# --- Distance-based measurement -----------------------------
+measurement:
+  immediate_window: 10
+  short_window: 100
+  periodic_sampling_step: 100
+  periodic_sampling_width: 10
+
+# --- Prompt generation (jsonfile mode) ----------------------
+prompts:
+  source: "jsonfile"
+  jsonfile_path: "prompt/extracted_prompts.json"
+  seed: 42
+  num_prompt_candidates: 50
+
+# --- Result storage -----------------------------------------
+storage:
+  output_dir: "./Qwen2.5-32B-prompt-diff-results"
+  format: "parquet"
+  checkpoint_every: 10
+
+# --- Logging ------------------------------------------------
+logging:
+  level: "INFO"
+  log_file: "./Qwen2.5-32B-prompt-diff-results/experiment.log"

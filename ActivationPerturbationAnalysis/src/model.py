@@ -57,7 +57,7 @@ def load_model_and_tokenizer(
         max_memory=max_memory,
         trust_remote_code=trust_remote_code,
         output_hidden_states=True,
-        attn_implementation="eager",
+        attn_implementation="flash_attention_2",
     )
     model.eval()
     logger.info("Model loaded. Parameters: %s", f"{model.num_parameters():,}")

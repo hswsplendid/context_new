@@ -437,3 +437,4 @@ Changes Made
   注意：对于 agent prompt 常见的"纯前缀追加"情况（prompt[i] 是 prompt[i+1] 的完整前缀），prev
   在分歧点后没有 token，min(post_prev, post_curr) =
   0，该对会被跳过。只有分歧发生在中间（两边分歧点后都有内容）的 prompt 对才会产生有效度量。
+

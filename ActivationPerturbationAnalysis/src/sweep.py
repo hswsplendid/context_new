@@ -15,7 +15,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from transformers import PreTrainedTokenizerBase
 
-from .experiment import run_prompt_diff_experiment, run_single_experiment
+from .experiment import run_prompt_diff_experiment, run_single_experiment, run_triplet_experiment
 from .prompts import PromptGenerator
 from .scheduler import ExperimentJob, ExperimentScheduler, GPUInfo, detect_gpus
 from .storage import ResultStore
@@ -99,6 +99,40 @@ def build_prompt_diff_jobs(
         jobs.append(ExperimentJob(job_id=job_id, params=params))
 
     logger.info("Built %d prompt-diff jobs.", len(jobs))
+    return jobs
+
+
+def build_triplet_jobs(
+    chain_groups: Dict[str, List[int]],
+) -> List[ExperimentJob]:
+    """Build triplet comparison jobs from prefix-chain groups.
+
+    Parameters
+    ----------
+    chain_groups:
+        Mapping from ``chain_id`` to list of prompt indices (into the
+        flat prompt list) that form a prefix chain, sorted by position.
+
+    For a chain of length N, produces N-2 triplet jobs:
+    ``(prompt[i], prompt[i+1], prompt[i+2])`` for i in 0..N-3.
+    """
+    jobs: List[ExperimentJob] = []
+    for chain_id, indices in sorted(chain_groups.items()):
+        if len(indices) < 3:
+            continue
+        for i in range(len(indices) - 2):
+            params = {
+                "perturbation_type": "prompt_diff_triplet",
+                "chain_id": chain_id,
+                "triplet_index": i,
+                "p_k_index": indices[i],
+                "p_k1_index": indices[i + 1],
+                "p_k2_index": indices[i + 2],
+            }
+            job_id = _make_experiment_id(params)
+            jobs.append(ExperimentJob(job_id=job_id, params=params))
+
+    logger.info("Built %d triplet jobs from %d chains.", len(jobs), len(chain_groups))
     return jobs
 
 
@@ -187,7 +221,25 @@ def run_sweep(config: Dict[str, Any]):
         sweep["perturbation_types"] == ["prompt_diff"] and is_jsonfile
     )
 
-    if is_prompt_diff:
+    # Check if the JSON records carry chain metadata (for triplet mode).
+    _chain_groups: Dict[str, List[int]] = {}
+    is_triplet = False
+    if is_prompt_diff and prompt_gen._json_records:
+        for i, rec in enumerate(prompt_gen._json_records):
+            cid = rec.get("chain_id")
+            if cid is not None:
+                _chain_groups.setdefault(cid, []).append(i)
+        if _chain_groups:
+            is_triplet = True
+            logger.info(
+                "Triplet mode: %d chains, %d total prompts.",
+                len(_chain_groups),
+                sum(len(v) for v in _chain_groups.values()),
+            )
+
+    if is_triplet:
+        all_jobs = build_triplet_jobs(_chain_groups)
+    elif is_prompt_diff:
         all_jobs = build_prompt_diff_jobs(prompt_token_counts)
     else:
         all_jobs = build_sweep_jobs(config, prompt_token_counts=prompt_token_counts)
@@ -209,7 +261,61 @@ def run_sweep(config: Dict[str, Any]):
 
         params = job.params
 
-        if params.get("perturbation_type") == "prompt_diff":
+        if params.get("perturbation_type") == "prompt_diff_triplet":
+            # --- Triplet mode: 3 consecutive prefix-chain prompts ---
+            triplet_idx = params["triplet_index"]
+            pk_idx = params["p_k_index"]
+            pk1_idx = params["p_k1_index"]
+            pk2_idx = params["p_k2_index"]
+            chain_id = params["chain_id"]
+            logger.info(
+                "[%d/%d] Running triplet %s — chain=%s triplet=%d "
+                "(prompts %d→%d→%d)",
+                idx + 1, total, job.job_id, chain_id,
+                triplet_idx, pk_idx, pk1_idx, pk2_idx,
+            )
+
+            p_k_text = prompt_gen.generate(target_length=0, index=pk_idx)
+            p_k1_text = prompt_gen.generate(target_length=0, index=pk1_idx)
+            p_k2_text = prompt_gen.generate(target_length=0, index=pk2_idx)
+
+            try:
+                records = run_triplet_experiment(
+                    model=model,
+                    tokenizer=tokenizer,
+                    p_k_text=p_k_text,
+                    p_k1_text=p_k1_text,
+                    p_k2_text=p_k2_text,
+                    measurement_cfg=measurement_cfg,
+                    triplet_index=triplet_idx,
+                )
+            except Exception:
+                logger.exception("Triplet experiment %s failed.", job.job_id)
+                continue
+
+            # Compute metadata: D1 is the perturbation.
+            pk_ids = tokenizer.encode(p_k_text, add_special_tokens=False)
+            pk1_ids = tokenizer.encode(p_k1_text, add_special_tokens=False)
+            pk2_ids = tokenizer.encode(p_k2_text, add_special_tokens=False)
+            prefix_len = len(pk_ids)
+            d1_len = len(pk1_ids) - prefix_len
+            d2_len = len(pk2_ids) - len(pk1_ids)
+
+            metadata = {
+                "model_id": model_id,
+                "context_length": len(pk2_ids),
+                "perturbation_type": "prompt_diff_triplet",
+                "perturbation_position_frac": (
+                    prefix_len / len(pk2_ids) if len(pk2_ids) > 0 else 0.0
+                ),
+                "perturbation_position_abs": prefix_len,
+                "perturbation_span_length": d1_len,
+                "prompt_pair_index": triplet_idx,
+                "common_prefix_length": prefix_len,
+            }
+            store.add_records(job.job_id, records, metadata=metadata)
+
+        elif params.get("perturbation_type") == "prompt_diff":
             # --- Prompt-diff mode: consecutive pair comparison ---
             pair_idx = params["prompt_pair_index"]
             prev_idx = params["prev_prompt_index"]

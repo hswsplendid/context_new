@@ -18,7 +18,13 @@ from transformers import PreTrainedTokenizerBase
 
 from .metrics import compute_distance_buckets
 from .model import extract_hidden_states
-from .perturbations import PerturbationResult, build_prompt_diff_result, get_strategy
+from .perturbations import (
+    PerturbationResult,
+    TripletResult,
+    build_prompt_diff_result,
+    build_triplet_result,
+    get_strategy,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -212,6 +218,109 @@ def run_prompt_diff_experiment(
 
     # Free GPU memory eagerly.
     del prev_hidden, curr_hidden
+    import gc
+    gc.collect()
+    torch.cuda.empty_cache()
+
+    return records
+
+
+def run_triplet_experiment(
+    model,
+    tokenizer: PreTrainedTokenizerBase,
+    p_k_text: str,
+    p_k1_text: str,
+    p_k2_text: str,
+    measurement_cfg: Dict[str, int],
+    triplet_index: int,
+) -> List[Dict[str, Any]]:
+    """Measure forward propagation using the triplet comparison method.
+
+    For three consecutive prefix-chain prompts P_k ⊂ P_{k+1} ⊂ P_{k+2}:
+      - P_k     = [prefix]
+      - P_{k+1} = [prefix][D1]
+      - P_{k+2} = [prefix][D1][D2]
+
+    Constructs:
+      - seq_full = [prefix][D1][D2]   (natural sequence, D1 present)
+      - seq_skip = [prefix][D2]        (D1 removed)
+
+    D1 is the "perturbation".  We measure how D1's presence/absence affects
+    hidden states in the D2 region (forward propagation through D2).
+
+    Parameters
+    ----------
+    model:
+        HuggingFace causal LM with ``output_hidden_states=True``.
+    tokenizer:
+        Corresponding tokenizer.
+    p_k_text, p_k1_text, p_k2_text:
+        Three consecutive prompts forming a prefix chain.
+    measurement_cfg:
+        Dict with keys ``immediate_window``, ``short_window``,
+        ``periodic_sampling_step``, ``periodic_sampling_width``.
+    triplet_index:
+        Index of this triplet (0 = prompts 0→1→2, etc.).
+
+    Returns
+    -------
+    List of metric records (dicts) ready for storage.
+    """
+    # 1. Tokenize all three prompts -----------------------------------------
+    p_k_ids = tokenizer.encode(p_k_text, add_special_tokens=False)
+    p_k1_ids = tokenizer.encode(p_k1_text, add_special_tokens=False)
+    p_k2_ids = tokenizer.encode(p_k2_text, add_special_tokens=False)
+
+    # 2. Build triplet -------------------------------------------------------
+    triplet = build_triplet_result(p_k_ids, p_k1_ids, p_k2_ids)
+    if triplet is None:
+        logger.warning(
+            "Triplet %d: build_triplet_result returned None. Skipping.",
+            triplet_index,
+        )
+        return []
+
+    logger.debug(
+        "Triplet %d: prefix=%d, D1=%d, D2=%d, "
+        "seq_full=%d tokens, seq_skip=%d tokens",
+        triplet_index,
+        triplet.prefix_len,
+        triplet.d1_len,
+        triplet.d2_len,
+        len(triplet.seq_full_ids),
+        len(triplet.seq_skip_ids),
+    )
+
+    # 3. Forward passes -------------------------------------------------------
+    logger.debug(
+        "Running forward pass on seq_full (%d tokens)…",
+        len(triplet.seq_full_ids),
+    )
+    full_hidden = extract_hidden_states(model, triplet.seq_full_ids)
+
+    logger.debug(
+        "Running forward pass on seq_skip (%d tokens)…",
+        len(triplet.seq_skip_ids),
+    )
+    skip_hidden = extract_hidden_states(model, triplet.seq_skip_ids)
+
+    # 4. Compute forward metrics over D2 region --------------------------------
+    #    In seq_full, D2 starts at d2_start_full = prefix_len + d1_len
+    #    In seq_skip, D2 starts at d2_start_skip = prefix_len
+    #    compute_distance_buckets aligns from these start points forward.
+    records = compute_distance_buckets(
+        original_states=full_hidden,
+        perturbed_states=skip_hidden,
+        post_perturbation_start_orig=triplet.d2_start_full,
+        post_perturbation_start_pert=triplet.d2_start_skip,
+        immediate_window=measurement_cfg.get("immediate_window", 10),
+        short_window=measurement_cfg.get("short_window", 100),
+        periodic_step=measurement_cfg.get("periodic_sampling_step", 100),
+        periodic_width=measurement_cfg.get("periodic_sampling_width", 10),
+    )
+
+    # Free GPU memory eagerly.
+    del full_hidden, skip_hidden
     import gc
     gc.collect()
     torch.cuda.empty_cache()
